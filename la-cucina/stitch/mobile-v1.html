@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cucina — Ristorante Monastir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:ital,wght@0,300..700;1,300..700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pineDark: '#10231F',
+            pine: '#1F4A43',
+            neonWarm: '#F6ECD2',
+            whiteBrick: '#F2F1EC',
+            sage: '#8FB0A6',
+            tomato: '#B8322A'
+          },
+          fontFamily: {
+            bodoni: ['"Bodoni Moda"', 'serif'],
+            hanken: ['"Hanken Grotesk"', 'sans-serif'],
+            montserrat: ['"Montserrat"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #10231F;
+      color: #F6ECD2;
+      font-family: 'Hanken Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+    }
+    .label-tracked {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+    .neon-text-glow {
+      text-shadow: 0 0 16px rgba(246, 236, 210, 0.45), 0 0 32px rgba(246, 236, 210, 0.22);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .leader-line {
+      flex: 1 1 auto;
+      border-bottom: 1px dotted #8FB0A6;
+      margin: 0 10px;
+      transform: translateY(-4px);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body class="max-w-[420px] mx-auto min-h-screen bg-pineDark overflow-x-hidden selection:bg-tomato selection:text-white">
+
+  <!-- 1. HERO SECTION -->
+  <section class="relative min-h-screen flex flex-col justify-between bg-pineDark">
+    <!-- Background Image with top neon clarity and bottom gradient scrim -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TV6VXWZv7UMh7Y6Nqor6Nt98w5yNjbM4Ntan-vvS4x18-AA0D2rgRX3VGSH1FN2jDb50QKB8YOovOhV47sV0MjAxdsjc5GnV2KaFAy19GrZYhuw7Qstj8J0yuRJykuB7un068900sc1Rxh=w1600" 
+        alt="La Cucina Night Storefront" 
+        class="w-full h-full object-cover object-center"
+      />
+      <!-- Gradient overlay: clear/transparent top so the CUCINA neon sign shines, fading to deep dark at bottom -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-[#10231F]/40 to-[#10231F]"></div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <header class="relative z-10 flex items-center justify-between px-6 pt-7 pb-4">
+      <span class="font-montserrat text-xs tracking-[0.35em] uppercase text-neonWarm font-medium">CUCINA</span>
+      <button type="button" aria-label="Menu" class="text-neonWarm p-1.5 focus:outline-none">
+        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Bottom Hero Text & Actions -->
+    <div class="relative z-10 px-6 pb-12 pt-28">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="w-5 h-[1px] bg-sage opacity-75"></span>
+        <span class="label-tracked text-sage font-semibold">RISTORANTE · MONASTIR</span>
+      </div>
+
+      <h1 class="font-bodoni italic text-[58px] leading-[1.05] text-neonWarm font-normal tracking-tight mb-4">
+        Pasta e Amore.
+      </h1>
+
+      <p class="font-hanken text-[15px] leading-relaxed text-neonWarm/85 max-w-sm mb-4">
+        Italian pizza, fresh pasta and paella on Place 3 Août, Monastir.
+      </p>
+
+      <div class="flex items-center flex-wrap gap-2 text-[12px] text-neonWarm/90 mb-8 font-hanken">
+        <span class="text-tomato font-bold">★</span>
+        <span class="font-medium">4.4</span>
+        <span class="text-sage/60">·</span>
+        <span>799 Google reviews</span>
+        <span class="text-sage/60">·</span>
+        <span>Dine-in</span>
+        <span class="text-sage/60">·</span>
+        <span>Takeaway</span>
+        <span class="text-sage/60">·</span>
+        <span>Delivery</span>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <a href="#menu" class="w-full py-4 bg-neonWarm text-pineDark text-center font-montserrat text-xs font-semibold tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+          View Menu
+        </a>
+        <a href="https://www.google.com/maps?cid=10450448928807487105" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 border border-sage/60 text-neonWarm text-center font-montserrat text-xs font-medium tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT SECTION -->
+  <section class="bg-whiteBrick text-pine px-6 pt-12 pb-14">
+    <!-- Image p07 full width with subtle caption styling -->
+    <div class="mb-8 -mx-6">
+      <img 
+        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R4biBd0BFCsAPyuzpshSdWF_KcNBoqZTnHDmm1CEoy977AWZYBvXezPrAwM3udSlx-u840wEvCXNxbsoGntMvrysMJNYu3T7-xs-yLiukylsCT_wDN0PMdqHR2YqNCSIz62uWkWml4-YXO=w1600" 
+        alt="Place 3 Août Façade" 
+        class="w-full h-auto object-cover aspect-[4/3]"
+      />
+    </div>
+
+    <div class="flex items-center gap-2 mb-3">
+      <span class="w-4 h-[1px] bg-sage"></span>
+      <span class="label-tracked text-sage font-medium">IL RISTORANTE</span>
+    </div>
+
+    <h2 class="font-bodoni text-3xl leading-snug font-normal text-pine mb-5">
+      A small green house on Place 3 Août with a big <span class="italic font-normal">Italian kitchen.</span>
+    </h2>
+
+    <p class="font-hanken text-[15px] leading-relaxed text-pine/85 mb-10">
+      Pizza, pasta made the way Italians make it, house-made ravioli, paella and lasagne, served in a room of white brick, sage panels and red gingham, under the neon that says <span class="italic">La Dolce Vita.</span>
+    </p>
+
+    <!-- Facts with hairline rules -->
+    <div class="space-y-4 pt-2">
+      <div class="flex items-baseline justify-between border-b border-sage/40 pb-3">
+        <span class="label-tracked text-pine/60">Price</span>
+        <span class="font-hanken text-sm text-pine font-medium">TND 20–30 per person</span>
+      </div>
+      <div class="flex items-baseline justify-between border-b border-sage/40 pb-3">
+        <span class="label-tracked text-pine/60">Service</span>
+        <span class="font-hanken text-sm text-pine font-medium">Dine-in, takeaway, delivery</span>
+      </div>
+      <div class="flex items-baseline justify-between border-b border-sage/40 pb-3">
+        <span class="label-tracked text-pine/60">Find us</span>
+        <span class="font-hanken text-sm text-pine font-medium">Place 3 Août, Monastir 5000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SIGNATURE DISHES -->
+  <section class="bg-whiteBrick text-pine px-6 pt-8 pb-14 border-t border-sage/25">
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-4 h-[1px] bg-sage"></span>
+        <span class="label-tracked text-sage font-medium">SPECIALITÀ DELLA CASA</span>
+      </div>
+      <h2 class="font-bodoni text-3xl font-normal text-pine">
+        Signature <span class="italic">Creations</span>
+      </h2>
+    </div>
+
+    <!-- Stacked items with full-bleed photos -->
+    <div class="space-y-10">
+      <!-- Dish 1: Spaghetti au Poulpe -->
+      <div>
+        <div class="-mx-6 mb-3 overflow-hidden">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RDksB2S95u7s7rvgxwCKD4KiUto3trmPsL_M1IDTvCiJIZJfOZDAHtW51zCf-qVaHQh4X3dvTwkVg8osGSdcWAgfSRwS9QOkIKyHqOduNUcbYjgzdr9IPDTwjSkqQwrJcL-7hFng=w1600" 
+            alt="Spaghetti au Poulpe" 
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+        <div class="flex items-baseline justify-between mb-1">
+          <h3 class="font-bodoni text-xl font-normal text-pine">
+            <span class="italic">Spaghetti</span> au Poulpe
+          </h3>
+          <span class="font-montserrat font-bold text-sm text-tomato tracking-wide">34 DT</span>
+        </div>
+        <p class="font-hanken text-xs text-pine/70">Sauce tomate, poulpe</p>
+      </div>
+
+      <!-- Dish 2: Pizza Fruits de Mer -->
+      <div>
+        <div class="-mx-6 mb-3 overflow-hidden">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnpk44pfasWrwzIxRGMFFCdBp3eE3ilEOaq7tdeTst1nA8Z7mgUS8ue9oljC8WT-54AWYJaIB6MIAFBzqsdtXHEENXqdUpvQjxuH6pSKB8cuHpsloi_7AznvO77aJrLCKtgEjCZ8fAyszsw=w1600" 
+            alt="Pizza Fruits de Mer" 
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+        <div class="flex items-baseline justify-between mb-1">
+          <h3 class="font-bodoni text-xl font-normal text-pine">
+            <span class="italic">Pizza</span> Fruits de Mer
+          </h3>
+          <span class="font-montserrat font-bold text-sm text-tomato tracking-wide">28 DT</span>
+        </div>
+        <p class="font-hanken text-xs text-pine/70">Sauce tomate, mozzarella, fruits de mer</p>
+      </div>
+
+      <!-- Dish 3: Paella -->
+      <div>
+        <div class="-mx-6 mb-3 overflow-hidden">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SytTM6qjajU14V_Av6YgHgrxht-qTPfIOBfeaPCCprZvRPWDy2qHofboij1sbM6PzdD1yS6CW8o54zoiZMqR7K7d2NpRhhKm0_B_rbD6rCzXcLDv-bI_z4u4LsO-2ZQSF2rJ0=w1600" 
+            alt="Paella" 
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+        <div class="flex items-baseline justify-between mb-1">
+          <h3 class="font-bodoni text-xl font-normal text-pine">
+            <span class="italic">Paella</span>
+          </h3>
+          <span class="font-montserrat font-bold text-sm text-tomato tracking-wide">35 DT</span>
+        </div>
+        <p class="font-hanken text-xs text-pine/70">Sauce tomate, huile d'olive, oignon, poivron, persil, petits pois, fruits de mer</p>
+      </div>
+
+      <!-- Dish 4: Lasagne Bolognaise -->
+      <div>
+        <div class="-mx-6 mb-3 overflow-hidden">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RrQRvL1WYKi1Yp5JwVYoe3hVMKK635lx5XnfMz2fZmEBFwV9o4cqYSJHaJ3C9fSuAcxfcdZzxVW7I2A2Gbnq5RH2Ig06m2IXsBmn0Z-SXLiTRq2p9etTVNWGnIDgyROtg6GQTEZbucOZi6=w1600" 
+            alt="Lasagne Bolognaise" 
+            class="w-full aspect-[4/3] object-cover"
+          />
+        </div>
+        <div class="flex items-baseline justify-between">
+          <h3 class="font-bodoni text-xl font-normal text-pine">
+            <span class="italic">Lasagne</span> Bolognaise
+          </h3>
+          <span class="font-montserrat font-bold text-sm text-tomato tracking-wide">20 DT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MENU SECTION -->
+  <section id="menu" class="bg-whiteBrick text-pine px-6 pt-10 pb-16 border-t border-sage/25">
+    <div class="text-center mb-6">
+      <span class="label-tracked text-sage font-medium block mb-2">LA CARTA</span>
+      <h2 class="font-bodoni text-4xl font-normal text-pine mb-2">
+        Il <span class="italic">Menu</span>
+      </h2>
+      <p class="font-hanken text-xs text-pine/70">
+        Prices in Tunisian Dinars (DT).
+      </p>
+    </div>
+
+    <!-- Horizontally scrolling tab row -->
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar -mx-6 px-6 pb-4 mb-8">
+      <button type="button" class="whitespace-nowrap px-4 py-2 bg-pine text-neonWarm rounded-[4px] font-montserrat text-[11px] tracking-wider uppercase font-semibold flex-shrink-0">
+        Pizza
+      </button>
+      <button type="button" class="whitespace-nowrap px-4 py-2 border border-sage/40 text-pine rounded-[4px] font-montserrat text-[11px] tracking-wider uppercase font-medium flex-shrink-0">
+        Pasta
+      </button>
+      <button type="button" class="whitespace-nowrap px-4 py-2 border border-sage/40 text-pine rounded-[4px] font-montserrat text-[11px] tracking-wider uppercase font-medium flex-shrink-0">
+        Paella &amp; Risotto
+      </button>
+      <button type="button" class="whitespace-nowrap px-4 py-2 border border-sage/40 text-pine rounded-[4px] font-montserrat text-[11px] tracking-wider uppercase font-medium flex-shrink-0">
+        Salades
+      </button>
+      <button type="button" class="whitespace-nowrap px-4 py-2 border border-sage/40 text-pine rounded-[4px] font-montserrat text-[11px] tracking-wider uppercase font-medium flex-shrink-0">
+        Dolce &amp; Boissons
+      </button>
+    </div>
+
+    <!-- Pizza List -->
+    <div class="space-y-4 mb-12">
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Margherita</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">15 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Végétarienne</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">18 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Sicilienne</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">18 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Thon</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">19 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Pepperoni</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">19 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Regina</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">19 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">4 Saisons</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">20 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Diavola</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">21 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Campione</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">23 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Al Pollo</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">23 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Saumon</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">Fruits de Mer</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+      </div>
+      <div class="flex items-baseline justify-between">
+        <span class="font-bodoni text-base text-pine">5 Fromages</span>
+        <span class="leader-line"></span>
+        <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">30 DT</span>
+      </div>
+      <div class="pt-1">
+        <div class="flex items-baseline justify-between">
+          <div class="flex items-center gap-2">
+            <span class="font-bodoni font-bold text-base text-pine tracking-wide">CUCINA</span>
+            <span class="font-montserrat text-[9px] uppercase tracking-wider text-tomato font-semibold">Speciale</span>
+          </div>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">32 DT</span>
+        </div>
+        <p class="text-[11px] text-pine/70 font-hanken mt-1">pesto, mozzarella, ricotta, crevettes, pistache, parmesan</p>
+      </div>
+    </div>
+
+    <!-- Pasta Subheading & List -->
+    <div class="pt-4 border-t border-sage/40">
+      <div class="flex items-center gap-2 mb-6">
+        <span class="w-4 h-[1px] bg-sage"></span>
+        <h3 class="font-bodoni italic text-2xl text-pine">Pasta</h3>
+      </div>
+
+      <div class="space-y-4">
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Penne all'Arrabbiata</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">22 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Pesto Rossa</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">24 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Pesto</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">24 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Ravioli Poulet <span class="text-xs text-pine/60 font-hanken italic">(maison)</span></span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Alfredo</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">27 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Spaghetti alla Carbonara</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">27 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Alfredo Rossa</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Bolognaise</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">25 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Ravioli Pesta</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Ravioli Fruits de Mer</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">30 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Bresaola</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">5 Fromages</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">28 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Tagliatelle au Saumon</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">32 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Spaghetti au Poulpe</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">34 DT</span>
+        </div>
+        <div class="pt-1">
+          <div class="flex items-baseline justify-between">
+            <span class="font-bodoni text-base text-pine">Tunisienne</span>
+            <span class="leader-line"></span>
+            <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">25 DT</span>
+          </div>
+          <p class="text-[11px] text-pine/70 font-hanken mt-0.5">poisson du jour, piment</p>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Spaghetti Fruits de Mer</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">36 DT</span>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="font-bodoni text-base text-pine">Spaghetti Frutti di Mare</span>
+          <span class="leader-line"></span>
+          <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">37 DT</span>
+        </div>
+        <div class="pt-1">
+          <div class="flex items-baseline justify-between">
+            <div class="flex items-center gap-2">
+              <span class="font-bodoni font-bold text-base text-pine tracking-wide">CUCINA</span>
+              <span class="font-montserrat text-[9px] uppercase tracking-wider text-tomato font-semibold">Signature</span>
+            </div>
+            <span class="leader-line"></span>
+            <span class="font-montserrat font-bold text-sm text-tomato flex-shrink-0">40 DT</span>
+          </div>
+          <p class="text-[11px] text-pine/70 font-hanken mt-1">sauce du chef, parmesan, aneth, crevettes, basilic</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. GALLERY SECTION (Dark) -->
+  <section class="bg-pineDark text-neonWarm px-6 pt-12 pb-14 border-t border-sage/20">
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-4 h-[1px] bg-sage"></span>
+        <span class="label-tracked text-sage font-medium">ATMOSFERA &amp; TAVOLA</span>
+      </div>
+      <h2 class="font-bodoni text-3xl font-normal text-neonWarm">
+        Momenti <span class="italic">alla Cucina</span>
+      </h2>
+    </div>
+
+    <!-- 2-column masonry with mixed tall/short tiles, 6px gaps, no borders -->
+    <div class="grid grid-cols-2 gap-[6px]">
+      <!-- Column 1 -->
+      <div class="flex flex-col gap-[6px]">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RGkEGx0wfMzTj094-TcGuVSGGB9kHOdY3tkN_jCBXgC9p9M7fXambyoNFpDxJIL7bzhk3jdSAJ56GlOlLcSDQ3vlSbbnHZjJra83dCeYJsRuY1E0F4xvIc8nPhY-_AW_jbwqsf=w1600" alt="p15" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TqfafQQA6U3teskhphTYRGYf4x4-E1BvF6hkPFGodBQTN4-rGgozDLzvOlwIxeQfnaB_Yb60HeqMYX00-bwiqsxYZvLPkbTRsQkx4dKJ4cfZFrLgv5LPcg_tj3qkuuNWp6nBboxAalSHol=w1600" alt="p04" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TNer2qSx74Mpvq6X6zUfcLjNQ8Mb-fIwCIuVW5KhbyqRUaOrT9Uqj8wCWKhFITsnkQh-t_yffJfHRwAzkrohlT5WUIcLxTHbov4sMdfyegz54XF-P82LbaJUh3pPlPrxuzg4gW9w=w1600" alt="p11" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkosC7wrCqp0-ko9pfld2w-X7WBG2sxc2k1Rpx9HZ-CTjyScpyTkTn1k4JDXmjF4VbTuK2UvXTZqwNep3DBFoJmWoRDamGM3B30KdGb79r-qiUvhjFpX5179dewZ4gPu9Rih_ijwg=w1600" alt="p25" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qz4P0-zaUEkVfOqAPn4BPtvEOuGDAC7jHmJE7mjXbLgmkqRkieYCO3JRDBZOB0wZQwHoEeWB8GmUUOcss3_RPDKUoKEi3b6vOz2Hn-nyXNhjIKgWLmaYlC2cCPsLhQIWo2fqF2BjKuQ6Yt=w1600" alt="p05" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn-TsDGP7ABSC4rUovg9SHorrrbeLPwgQr8nREqeQy3dzXlxrHooV7hNJBg5jWHCrUYodhOAXZHwnVFY_l5ssb5nUWAi0sjtqRBrjoNuV7Kbc6Iv6svnClMXza3aFjjQIQbB_SwRB6-ACo=w1600" alt="p26" class="w-full h-auto object-cover rounded-none" />
+      </div>
+
+      <!-- Column 2 -->
+      <div class="flex flex-col gap-[6px]">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkzKDQs91Hb4IFFD4b6Qs910bOE0k-iLhKUzul6B57_xBx0NDJsaYFx-1CXB-_VgkOhbdqmyaCbdE2FxEqClm49mgD8jlC83gxwwnQW3IeUEnsTk2mDTV_QjCfICpXE05-xMFwFXn564dQ=w1600" alt="p24" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RFeST2pw-qLsutGe4S27-rearoUIaCdQ3wNyZBX2-mvkgXKOy-abdZC8xlMs6DRdMWgfqPC0xusrNkvpDKMu21zz4z2rRQViNbicT4WX4TDa1LQIqbJPT4Cd-bIbunGgR0Cn9gbMYxp7Jk=w1600" alt="p06" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlyGBivJI55qG5vs1uQxbsvMTWaziuLmHUe1xzUySn11wFe2DinfRLijKX_6srEdYAB_coFRl_fmJj2kUH3G0fprUTKcm4SFrKxe0JG1Ho7f3tcyF0NwdJ3D1YoexeTYPRz025_f3qrG4Za=w1600" alt="p18" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RI5AfaU22Bv9qazrhIb7qwiEx0IbHCUHB1Vq5YkKkbJjFO0nCYIARmE4E7PXHBzqT7CjRKR-ZE90iuEzuRE6lywop5cTpniMte3PF1RMeV0JS4HUY54v7cUg2dWkaZM4uYvBI=w1600" alt="p16" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWma6qcLoUZlLF16Q1ng_moswzUPYqVn1h2156G-sLR71g5BdXrZfYQDrbP_07IGQ0y015BYchmfY5DZak9V7q7sVevCZs4tM1tOyfYoAt5ij690CTsj81VyzL28lzMerL_WgoY=w1600" alt="p28" class="w-full h-auto object-cover rounded-none" />
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Ty3vNqnaqOWdovXyH8KrVpW8BdDkbxLRY2LpmxvldDNzsUv1ZepUN1mxqlN704wTf81Nqq1B8e7NkSZATzNfwve9NtHGzl54Ravl8QH4Lohl6eh_SmJqjxaQhPGgmti3AQvPOBPw=w1600" alt="p09" class="w-full h-auto object-cover rounded-none" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. REVIEWS SECTION (Dark) -->
+  <section class="bg-pineDark text-neonWarm px-6 pt-12 pb-14 border-t border-sage/20">
+    <div class="mb-10">
+      <div class="font-bodoni text-6xl font-normal text-neonWarm leading-none mb-2">4.4</div>
+      <div class="flex items-center gap-1.5 text-tomato text-base mb-1">
+        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      </div>
+      <p class="font-montserrat text-xs text-sage tracking-wider uppercase">799 reviews on Google</p>
+    </div>
+
+    <!-- Quotes stacked, separated by sage hairlines, no boxes -->
+    <div class="divide-y divide-sage/30 mb-8">
+      <div class="py-5 first:pt-0">
+        <p class="font-bodoni italic text-base leading-relaxed text-neonWarm/95 mb-3">
+          "We ordered few pizzas, and our family is from Italy - everyone said it was Napolitan pizza level (dough,sauce, ingredients), delicious!"
+        </p>
+        <span class="label-tracked text-sage font-medium">— Margo Kargo</span>
+      </div>
+
+      <div class="py-5">
+        <p class="font-bodoni italic text-base leading-relaxed text-neonWarm/95 mb-3">
+          "Wanna taste the best Pizza in the whole Sahel ? That's the place to be."
+        </p>
+        <span class="label-tracked text-sage font-medium">— ramzi hamdi</span>
+      </div>
+
+      <div class="py-5">
+        <p class="font-bodoni italic text-base leading-relaxed text-neonWarm/95 mb-3">
+          "The staff is friendly, and the food is simply perfect. It's one of those restaurants where everything feels authentic and uniquely Italian…"
+        </p>
+        <span class="label-tracked text-sage font-medium">— Ismail Nouira</span>
+      </div>
+
+      <div class="py-5">
+        <p class="font-bodoni italic text-base leading-relaxed text-neonWarm/95 mb-3">
+          "The tastiest pizza i have ever had in tunisia . The ingredients are fresh and of high quality."
+        </p>
+        <span class="label-tracked text-sage font-medium">— Farabi</span>
+      </div>
+
+      <div class="py-5 last:pb-0">
+        <p class="font-bodoni italic text-base leading-relaxed text-neonWarm/95 mb-3">
+          "One plate away from Italy 🇮🇹❤️"
+        </p>
+        <span class="label-tracked text-sage font-medium">— Firas Atigui</span>
+      </div>
+    </div>
+
+    <a href="https://www.google.com/maps?cid=10450448928807487105" target="_blank" rel="noopener noreferrer" class="block w-full py-3.5 border border-sage/60 text-neonWarm text-center font-montserrat text-xs font-medium tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+      Read all reviews on Google
+    </a>
+  </section>
+
+  <!-- 7. LOCATION SECTION (Dark) -->
+  <section class="bg-pineDark text-neonWarm px-6 pt-12 pb-14 border-t border-sage/20">
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-4 h-[1px] bg-sage"></span>
+        <span class="label-tracked text-sage font-medium">TROVARCI</span>
+      </div>
+      <h2 class="font-bodoni text-3xl font-normal text-neonWarm">
+        Place 3 Août, Monastir
+      </h2>
+    </div>
+
+    <div class="space-y-4 mb-8">
+      <div class="border-b border-sage/30 pb-3">
+        <span class="label-tracked text-sage/75 block mb-1">Indirizzo</span>
+        <span class="font-hanken text-sm text-neonWarm">Place 3 Août, Monastir 5000, Tunisia</span>
+      </div>
+      <div class="border-b border-sage/30 pb-3">
+        <span class="label-tracked text-sage/75 block mb-1">Telefono</span>
+        <a href="tel:+21696455150" class="font-hanken text-sm text-neonWarm hover:underline">+216 96 455 150</a>
+      </div>
+      <div class="border-b border-sage/30 pb-3">
+        <span class="label-tracked text-sage/75 block mb-2">Orari</span>
+        <div class="font-hanken text-xs text-neonWarm/90 space-y-1">
+          <div class="flex justify-between">
+            <span>Monday – Thursday</span>
+            <span>11:00 – 00:00</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Saturday – Sunday</span>
+            <span>11:00 – 00:30</span>
+          </div>
+          <div class="flex justify-between text-sage">
+            <span>Friday</span>
+            <span class="italic">Please call ahead</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simple map-style panel with a pin (no coordinates) -->
+    <div class="relative w-full aspect-[16/10] bg-[#162D28] border border-sage/30 rounded-[4px] p-6 flex flex-col justify-between overflow-hidden mb-4">
+      <!-- Minimalist grid background lines -->
+      <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: linear-gradient(to right, #8FB0A6 1px, transparent 1px), linear-gradient(to bottom, #8FB0A6 1px, transparent 1px); background-size: 28px 28px;"></div>
+      
+      <div class="relative z-10 flex items-center justify-between">
+        <span class="label-tracked text-[9px] text-sage">MONASTIR</span>
+        <span class="w-2 h-2 rounded-full bg-tomato animate-pulse"></span>
+      </div>
+
+      <div class="relative z-10 text-center my-auto py-2">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-tomato/20 border border-tomato text-tomato mb-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+        </div>
+        <p class="font-bodoni text-lg text-neonWarm font-normal tracking-wide">La Cucina</p>
+        <p class="font-hanken text-xs text-sage/80">Place 3 Août · Monastir</p>
+      </div>
+
+      <div class="relative z-10 text-right">
+        <span class="text-[10px] font-montserrat text-sage uppercase tracking-wider">Dine-in · Takeaway</span>
+      </div>
+    </div>
+
+    <a href="https://www.google.com/maps?cid=10450448928807487105" target="_blank" rel="noopener noreferrer" class="block w-full py-3.5 bg-neonWarm text-pineDark text-center font-montserrat text-xs font-semibold tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+      Open in Google Maps
+    </a>
+  </section>
+
+  <!-- 8. FINAL CTA & FOOTER (Dark) -->
+  <section class="bg-pineDark text-neonWarm px-6 pt-12 pb-12 border-t border-sage/20 text-center">
+    <div class="mb-8">
+      <span class="label-tracked text-sage font-medium block mb-3">PRENOTAZIONI &amp; VISITA</span>
+      <h2 class="font-bodoni italic text-5xl font-normal text-neonWarm neon-text-glow mb-4">
+        Visit Us
+      </h2>
+      <p class="font-hanken text-sm text-neonWarm/85">
+        Reservations by phone: <a href="tel:+21696455150" class="text-neonWarm font-semibold underline underline-offset-4 decoration-sage/50">+216 96 455 150</a>
+      </p>
+    </div>
+
+    <!-- Stacked Full-Width Buttons -->
+    <div class="flex flex-col gap-3 mb-14">
+      <a href="tel:+21696455150" class="w-full py-4 bg-neonWarm text-pineDark font-montserrat text-xs font-semibold tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+        Call Now
+      </a>
+      <a href="https://wa.me/21696455150" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 border border-sage/60 text-neonWarm font-montserrat text-xs font-medium tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+        WhatsApp
+      </a>
+      <a href="https://www.google.com/maps?cid=10450448928807487105" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 border border-sage/60 text-neonWarm font-montserrat text-xs font-medium tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+        Get Directions
+      </a>
+      <a href="tel:+21696455150" class="w-full py-3.5 border border-sage/60 text-neonWarm font-montserrat text-xs font-medium tracking-[0.2em] uppercase rounded-[4px] active:scale-[0.99] transition-transform">
+        Reserve a Table
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-6 border-t border-sage/20 text-center space-y-4">
+      <div class="flex items-center justify-center gap-6 font-montserrat text-xs text-sage tracking-wider">
+        <a href="https://instagram.com/lacucinaa23" target="_blank" rel="noopener noreferrer" class="hover:text-neonWarm transition-colors">
+          Instagram @lacucinaa23
+        </a>
+        <span>·</span>
+        <a href="https://www.facebook.com/61551104882964/" target="_blank" rel="noopener noreferrer" class="hover:text-neonWarm transition-colors">
+          Facebook
+        </a>
+      </div>
+      <p class="font-hanken text-[11px] text-sage/60 tracking-normal">
+        © La Cucina Monastir
+      </p>
+    </footer>
+  </section>
+
+</body>
+</html>

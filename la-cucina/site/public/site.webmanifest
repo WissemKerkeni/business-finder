@@ -1,0 +1,8 @@
+{
+  "name": "La Cucina Monastir",
+  "short_name": "La Cucina",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#10231F",
+  "background_color": "#10231F",
+  "display": "browser"
+}
