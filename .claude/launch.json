@@ -2,6 +2,8 @@
   "version": "0.0.1",
   "configurations": [
     { "name": "la-cucina-preview", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "la-cucina/site", "run", "preview", "--", "--port", "4173", "--strictPort"], "port": 4173 },
-    { "name": "la-cucina-dev", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "la-cucina/site", "run", "dev", "--", "--port", "5173", "--strictPort"], "port": 5173 }
+    { "name": "la-cucina-dev", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "la-cucina/site", "run", "dev", "--", "--port", "5173", "--strictPort"], "port": 5173 },
+    { "name": "di-piu-preview", "runtimeExecutable": "npm", "runtimeArgs": ["--prefix", "di-piu/site", "run", "preview", "--", "--port", "4174", "--strictPort"], "port": 4174 },
+    { "name": "di-piu-static", "runtimeExecutable": "npx", "runtimeArgs": ["--yes", "http-server", "di-piu", "-p", "4180", "-c-1", "--silent"], "port": 4180 }
   ]
 }

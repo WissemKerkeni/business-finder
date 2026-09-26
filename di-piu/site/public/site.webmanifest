@@ -1,0 +1,8 @@
+{
+  "name": "Di Più Monastir",
+  "short_name": "Di Più",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#07090A",
+  "background_color": "#07090A",
+  "display": "browser"
+}

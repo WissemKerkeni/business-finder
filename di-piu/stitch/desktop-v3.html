@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Di Più — Ristorante Italiano · Monastir</title>
+<!-- Google Fonts: Newsreader (light/italic) & Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,200;1,6..72,300;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#07090A',
+            'night-sage': '#0E1311',
+            accent: '#8BC34A',
+            bodytext: '#E7ECE6',
+            mutedtext: '#8C968E',
+            sage: '#A9B59C',
+            'hairline-dark': 'rgba(255, 255, 255, 0.12)',
+            'hairline-light': 'rgba(7, 9, 10, 0.14)',
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Manrope', 'sans-serif'],
+          },
+          letterSpacing: {
+            'ultra-wide': '0.22em',
+          },
+          borderRadius: {
+            DEFAULT: '2px',
+            sm: '2px',
+            md: '4px',
+            lg: '4px',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .italic-serif { font-style: italic; }
+    .leader-line {
+      flex: 1;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+      margin: 0 0.75rem 0.35rem 0.75rem;
+    }
+  </style>
+</head>
+<body class="bg-night text-bodytext font-sans antialiased selection:bg-accent selection:text-night">
+<!-- ========================================================================= -->
+<!-- 1. HERO (Near-black #07090A) -->
+<!-- ========================================================================= -->
+<header class="relative h-screen min-h-[660px] max-h-screen bg-night text-white flex flex-col justify-between overflow-hidden" id="hero">
+<!-- Top Nav -->
+<nav class="w-full shrink-0 border-b border-hairline-dark px-6 md:px-12 py-3.5 md:py-4 z-20 flex items-center justify-between">
+<a class="flex flex-col group" href="#hero">
+<span class="font-serif text-2xl md:text-3xl font-light italic tracking-wide text-white leading-tight">Di Più</span>
+<span class="text-[9px] uppercase tracking-ultra-wide text-accent font-semibold -mt-0.5">Ristorante</span>
+</a>
+<div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-ultra-wide text-mutedtext">
+<a class="hover:text-white transition-colors duration-200" href="#about">About</a>
+<a class="hover:text-white transition-colors duration-200" href="#signature">La Cucina</a>
+<a class="hover:text-white transition-colors duration-200" href="#menu">Menu</a>
+<a class="hover:text-white transition-colors duration-200" href="#gallery">Gallery</a>
+<a class="hover:text-white transition-colors duration-200" href="#reviews">Reviews</a>
+<a class="hover:text-white transition-colors duration-200" href="#visit">Visit</a>
+</div>
+<div class="flex items-center">
+<a class="text-xs tracking-wider font-medium text-white border border-white/40 rounded-sm px-4 py-2 hover:border-white transition-colors" href="tel:+21650074004">
+        +216 50 074 004
+      </a>
+</div>
+</nav>
+<!-- Split Layout Hero: Left 55% Text Panel | Right 45% Storefront Photo -->
+<div class="grid grid-cols-1 lg:grid-cols-12 flex-1 w-full min-h-0">
+<!-- Left Panel (55%) -->
+<div class="lg:col-span-7 flex flex-col justify-between px-6 sm:px-12 lg:px-16 py-6 md:py-8 lg:py-10 border-r border-hairline-dark overflow-y-auto lg:overflow-hidden">
+<div class="my-auto max-w-2xl py-2">
+<!-- Eyebrow -->
+<div class="flex items-center space-x-3 mb-4 lg:mb-5">
+<span class="w-6 h-px bg-accent"></span>
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold">Ristorante Italiano · Monastir</span>
+</div>
+<!-- Headline -->
+<h1 class="font-serif text-[clamp(3.8rem,7.5vw,7.8rem)] xl:text-[clamp(4.2rem,8.2vw,8.5rem)] font-light leading-[0.92] text-white tracking-tight mb-5 lg:mb-6">
+          Un po' <span class="italic font-light text-accent">di più.</span>
+</h1>
+<!-- Subheadline -->
+<p class="text-sm sm:text-base lg:text-lg text-bodytext font-light leading-relaxed max-w-xl mb-6 lg:mb-8">
+          Pizza, pasta, risotto and grilled fish, served generously in a sage-green room one block from Place 3 Août.
+        </p>
+<!-- Buttons & Directions -->
+<div class="flex flex-wrap items-center gap-3.5 pt-1">
+<a class="border border-white/40 text-white px-6 sm:px-7 py-3 text-xs uppercase tracking-ultra-wide font-semibold rounded-sm hover:border-white hover:bg-white/5 transition-colors duration-150" href="#menu">
+            View the menu
+          </a>
+<a class="bg-accent text-night px-6 sm:px-7 py-3 text-xs uppercase tracking-ultra-wide font-semibold rounded-sm hover:brightness-105 transition-all duration-150" href="tel:+21650074004">
+            Reserve a table
+          </a>
+<a class="ml-1 text-xs text-mutedtext hover:text-white tracking-wider flex items-center group transition-colors" href="https://www.google.com/maps?cid=13172501472462840975" rel="noopener noreferrer" target="_blank">
+            Get directions <span class="inline-block ml-1.5 transition-transform group-hover:translate-x-1">→</span>
+</a>
+</div>
+</div>
+<!-- Meta Row with Hairline Dividers -->
+<div class="pt-4 lg:pt-5 border-t border-hairline-dark grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 text-xs text-bodytext shrink-0">
+<div class="flex items-center space-x-2">
+<span class="text-accent text-sm">★</span>
+<span class="font-semibold text-white">4.5</span>
+<span class="text-mutedtext">·</span>
+<span class="text-mutedtext">423 Google reviews</span>
+</div>
+<div class="md:border-l md:border-hairline-dark md:pl-6">
+<span class="block text-accent text-[10px] uppercase tracking-ultra-wide mb-0.5 font-semibold">Hours</span>
+<span class="text-white">Open daily 12:00 – 00:00</span>
+</div>
+<div class="md:border-l md:border-hairline-dark md:pl-6">
+<span class="block text-accent text-[10px] uppercase tracking-ultra-wide mb-0.5 font-semibold">Service</span>
+<span class="text-white">Dine-in · Terrace · Takeaway · Delivery</span>
+</div>
+</div>
+</div>
+<!-- Right Panel (45% Tall Full-height Photo) -->
+<div class="lg:col-span-5 relative h-full bg-night overflow-hidden">
+<img alt="Di Più glowing black night façade storefront in Monastir" class="w-full h-full object-cover object-center brightness-100 contrast-105" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QUo7BTJUrRV0OzhySGNPdv3MTxs-ToMECBG70ok4cp00MGKV-s_T5S8CTEq5qk1swD8LKchYdgKkskosafqOEPqh7xzYQHsI_yZuQRSi8tIwSPOFMRF7vYSGueXTUpX6h9SHtYGIJOagt4=w1600"/>
+<div class="absolute inset-0 bg-gradient-to-t from-night/80 via-transparent to-transparent lg:hidden pointer-events-none"></div>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- 2. ABOUT (Deep Dark Sage-Night #0E1311) -->
+<!-- ========================================================================= -->
+<section class="bg-night-sage text-bodytext py-24 sm:py-32 px-6 sm:px-12 lg:px-16 border-b border-hairline-dark" id="about">
+<div class="max-w-7xl mx-auto">
+<!-- Large Italic Pull-Line -->
+<div class="mb-16 md:mb-24">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold block mb-4">L'Identità</span>
+<h2 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.08] max-w-4xl">
+        Di più — <span class="italic font-light text-accent">Italian for more.</span>
+</h2>
+</div>
+<!-- Two Columns Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Column: Copy & Facts -->
+<div class="lg:col-span-5 space-y-12">
+<p class="text-base sm:text-lg text-bodytext font-light leading-relaxed">
+          A calm, modern trattoria in the centre of Monastir: sage walls, oak slats and rattan lamps inside, a planted green-wall terrace outside. The kitchen covers the Italian classics — pizza, pasta your way (spaghetti, penne, farfalle or tagliatelle), ravioli, risotto — plus grilled meat and fish, mojitos and cheesecakes.
+        </p>
+<!-- Fact list with hairlines -->
+<div class="bg-night/70 border border-hairline-dark p-6 rounded-sm divide-y divide-hairline-dark text-sm">
+<div class="pb-4.5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold">Price</span>
+<span class="font-medium text-white">TND 20–40 per person</span>
+</div>
+<div class="py-4.5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold">Good for</span>
+<span class="font-medium text-white">Families, groups, a quiet dinner for two</span>
+</div>
+<div class="pt-4.5 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold">Reservations</span>
+<span class="font-medium text-white">Accepted by phone (<a class="underline underline-offset-4 hover:text-accent text-white" href="tel:+21650074004">+216 50 074 004</a>)</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Asymmetric 2-Photo Stack -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-12 gap-6 items-end">
+<div class="sm:col-span-7">
+<img alt="Di Più basket-wall booth seating with rattan lights and warm oak slats" class="w-full h-[400px] object-cover rounded-sm border border-hairline-dark" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QyBhvr4Zje7L9i-ziaxgunexnraoUhwVTVBewvibYP0Sx1tj7Ub0O4qSeIItd1JfKrHzlrloZOINAKz9gg-2tnYB2XJcJ4wHy_91GE37FBGDp_wN5D6q_8rhQSJsz5zoiZqoQMIy-A7AU=w1200"/>
+<span class="block text-[10px] uppercase tracking-ultra-wide text-mutedtext mt-2.5">The dining room · woven pendants &amp; oak</span>
+</div>
+<div class="sm:col-span-5 sm:-mb-8">
+<img alt="Di Più sage bar with glowing brand logo" class="w-full h-[320px] object-cover rounded-sm border border-hairline-dark" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sm8kd4-3SfH-bEHL7s7K-ro-rlb86xIOhsKmPcROkdG5sp8t2lipgcU-kp_Q-nFyf5uXFsYd6vUaWqs0KMrHVGEETLvv-J_j09Do7wQxsYR3598NBObruWxV5KNX-qzlAubvQ4R1T0AMs=w1200"/>
+<span class="block text-[10px] uppercase tracking-ultra-wide text-mutedtext mt-2.5">Sage counter &amp; signature crest</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 3. SIGNATURE DISHES (Near-black #07090A) -->
+<!-- ========================================================================= -->
+<section class="bg-night text-white py-24 sm:py-32 px-6 sm:px-12 lg:px-16 border-b border-hairline-dark" id="signature">
+<div class="max-w-7xl mx-auto">
+<!-- Section Header -->
+<div class="border-b border-hairline-dark pb-8 mb-16">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold block mb-2">FROM THE MENU</span>
+<h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-light text-white">
+        La cucina
+      </h2>
+</div>
+<!-- Editorial Layout: Left Feature (~60%) | Right Stack (~40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Column: Large Feature Dish (Pâtes Di Più, ~60%) -->
+<article class="lg:col-span-7 flex flex-col group">
+<div class="aspect-[16/11] w-full overflow-hidden bg-night-sage rounded-sm mb-6 border border-hairline-dark">
+<img alt="Pâtes Di Più" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkm2Zi9kbam4MsGbADSb2zSqOXPmiXA-B63i-Dpt3sNH0kygna8A5ePB8kCmJ21irU1xS9H1p_QtLBsimx36NpHUCK7v-iqnC630xmXfMgJGMNIaX4DN-vYVwYF-_Du1Gk1ciX9102KdQQ=w1200"/>
+</div>
+<div class="border-t border-hairline-dark pt-5">
+<span class="text-[10px] uppercase tracking-ultra-wide text-accent font-semibold block mb-1">THE HOUSE PASTA</span>
+<div class="flex items-baseline justify-between">
+<h3 class="font-serif text-3xl sm:text-4xl text-white font-light italic">Pâtes Di Più</h3>
+<span class="text-xl font-medium text-accent tracking-tight font-serif">38.9 DT</span>
+</div>
+<p class="text-sm text-bodytext font-light mt-2.5 leading-relaxed">
+            pesto, parmesan, pistachio, rolled chicken supreme, ricotta, spinach, shrimp
+          </p>
+</div>
+</article>
+<!-- Right Column: Staggered/Stacked Column (~40%) -->
+<div class="lg:col-span-5 flex flex-col space-y-10">
+<!-- Dish 2: Pizza Burrata -->
+<article class="flex flex-col group">
+<div class="aspect-[16/10] w-full overflow-hidden bg-night-sage rounded-sm mb-4 border border-hairline-dark">
+<img alt="Pizza Burrata" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SElqdWYmiK2ArjBiXJ3nzB4Lu23OkrSoinZBLK2h1-N7A9V4cFesnYK-rgWKO-KBnabZndwtubJUQHJV-S4K7M-SP6SjGvQPOYvl6cHfCF02fNo3iohtD1ZB4YlmRwSf3ScZScq1YlmQGq=w1200"/>
+</div>
+<div class="border-t border-hairline-dark pt-3 flex items-baseline justify-between">
+<h3 class="font-serif text-2xl text-white font-light italic">Pizza Burrata</h3>
+<span class="text-base font-medium text-accent tracking-tight font-serif">27.9 DT</span>
+</div>
+<p class="text-xs text-mutedtext font-light mt-1.5 leading-relaxed">
+            tomato, mozzarella, burrata, rocket, parmesan, balsamic
+          </p>
+</article>
+<!-- Dish 3: Pâtes Fruits de Mer -->
+<article class="flex flex-col group">
+<div class="aspect-[16/10] w-full overflow-hidden bg-night-sage rounded-sm mb-4 border border-hairline-dark">
+<img alt="Pâtes Fruits de Mer" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlZCGICcoTnV94kr5szbieKrUEeKsBZn0q1-q_Q1b-Nr-ChVo0B8vwEbrYMMIQfaArWgW0NFcD-jEgU7QWOsmKWsQkOMtThLY6CwbEFijDVYpWYjz6WZBbhHXccfuqSN5w2x0qYqOsuo74=w1200"/>
+</div>
+<div class="border-t border-hairline-dark pt-3 flex items-baseline justify-between">
+<h3 class="font-serif text-2xl text-white font-light italic">Pâtes Fruits de Mer</h3>
+<span class="text-base font-medium text-accent tracking-tight font-serif">37.8 DT</span>
+</div>
+<p class="text-xs text-mutedtext font-light mt-1.5 leading-relaxed">
+            tomato, rosé or cream sauce, seafood, cherry tomato, pepper, basil
+          </p>
+</article>
+<!-- Dish 4: Risotto Fruits de Mer -->
+<article class="flex flex-col group">
+<div class="aspect-[16/10] w-full overflow-hidden bg-night-sage rounded-sm mb-4 border border-hairline-dark">
+<img alt="Risotto Fruits de Mer" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmkDNj_VMiMK1DWdlVGx5sFJhWCqOsS2vg1bEST9b2j5gF6W4SM_0PCNeo3lY_OiBgkqpMY6YAYGGlbLoM2ot6w5Jk5DNkah8Qa9mkYW5NnR1DrGRxxsKMoUwRc5K7PyGiDgLurMpIYT7-4=w1200"/>
+</div>
+<div class="border-t border-hairline-dark pt-3 flex items-baseline justify-between">
+<h3 class="font-serif text-2xl text-white font-light italic">Risotto Fruits de Mer</h3>
+<span class="text-base font-medium text-accent tracking-tight font-serif">39.8 DT</span>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 4. MENU SECTION (Deep Dark Sage-Night #0E1311 with Pizza Spotlight & Table Strip) -->
+<!-- ========================================================================= -->
+<section class="bg-night-sage text-white py-24 sm:py-32 px-6 sm:px-12 lg:px-16 border-b border-hairline-dark" id="menu">
+<div class="max-w-7xl mx-auto">
+<!-- Menu Header -->
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold block mb-3">LA CARTA</span>
+<h2 class="font-serif text-5xl sm:text-6xl font-light text-white leading-none mb-3">
+        Il menù
+      </h2>
+<p class="text-xs tracking-wider text-mutedtext uppercase">
+        Prices in Tunisian dinars
+      </p>
+</div>
+<!-- Tab Row as Rectangular Chips (max-w 4px radius) -->
+<div class="flex items-center justify-start sm:justify-center overflow-x-auto gap-2.5 pb-4 mb-16 border-b border-hairline-dark text-xs uppercase tracking-ultra-wide scrollbar-none">
+<button class="menu-tab-btn px-4 py-2.5 border border-white/30 text-white rounded-sm hover:border-white transition-colors cursor-pointer whitespace-nowrap" id="tab-btn-antipasti" onclick="switchMenuTab('antipasti')" type="button">Antipasti &amp; Salades</button>
+<button class="menu-tab-btn active px-4 py-2.5 bg-accent text-night font-semibold rounded-sm transition-colors cursor-pointer whitespace-nowrap" id="tab-btn-pizza" onclick="switchMenuTab('pizza')" type="button">Pizza</button>
+<button class="menu-tab-btn px-4 py-2.5 border border-white/30 text-white rounded-sm hover:border-white transition-colors cursor-pointer whitespace-nowrap" id="tab-btn-pasta" onclick="switchMenuTab('pasta')" type="button">Pasta</button>
+<button class="menu-tab-btn px-4 py-2.5 border border-white/30 text-white rounded-sm hover:border-white transition-colors cursor-pointer whitespace-nowrap" id="tab-btn-ravioli-risotto" onclick="switchMenuTab('ravioli-risotto')" type="button">Ravioli &amp; Risotto</button>
+<button class="menu-tab-btn px-4 py-2.5 border border-white/30 text-white rounded-sm hover:border-white transition-colors cursor-pointer whitespace-nowrap" id="tab-btn-plats" onclick="switchMenuTab('plats')" type="button">Plats</button>
+<button class="menu-tab-btn px-4 py-2.5 border border-white/30 text-white rounded-sm hover:border-white transition-colors cursor-pointer whitespace-nowrap" id="tab-btn-dolci-drinks" onclick="switchMenuTab('dolci-drinks')" type="button">Dolci &amp; Drinks</button>
+</div>
+<!-- TAB PANEL: PIZZA (Active Default) -->
+<div class="menu-panel" id="tab-panel-pizza">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start mb-20">
+<!-- LEFT 40%: Tall Real Photo -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="w-full aspect-[3/4] overflow-hidden rounded-sm border border-hairline-dark bg-night">
+<img alt="Pizza au feu de bois à la napolitaine chez Di Più" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmf57ATQufdMT5Lci045HnW9C5_GxpeLY1pkhTb_71_2o-iCMrx2omK2OUiITH4VY2ZhSunGIV6yIJqsb8UqYi3M5tSysfhTvblsRKHSAlM8QrNXWjUgQVOyFrik-FYCWZI28rn5BKsiD0=w1200"/>
+</div>
+<span class="block text-[11px] uppercase tracking-ultra-wide text-mutedtext mt-3">Pizza au feu de bois à la napolitaine · Di Più</span>
+</div>
+<!-- RIGHT 60%: Pizza Items List with dotted leaders -->
+<div class="lg:col-span-7">
+<div class="border-b border-hairline-dark pb-3 mb-6 flex items-baseline justify-between">
+<h3 class="font-serif text-3xl font-light italic text-white">Pizze artigianali</h3>
+<span class="text-[10px] uppercase tracking-ultra-wide text-accent font-semibold">Di Più classic</span>
+</div>
+<ul class="space-y-4">
+<!-- 1. Margarita -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Margarita</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">15.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">sauce tomate, mozzarella, basilic</p>
+</li>
+<!-- 2. Neptune -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Neptune</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">18.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">thon, basilic, olive</p>
+</li>
+<!-- 3. Poulet -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Poulet</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">20.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">sauce blanche, poulet, champignons, poivre</p>
+</li>
+<!-- 4. Végétarienne -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Végétarienne</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">23.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">aubergines et courgettes grillées, champignons frais</p>
+</li>
+<!-- 5. Pepperoni -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Pepperoni</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">24.9 DT</span>
+</div>
+</li>
+<!-- 6. Reine -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Reine</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">25.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">jambon fumé, champignons</p>
+</li>
+<!-- 7. Bresaola -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Bresaola</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">25.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">bresaola, roquette, parmesan, balsamique</p>
+</li>
+<!-- 8. 5 Fromages -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">5 Fromages</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">25.9 DT</span>
+</div>
+</li>
+<!-- 9. Campione -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Campione</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">26.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">viande hachée, champignons</p>
+</li>
+<!-- 10. Burrata (WITH 72px square thumbnail) -->
+<li class="p-2.5 bg-night/60 border border-hairline-dark rounded-sm flex items-center gap-3">
+<img alt="Pizza Burrata" class="w-[72px] h-[72px] shrink-0 object-cover rounded-sm border border-hairline-dark" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SElqdWYmiK2ArjBiXJ3nzB4Lu23OkrSoinZBLK2h1-N7A9V4cFesnYK-rgWKO-KBnabZndwtubJUQHJV-S4K7M-SP6SjGvQPOYvl6cHfCF02fNo3iohtD1ZB4YlmRwSf3ScZScq1YlmQGq=w300"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between">
+<span class="font-semibold text-sm text-white">Burrata</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">27.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5 truncate">burrata, roquette, parmesan, balsamique</p>
+</div>
+</li>
+<!-- 11. Fruits de mer -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Fruits de mer</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">27.8 DT</span>
+</div>
+</li>
+<!-- 12. Saumon -->
+<li class="py-1">
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Saumon</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">29.9 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">saumon fumé, épinards</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- TAB PANEL: ANTIPASTI & SALADES (Hidden by default) -->
+<div class="menu-panel hidden" id="tab-panel-antipasti">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-6 max-w-5xl mx-auto mb-20">
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Soupe aux lentilles</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">9.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Bisque de crevettes</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">12.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Mozzarella chaude panée</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">21.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Calamars dorés (6 pièces)</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">24.9 DT</span>
+</div>
+</li>
+</ul>
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Salade Italienne</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">23.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Salade Burrata</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">24.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Salade César</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">25.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Salade Fruits de mer</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">29.5 DT</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- TAB PANEL: PASTA -->
+<div class="menu-panel hidden" id="tab-panel-pasta">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-6 max-w-5xl mx-auto mb-20">
+<ul class="space-y-5">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Putanesca</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">22.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Bolognaise</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">25.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Chlepatra</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">27.8 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">poulet, champignons, parmesan</p>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Carbonara</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">27.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">4 fromages</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">29.8 DT</span>
+</div>
+</li>
+</ul>
+<ul class="space-y-5">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Burrata</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">30.8 DT</span>
+</div>
+<p class="text-[11px] text-mutedtext font-light mt-0.5">pesto, burrata, pignons, roquette</p>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Émincé de bœuf champignons</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">33.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Fruits de mer</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">37.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Pâtes Di Più</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">38.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Pâtes au mérou</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">39.8 DT</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- TAB PANEL: RAVIOLI & RISOTTO -->
+<div class="menu-panel hidden" id="tab-panel-ravioli-risotto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-6 max-w-5xl mx-auto mb-20">
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Ravioli épinards ricotta</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">28.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Ravioli bolognaise</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">30.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Ravioli 4 fromages</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">31.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Ravioli saumon fumé</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">35.8 DT</span>
+</div>
+</li>
+</ul>
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Lasagnes bolognaise</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">24.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Risotto 4 fromages</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">31.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Risotto poulet champignons</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">32.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Risotto fruits de mer</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">39.8 DT</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- TAB PANEL: PLATS -->
+<div class="menu-panel hidden" id="tab-panel-plats">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-6 max-w-5xl mx-auto mb-20">
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Escalope de poulet grillée</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">23.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Suprême sauce champignons</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">28.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Loup grillé</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">29.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Filet de dorade sauce citron</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">33.8 DT</span>
+</div>
+</li>
+</ul>
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Filet de bœuf 3 sauces</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">46.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Côte à l'os grillée 500 g</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">49.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Carré d'agneau 3 sauces</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">49.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Symphonie fruits de mer (pour 2)</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">119.5 DT</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- TAB PANEL: DOLCI & DRINKS -->
+<div class="menu-panel hidden" id="tab-panel-dolci-drinks">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-6 max-w-5xl mx-auto mb-20">
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Red velvet</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">8.4 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Cheesecake noisette, spéculoos</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">11.8 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Tiramisu</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">12.9 DT</span>
+</div>
+</li>
+</ul>
+<ul class="space-y-6">
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Mojito Di Più</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">13.9 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Espresso</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">3.5 DT</span>
+</div>
+</li>
+<li>
+<div class="flex items-baseline justify-between">
+<span class="font-medium text-sm text-white">Citronnade</span>
+<span class="leader-line"></span>
+<span class="font-serif text-sm font-semibold text-accent">6.2 DT</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- "SEEN ON THE TABLE" STRIP (5 Cards in 4:5 aspect ratio) -->
+<div class="pt-12 border-t border-hairline-dark">
+<div class="flex items-baseline justify-between mb-6">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold block">Seen on the table</span>
+<span class="text-xs text-mutedtext font-light">From our daily service</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- Card 1: Ravioli saumon fumé -->
+<div class="flex flex-col group bg-night border border-hairline-dark p-2.5 rounded-sm">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-sm bg-night-sage mb-2.5">
+<img alt="Ravioli saumon fumé" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmKBJp69GLvGJP4Alhw_vo_9JDRxaFBZ3SAf-QI34fxcyFQlF9lTNgU9-R-s0H2uv6roYM-5Rw-Sg597jnb5OZD0-XgW4wOr-TeztDA84KTLr-FBQiaD5XYvg1LFaNMjzYhhPv_CFN88GM=w600"/>
+</div>
+<span class="font-medium text-xs text-white leading-tight truncate">Ravioli saumon fumé</span>
+<span class="font-serif text-xs font-semibold text-accent mt-1">35.8 DT</span>
+</div>
+<!-- Card 2: Filet de dorade sauce citron -->
+<div class="flex flex-col group bg-night border border-hairline-dark p-2.5 rounded-sm">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-sm bg-night-sage mb-2.5">
+<img alt="Filet de dorade sauce citron" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkumJds7ifbnMb-jJ4bA4uI41nbRKBNxGWy-8pMaJr7_dO5gz6Ko-xd72z8aMAe0w2WbpAy-ZElAjgvNMD8niGJPOkxBVD-MF0E_QquyEcnM8l6DMfWLfyDFI5foyLHF-GsQdsyIqm7xJum=w600"/>
+</div>
+<span class="font-medium text-xs text-white leading-tight truncate">Filet de dorade</span>
+<span class="font-serif text-xs font-semibold text-accent mt-1">33.8 DT</span>
+</div>
+<!-- Card 3: Suprême sauce champignons -->
+<div class="flex flex-col group bg-night border border-hairline-dark p-2.5 rounded-sm">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-sm bg-night-sage mb-2.5">
+<img alt="Suprême sauce champignons" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkLx7vVthHfGFaq3W9iIjd3J4avHOrxpNFQZp9bypkxEpsy9bydcv_-mBqfVRpx04IdKD15ciPHUAlHgNwbK71fHNy88BZWQvOgWJ6fdFYiLae9TXrELrjrukIujAGV-9k39GiBYC1RFv8=w600"/>
+</div>
+<span class="font-medium text-xs text-white leading-tight truncate">Suprême champignons</span>
+<span class="font-serif text-xs font-semibold text-accent mt-1">28.9 DT</span>
+</div>
+<!-- Card 4: Salade fruits de mer -->
+<div class="flex flex-col group bg-night border border-hairline-dark p-2.5 rounded-sm">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-sm bg-night-sage mb-2.5">
+<img alt="Salade fruits de mer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn3X6IDogaqeWQt96nj8LIWE4zGnCbp6QISjCLHiaS7JWGRwpNFsFcQzrG5JI7YNoS9UC7RuP98MsFxmfqTBhtiNqc79Ga6b7m36XF8dLyWZP8-WvJ6Jd_aZz30xcCUI6p9xmFt0WQNK-Ht=w600"/>
+</div>
+<span class="font-medium text-xs text-white leading-tight truncate">Salade fruits de mer</span>
+<span class="font-serif text-xs font-semibold text-accent mt-1">29.5 DT</span>
+</div>
+<!-- Card 5: Cheesecake -->
+<div class="flex flex-col group bg-night border border-hairline-dark p-2.5 rounded-sm col-span-2 sm:col-span-1">
+<div class="w-full aspect-[4/5] overflow-hidden rounded-sm bg-night-sage mb-2.5">
+<img alt="Cheesecake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn2F9hNLeB1lzBo7vCPIOc7ezDYxYIdeIjcRfF9SKn-1mfvjyRA1iO3EbnuFCbCz4vy21kR-IouiqFbju7VJijo5q3Sk9sp9uIGVTEOWqZsKDrF7Buonal91YL6LZ_NZiPpyxg4DtIK5Cb1=w600"/>
+</div>
+<span class="font-medium text-xs text-white leading-tight truncate">Cheesecake maison</span>
+<span class="font-serif text-xs font-semibold text-accent mt-1">11.8 DT</span>
+</div>
+</div>
+</div>
+<!-- Script for Tab Switching -->
+<script>
+      function switchMenuTab(tabId) {
+        const panels = document.querySelectorAll('.menu-panel');
+        const buttons = document.querySelectorAll('.menu-tab-btn');
+        panels.forEach(p => p.classList.add('hidden'));
+        buttons.forEach(b => {
+          b.classList.remove('active', 'bg-accent', 'text-night', 'font-semibold');
+          b.classList.add('border', 'border-white/30', 'text-white');
+        });
+        
+        const targetPanel = document.getElementById('tab-panel-' + tabId);
+        const targetBtn = document.getElementById('tab-btn-' + tabId);
+        if (targetPanel) targetPanel.classList.remove('hidden');
+        if (targetBtn) {
+          targetBtn.classList.remove('border', 'border-white/30', 'text-white');
+          targetBtn.classList.add('active', 'bg-accent', 'text-night', 'font-semibold');
+        }
+      }
+    </script>
+<!-- Menu subtext -->
+<div class="mt-14 pt-6 border-t border-hairline-dark text-center">
+<p class="text-xs text-mutedtext italic">
+        Menu from the restaurant's printed card; prices may change.
+      </p>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 5. GALLERY (Near-black #07090A) -->
+<!-- ========================================================================= -->
+<section class="bg-night text-white py-20 px-4 sm:px-8 border-b border-hairline-dark" id="gallery">
+<div class="max-w-7xl mx-auto mb-8 px-4 flex items-baseline justify-between border-b border-hairline-dark pb-4">
+<div>
+<span class="text-[10px] uppercase tracking-ultra-wide text-accent font-semibold block">AMBIENTE</span>
+<h2 class="font-serif text-2xl md:text-3xl font-light italic text-white">La sala</h2>
+</div>
+<span class="text-xs text-mutedtext font-light">Photos from Google Maps</span>
+</div>
+<!-- Immersive Masonry / Mosaic Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-7xl mx-auto">
+<!-- Img 1 -->
+<div class="col-span-1 md:col-span-2 row-span-2 overflow-hidden aspect-[4/3] md:aspect-auto md:h-full bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più restaurant interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TL_TDIJB-olMThOkgitNztnqq8vCLNtWPOxbahaBkXsTP1741pYVJUdewpy4RsIEC518YgJVvD3dWdYdiw7XDHBFp6Sh5swPKOH_lLXXwlmc1wtkJM3gu3uLFPxb1-mi58eJ5GnAkymZ5E=w1400"/>
+</div>
+<!-- Img 2 -->
+<div class="overflow-hidden aspect-square bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più room detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T6R-QStlooYphTjkGvw7XwhEzm-PENJlgAo9GsTlFbBEKKFKZkJhj5EoU8MIDazTXQrNQ8KM0f5FRvM-GbaMHu0t6mox3liuZzi6HuSINI0a6MdXyyxCP6VX4TOJJrvGYRUJ51hgBFf91P=w1200"/>
+</div>
+<!-- Img 3 -->
+<div class="overflow-hidden aspect-square bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più table atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmf57ATQufdMT5Lci045HnW9C5_GxpeLY1pkhTb_71_2o-iCMrx2omK2OUiITH4VY2ZhSunGIV6yIJqsb8UqYi3M5tSysfhTvblsRKHSAlM8QrNXWjUgQVOyFrik-FYCWZI28rn5BKsiD0=w1200"/>
+</div>
+<!-- Img 4 -->
+<div class="overflow-hidden aspect-square bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più sage ambiance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SgZgwLOXdK22CQGDZL5rGFtnslh2RMTJh1XdxaQQ85b1GvdASHjuk2cy3fbkbpcI40_Lw_AuJhzT7Yx7CLGl1Z0ReKe7lJo6Cap3ciMclgj7FBvRLDwpwi7-hwfCYJA6L0YmeTVrUHG_XD=w1200"/>
+</div>
+<!-- Img 5 -->
+<div class="overflow-hidden aspect-square bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più lighting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmKBJp69GLvGJP4Alhw_vo_9JDRxaFBZ3SAf-QI34fxcyFQlF9lTNgU9-R-s0H2uv6roYM-5Rw-Sg597jnb5OZD0-XgW4wOr-TeztDA84KTLr-FBQiaD5XYvg1LFaNMjzYhhPv_CFN88GM=w1200"/>
+</div>
+<!-- Img 6 -->
+<div class="col-span-1 md:col-span-2 overflow-hidden aspect-[16/9] md:aspect-auto md:h-64 bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più dining banquettes" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QNFl34MgfumdTtYjqjyRci5vUb3DcI-A6rwBeFxxIrrCa1IIrCuNroDi7EYNIRh-7xcpqFdO_BtzEmWhY756WgjYxpnm-B_kKXFTAf29g17F3ZH0LDjrgoE1HFybeYN2MFE6wmfz9-w4L9=w1200"/>
+</div>
+<!-- Img 7 -->
+<div class="overflow-hidden aspect-square bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più dish presentation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn2F9hNLeB1lzBo7vCPIOc7ezDYxYIdeIjcRfF9SKn-1mfvjyRA1iO3EbnuFCbCz4vy21kR-IouiqFbju7VJijo5q3Sk9sp9uIGVTEOWqZsKDrF7Buonal91YL6LZ_NZiPpyxg4DtIK5Cb1=w1200"/>
+</div>
+<!-- Img 8 -->
+<div class="overflow-hidden aspect-square bg-night-sage rounded-sm border border-hairline-dark">
+<img alt="Di Più terrace or room detail" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TQbTz5YOKwTgZZeNLWJ6LcvbI9pB43ZdGFrPx2ClD83CLsJfuLNoySbt8w23Lt6s9FaGJLggTVaCdlkkfIUx4T7Sne2HfBtl47skvpFIqOzA_G2Mran9_1U9bWT4uyLPkakpxXW-iO9aU=w1200"/>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 6. GOOGLE REVIEWS (One Light Moment: Sage #A9B59C with Near-black #07090A text) -->
+<!-- ========================================================================= -->
+<section class="bg-sage text-night py-24 sm:py-32 px-6 sm:px-12 lg:px-16 border-b border-hairline-light" id="reviews">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left: giant 4.5, stars, badge, distribution, google link -->
+<div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-night/15 pb-12 lg:pb-0 lg:pr-12">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[11px] uppercase tracking-ultra-wide text-night/70 font-semibold block">Feedback</span>
+<!-- Clean Google Wordmark Badge -->
+<span class="inline-flex items-center space-x-1.5 px-2.5 py-1 bg-night/10 rounded-sm text-[11px] font-semibold text-night/80 tracking-wide">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#07090A"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#07090A"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#07090A"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#07090A"></path>
+</svg>
+<span>Google</span>
+</span>
+</div>
+<div class="flex items-baseline space-x-3 mb-2">
+<span class="font-serif text-7xl sm:text-8xl font-light text-night leading-none tracking-tight">4.5</span>
+<div class="text-night text-2xl tracking-tighter">★★★★★</div>
+</div>
+<p class="text-sm font-medium text-night/80 mb-8">
+          423 reviews on Google
+        </p>
+<!-- Thin 5-bar distribution -->
+<div class="space-y-2 mb-10 text-xs">
+<!-- 5 Star -->
+<div class="flex items-center space-x-3">
+<span class="w-5 text-night/70">5★</span>
+<div class="flex-1 h-[2px] bg-night/10">
+<div class="h-[2px] bg-night" style="width: 78.5%;"></div>
+</div>
+<span class="w-7 text-right text-night/60 tabular-nums">332</span>
+</div>
+<!-- 4 Star -->
+<div class="flex items-center space-x-3">
+<span class="w-5 text-night/70">4★</span>
+<div class="flex-1 h-[2px] bg-night/10">
+<div class="h-[2px] bg-night" style="width: 10.2%;"></div>
+</div>
+<span class="w-7 text-right text-night/60 tabular-nums">43</span>
+</div>
+<!-- 3 Star -->
+<div class="flex items-center space-x-3">
+<span class="w-5 text-night/70">3★</span>
+<div class="flex-1 h-[2px] bg-night/10">
+<div class="h-[2px] bg-night" style="width: 3.8%;"></div>
+</div>
+<span class="w-7 text-right text-night/60 tabular-nums">16</span>
+</div>
+<!-- 2 Star -->
+<div class="flex items-center space-x-3">
+<span class="w-5 text-night/70">2★</span>
+<div class="flex-1 h-[2px] bg-night/10">
+<div class="h-[2px] bg-night" style="width: 1.7%;"></div>
+</div>
+<span class="w-7 text-right text-night/60 tabular-nums">7</span>
+</div>
+<!-- 1 Star -->
+<div class="flex items-center space-x-3">
+<span class="w-5 text-night/70">1★</span>
+<div class="flex-1 h-[2px] bg-night/10">
+<div class="h-[2px] bg-night" style="width: 5.9%;"></div>
+</div>
+<span class="w-7 text-right text-night/60 tabular-nums">25</span>
+</div>
+</div>
+<a class="inline-flex items-center text-xs uppercase tracking-ultra-wide font-semibold text-night border-b border-night pb-1 hover:text-night/70 hover:border-night/70 transition-colors" href="https://www.google.com/maps?cid=13172501472462840975" rel="noopener noreferrer" target="_blank">
+          Read all reviews on Google →
+        </a>
+</div>
+<!-- Right: Large editorial quotes separated by hairlines -->
+<div class="lg:col-span-8 divide-y divide-night/15">
+<div class="pb-10">
+<blockquote class="font-serif text-2xl sm:text-3xl font-light italic leading-snug text-night mb-4">
+            “Food was out of this world, so good we had to come back twice! … Restaurant itself is lovely, very stylish and fresh with a nice atmosphere.”
+          </blockquote>
+<cite class="text-xs uppercase tracking-ultra-wide text-night/70 font-semibold not-italic">
+            — Jessica B
+          </cite>
+</div>
+<div class="py-10">
+<blockquote class="font-serif text-2xl sm:text-3xl font-light italic leading-snug text-night mb-4">
+            “The place is so calm with relaxing music, I loved the vibe there… the quantity of the seafood is so generous and it tastes so good”
+          </blockquote>
+<cite class="text-xs uppercase tracking-ultra-wide text-night/70 font-semibold not-italic">
+            — Jasmine, Local Guide
+          </cite>
+</div>
+<div class="py-10">
+<blockquote class="font-serif text-2xl sm:text-3xl font-light italic leading-snug text-night mb-4">
+            “I have revisited this place several times, and I can confidently testify that their prices are fair, the portions are generous…”
+          </blockquote>
+<cite class="text-xs uppercase tracking-ultra-wide text-night/70 font-semibold not-italic">
+            — Fa, Local Guide
+          </cite>
+</div>
+<div class="pt-10">
+<blockquote class="font-serif text-2xl sm:text-3xl font-light italic leading-snug text-night mb-4">
+            “Presentation is amazing and the food is very delicious. The staff were very welcoming and warm.”
+          </blockquote>
+<cite class="text-xs uppercase tracking-ultra-wide text-night/70 font-semibold not-italic">
+            — Wannes Sonia
+          </cite>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 7. VISIT / LOCATION (Deep Dark Sage-Night #0E1311) -->
+<!-- ========================================================================= -->
+<section class="bg-night-sage text-white py-24 sm:py-32 px-6 sm:px-12 lg:px-16 border-b border-hairline-dark" id="visit">
+<div class="max-w-7xl mx-auto">
+<div class="mb-14">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold block mb-3">POSIZIONE</span>
+<h2 class="font-serif text-4xl sm:text-5xl font-light text-white leading-none">
+        Find Di Più in Monastir
+      </h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left: Real Embedded Google Map iframe with dark/greyscale filter -->
+<div class="lg:col-span-6 w-full aspect-[4/3] bg-night border border-hairline-dark overflow-hidden rounded-sm">
+<iframe class="w-full h-full min-h-[380px] border-0 grayscale invert contrast-125 brightness-75 hover:grayscale-0 hover:invert-0 hover:brightness-100 transition-all duration-500 rounded-none" loading="lazy" src="https://maps.google.com/maps?q=35.7706018,10.8392555&amp;z=17&amp;output=embed">
+</iframe>
+</div>
+<!-- Right: Rows with hairlines in dark info card -->
+<div class="lg:col-span-6 bg-night border border-hairline-dark p-8 rounded-sm divide-y divide-hairline-dark">
+<div class="pb-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold w-36">FIND US</span>
+<div class="flex-1 text-sm text-white font-medium">
+            QRCQ+6P, Monastir 5000<br/>
+<span class="text-xs text-mutedtext font-normal">one block from Place 3 Août</span>
+</div>
+</div>
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold w-36">CALL</span>
+<div class="flex-1 text-sm text-white font-medium">
+<a class="hover:text-accent transition-colors" href="tel:+21650074004">+216 50 074 004</a>
+</div>
+</div>
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold w-36">HOURS</span>
+<div class="flex-1 text-sm text-white font-medium">
+            Every day, 12:00 – 00:00
+          </div>
+</div>
+<div class="py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold w-36">GOOD TO KNOW</span>
+<div class="flex-1 text-sm text-bodytext font-light">
+            Terrace seating · Free parking nearby · Card payments · Kids welcome
+          </div>
+</div>
+<div class="pt-8">
+<a class="inline-block bg-accent text-night px-8 py-4 text-xs uppercase tracking-ultra-wide font-semibold rounded-sm hover:brightness-105 transition-all" href="https://www.google.com/maps?cid=13172501472462840975" rel="noopener noreferrer" target="_blank">
+            Open in Google Maps
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 8. FINAL CTA & FOOTER (Near-black #07090A with 4 Action Cards) -->
+<!-- ========================================================================= -->
+<section class="relative bg-night text-white pt-28 pb-16 px-6 sm:px-12 lg:px-16 overflow-hidden">
+<!-- Faint background glowing logo sign photo on the right -->
+<div class="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 pointer-events-none opacity-20 mix-blend-screen overflow-hidden">
+<img alt="Di Più glowing logo light" class="w-full h-full object-cover object-center filter grayscale contrast-125" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sabc1FBO9tBAh26rRXqFHPcqzjyu2fcW5h5Vd-MAprF26or1O57Syq1Lmu-gMZSqir817OU-bGcxBjJMn6xVPZjHeGS1zRurXxON9gKHsJ4axcTMILOZWajQ5M2fGCrkspKbtOuzxpD54=w1200"/>
+<div class="absolute inset-0 bg-gradient-to-r from-night via-night/80 to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto relative z-10">
+<!-- Headline & Sub -->
+<div class="max-w-2xl mb-16">
+<span class="text-[11px] uppercase tracking-ultra-wide text-accent font-semibold block mb-4">BENVENUTI</span>
+<h2 class="font-serif text-5xl sm:text-6xl md:text-7xl font-light text-white leading-tight mb-4">
+        Visit us.
+      </h2>
+<p class="font-serif text-2xl sm:text-3xl font-light italic text-mutedtext">
+        A table, and a little more.
+      </p>
+</div>
+<!-- Four Distinct Rectangular Action Buttons in a Row (radius max 4px) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24 max-w-5xl">
+<!-- 1. Call -->
+<a class="border border-white/25 rounded-sm hover:border-white p-6 flex flex-col justify-center text-center transition-colors group bg-night-sage/50" href="tel:+21650074004">
+<span class="block text-[10px] uppercase tracking-ultra-wide text-mutedtext mb-1.5 font-medium">CALL</span>
+<span class="text-base sm:text-lg font-medium text-white tracking-wide group-hover:text-accent transition-colors">+216 50 074 004</span>
+</a>
+<!-- 2. WhatsApp -->
+<a class="border border-white/25 rounded-sm hover:border-white p-6 flex flex-col justify-center text-center transition-colors group bg-night-sage/50" href="https://wa.me/21650074004" rel="noopener noreferrer" target="_blank">
+<span class="block text-[10px] uppercase tracking-ultra-wide text-mutedtext mb-1.5 font-medium">WHATSAPP</span>
+<span class="text-base sm:text-lg font-medium text-white tracking-wide group-hover:text-accent transition-colors">50 074 004</span>
+</a>
+<!-- 3. Get Directions -->
+<a class="border border-white/25 rounded-sm hover:border-white p-6 flex flex-col justify-center text-center transition-colors group bg-night-sage/50" href="https://www.google.com/maps?cid=13172501472462840975" rel="noopener noreferrer" target="_blank">
+<span class="block text-[10px] uppercase tracking-ultra-wide text-mutedtext mb-1.5 font-medium">GET DIRECTIONS</span>
+<span class="text-base sm:text-lg font-medium text-white tracking-wide group-hover:text-accent transition-colors">Google Maps</span>
+</a>
+<!-- 4. Reserve a Table (PRIMARY ACCENT) -->
+<a class="bg-accent text-night hover:brightness-105 rounded-sm p-6 flex flex-col justify-center text-center transition-all" href="tel:+21650074004">
+<span class="block text-[10px] uppercase tracking-ultra-wide text-night/75 mb-1.5 font-bold">RESERVE A TABLE</span>
+<span class="text-base sm:text-lg font-bold tracking-wide">by phone</span>
+</a>
+</div>
+<!-- Footer Hairline & Credits -->
+<footer class="pt-8 border-t border-hairline-dark flex flex-col md:flex-row items-center justify-between text-xs text-mutedtext gap-4">
+<div class="flex items-center space-x-3">
+<span class="font-serif italic text-white font-light text-base">Di Più Ristorante</span>
+<span class="text-white/30">·</span>
+<span>Place 3 Août, Monastir 5000, Tunisia</span>
+</div>
+<div class="flex items-center space-x-6 text-[11px] tracking-wider uppercase">
+<a class="hover:text-white transition-colors" href="https://www.facebook.com/dipiu.monastir/" rel="noopener noreferrer" target="_blank">
+          Facebook
+        </a>
+<a class="hover:text-white transition-colors" href="https://www.google.com/maps?cid=13172501472462840975" rel="noopener noreferrer" target="_blank">
+          Google Maps
+        </a>
+<span class="text-white/30">·</span>
+<span class="text-mutedtext normal-case font-light">
+          © Di Più Monastir. All rights reserved.
+        </span>
+</div>
+</footer>
+</div>
+</section>
+</body></html>

@@ -1,0 +1,4 @@
+# Throwaway renders/contact sheets; the build scripts stay tracked.
+_scratch/*
+!_scratch/build_final.py
+!_scratch/shoot_mobile.py
