@@ -1,16 +1,27 @@
 # Restaurant website pipeline: research → Stitch → static HTML → Vite + React → deploy
 
-Fill in the placeholders, then paste everything below the line into a new session.
+Paste everything below the line into a new session as-is. The session asks for the restaurant name and fills in the rest from `sahel-website-leads.csv`.
 Worked examples in this repo: `di-piu/` (latest, use it as the reference) and `la-cucina/`.
-
-- `[NAME]`: restaurant name, e.g. Di Più
-- `[MAPS_URL]`: Google Maps link, e.g. https://www.google.com/maps?cid=…
-- `[CITY]`: e.g. Monastir
-- `[SLUG]`: folder / Vercel project name, e.g. `di-piu` → Vercel `di-piu-monastir`
 
 ---
 
-Build a website proposal for **[NAME]** ([CITY]) from its Google Maps profile [MAPS_URL]: research, then design in Stitch, then approve a static HTML version, then build a Vite + React site, then deploy it. It is an informational site for showing the owner, not an ordering system.
+Build a website proposal for a restaurant from my leads list: research, then design in Stitch, then approve a static HTML version, then build a Vite + React site, then deploy it. It is an informational site for showing the owner, not an ordering system.
+
+## Phase 0: Pick the restaurant from `sahel-website-leads.csv`
+
+1. **Ask me** which restaurant to work on, then wait for my answer. Don't start anything else first.
+2. **Look it up** in `D:\workspace\business-finder\sahel-website-leads.csv` by the `Business` column. Match without regard to case, accents or extra spaces (e.g. "dar zmen" matches "Dar Zmen").
+   - No match: show me the closest names and ask again.
+   - Several matches: list them with their city and address, and ask me which one.
+3. **Fill the placeholders** used in the rest of this prompt from that row:
+   - `[NAME]`: `Business`
+   - `[CITY]`: `City`
+   - `[MAPS_URL]`: `Google Maps`
+   - `[SLUG]`: the name in lowercase ASCII, accents removed, words joined with hyphens (e.g. Dar Zmen → `dar-zmen`, Di Più → `di-piu`). It is both the folder name and the Vercel project name.
+4. **Keep the rest of the row** as leads for Phase 1: address, phone, secondary phone, website status, Facebook, Instagram, rating, review count, reason and verification sources. The CSV is only a starting point. Check every value against the Google profile. If they disagree, use Google and list the difference for the owner.
+5. **If `Google Maps` is empty**, search Google Maps for `[NAME] [CITY]` in the built-in browser, and ask me to confirm the profile before going on.
+6. **Confirm with me** in one short message before starting Phase 1: the name, city, Maps link, slug and the planned URL `https://[SLUG].vercel.app`.
+7. **If `[SLUG]/` already exists**, stop and ask me whether to continue that work or start over.
 
 ## Ground rules (apply to every phase)
 
@@ -96,7 +107,7 @@ Build a website proposal for **[NAME]** ([CITY]) from its Google Maps profile [M
    - Components: Hero (with Header and drawer), About, Signatures, Menu (ARIA tabs with arrow keys; all panels rendered, inactive ones `hidden`, so the prerendered HTML contains the full menu), Gallery, Reviews, Faq, Location (lazy map iframe), Visit, Footer, ActionBar.
    - `src/seo/seo.ts` plus the Vite plugin produce: head tags, OG `restaurant.restaurant`, geo meta, JSON-LD `@graph` (WebSite, Restaurant with `hasMenu` in TND, FAQPage; no self-serving review markup), `robots.txt` allowing AI crawlers, `sitemap.xml` with images, and `llms.txt`.
    - `scripts/prerender.mjs` prerenders the page to static HTML. The `README.md` follows the same layout.
-2. **Build.** Put `SITE_URL=https://[SLUG]-[city].vercel.app` in `.env` (gitignored), then run `npm install` and `npm run build`. The type check, SSR build and prerender must all pass.
+2. **Build.** Put `SITE_URL=https://[SLUG].vercel.app` in `.env` (gitignored), then run `npm install` and `npm run build`. The type check, SSR build and prerender must all pass.
 3. **Preview.** Add a `[SLUG]-preview` entry to `.claude/launch.json` and run it. Verify:
    - no console or hydration errors
    - the prerendered HTML contains every panel and item
@@ -108,11 +119,12 @@ Build a website proposal for **[NAME]** ([CITY]) from its Google Maps profile [M
 ## Phase 5: Commit, push, deploy
 
 1. **Commit.** Stage only `[SLUG]/` and `.claude/launch.json`. Ignore `_scratch/*` except the build scripts. No `.env`, `node_modules` or `dist`. Commit on `main`, then `git push origin main`.
-2. **Vercel.** In `[SLUG]/site`:
-   - `npx vercel link --yes --project [SLUG]-[city]`
-   - `printf 'https://…' | npx vercel env add SITE_URL production`
+2. **Vercel.** The site always lives on the restaurant-name subdomain `https://[SLUG].vercel.app` (e.g. Dar Zmen → `https://dar-zmen.vercel.app`). Never add the city or any other suffix to the project name. In `[SLUG]/site`:
+   - `npx vercel link --yes --project [SLUG]`
+   - `printf 'https://[SLUG].vercel.app' | npx vercel env add SITE_URL production`
    - `npx vercel deploy --prod --yes`
-   - `npx vercel inspect <url>` to confirm "Ready" and the alias. If the name is taken by another account, choose another name and tell me.
+   - `npx vercel inspect <url>` to confirm "Ready" and that the alias is exactly `[SLUG].vercel.app`.
+   - If `[SLUG].vercel.app` is already taken by another account, stop and ask me which name to use. Don't pick one yourself. Then update `SITE_URL` in `.env` and on Vercel, and rebuild so the canonical URL, sitemap and `llms.txt` match.
 3. **Live checks:**
    - `/`, `/robots.txt`, `/sitemap.xml`, `/llms.txt` and `/favicon.svg` all return 200
    - the canonical URL is the live URL
