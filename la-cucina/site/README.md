@@ -3,11 +3,14 @@
 One-page site for La Cucina (Italian restaurant, Place 3 Août, Monastir), built with Vite + React 19 + Tailwind 4.
 The design follows the approved Stitch screens in `../stitch/`.
 
+**Live:** https://la-cucina-monastir.vercel.app (Vercel project `la-cucina`; `SITE_URL` is set in the project's production env). `la-cucina.vercel.app` is taken by another Vercel account.
+
 ```bash
 npm install
 npm run dev        # http://localhost:5173
 npm run build      # type-check, client build, SSR build, prerender → dist/
 npm run preview    # serve dist/ on http://localhost:4173
+npx vercel deploy --prod   # deploy (project is linked in .vercel/)
 ```
 
 **Before deploying:** copy `.env.example` to `.env` and set `SITE_URL` to the real domain. It is used for the canonical URL, sitemap, llms.txt and JSON-LD. The build warns if it is missing.
