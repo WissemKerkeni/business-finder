@@ -1,0 +1,4 @@
+_scratch/*
+!_scratch/build_final.py
+!_scratch/shoot.py
+!_scratch/sheet.py

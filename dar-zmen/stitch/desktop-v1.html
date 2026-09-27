@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dar Zmen (دار زمان) — Traditional Tunisian Kitchen · Medina of Monastir</title>
+  <!-- Google Fonts: EB Garamond, Work Sans, Space Mono, Amiri for Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Work+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            limewash: '#F3EEE4',
+            limewashDark: '#EAE2D3',
+            ink: '#15171C',
+            cobalt: '#1D3C8F',
+            sandstone: '#B8894F',
+          },
+          fontFamily: {
+            serif: ['"EB Garamond"', 'serif'],
+            sans: ['"Work Sans"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+            arabic: ['"Amiri"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Strict styling rules: no rounded corners, no cards, hairlines only */
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+    }
+    body {
+      background-color: #F3EEE4;
+      color: #15171C;
+      font-family: 'Work Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hairline-b {
+      border-bottom: 1px solid #B8894F;
+    }
+    .hairline-t {
+      border-top: 1px solid #B8894F;
+    }
+    .hairline-r {
+      border-right: 1px solid #B8894F;
+    }
+    .hairline-l {
+      border-left: 1px solid #B8894F;
+    }
+    .hairline-ink-b {
+      border-bottom: 1px solid rgba(21, 23, 28, 0.15);
+    }
+    .hairline-ink-t {
+      border-top: 1px solid rgba(21, 23, 28, 0.15);
+    }
+    .hairline-white-r {
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .hairline-white-b {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .img-zoom-container {
+      overflow: hidden;
+    }
+    .img-zoom {
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .img-zoom-container:hover .img-zoom {
+      transform: scale(1.03);
+    }
+    /* Checkerboard Pattern Strip */
+    .checkerboard-strip {
+      width: 100%;
+      height: 12px;
+      background-image: linear-gradient(45deg, #15171C 25%, transparent 25%), 
+                        linear-gradient(-45deg, #15171C 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #15171C 75%), 
+                        linear-gradient(-45deg, transparent 75%, #15171C 75%);
+      background-size: 12px 12px;
+      background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+      background-color: #F3EEE4;
+    }
+    .tab-btn.active {
+      background-color: #1D3C8F;
+      color: #ffffff;
+      border-color: #1D3C8F;
+    }
+    .menu-panel {
+      display: none;
+    }
+    .menu-panel.active {
+      display: grid;
+    }
+    /* Dotted leader for menu prices */
+    .menu-leader {
+      flex: 1;
+      border-bottom: 1px dotted rgba(21, 23, 28, 0.35);
+      margin: 0 10px;
+      margin-bottom: 6px;
+    }
+    /* Scroll reveal opacity */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="selection:bg-cobalt selection:text-white">
+
+  <!-- 1) HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 bg-gradient-to-b from-black/80 via-black/40 to-transparent text-white px-8 md:px-14 py-6 flex items-center justify-between pointer-events-auto">
+    <a href="#" class="flex items-baseline gap-3 group">
+      <span class="font-serif text-2xl md:text-3xl tracking-tight font-normal text-white group-hover:text-sandstone transition-colors">Dar Zmen</span>
+      <span class="font-arabic text-sandstone text-base md:text-lg tracking-normal">دار زمان</span>
+    </a>
+    
+    <nav class="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest text-white/90">
+      <a href="#house" class="hover:text-sandstone transition-colors">The house</a>
+      <span class="text-sandstone text-[10px]">·</span>
+      <a href="#menu" class="hover:text-sandstone transition-colors">Menu</a>
+      <span class="text-sandstone text-[10px]">·</span>
+      <a href="#gallery" class="hover:text-sandstone transition-colors">Gallery</a>
+      <span class="text-sandstone text-[10px]">·</span>
+      <a href="#reviews" class="hover:text-sandstone transition-colors">Reviews</a>
+      <span class="text-sandstone text-[10px]">·</span>
+      <a href="#visit" class="hover:text-sandstone transition-colors">Visit</a>
+    </nav>
+
+    <div class="flex items-center">
+      <a href="tel:+21620181878" class="bg-cobalt hover:bg-[#152e70] text-white px-5 py-2.5 font-mono text-xs uppercase tracking-widest transition-colors flex items-center gap-2">
+        <span>Call 20 181 878</span>
+        <span class="text-xs">→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 2) HERO — full viewport (100vh) -->
+  <section class="relative w-full h-screen min-h-[740px] flex flex-col justify-end overflow-hidden">
+    <!-- Hero Background Image -->
+    <div class="absolute inset-0 z-0 img-zoom-container">
+      <img 
+        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q6MjCnjnE8pRQLnHxTMbW4lOcNqV3hDzmjf-yS4m7zfK171WDYgMn28dETh0AKkTnlVKIMGFTQYCqQ1pFdNg231tRmxeAP59YN2ENgUnPiNZIMl50vSleTfM55WSRO7sv5ZrFCCuNa5S8T=w1600" 
+        alt="Stone medina gate with the Dar Zmen sign in Monastir" 
+        referrerpolicy="no-referrer"
+        class="w-full h-full object-cover img-zoom"
+        style="object-position: center 40%;"
+      />
+      <!-- Dark bottom scrim and subtle global grading -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/25"></div>
+    </div>
+
+    <!-- Hero Content (Bottom-left text block) -->
+    <div class="relative z-10 w-full max-w-[1440px] mx-auto px-8 md:px-14 pb-14 pt-32 flex flex-col justify-end">
+      <div class="max-w-4xl">
+        <p class="font-mono text-xs uppercase tracking-[0.25em] text-sandstone mb-4">
+          TRADITIONAL TUNISIAN KITCHEN · MEDINA OF MONASTIR
+        </p>
+        <div class="flex flex-wrap items-baseline gap-x-6 gap-y-2 mb-6">
+          <h1 class="font-serif text-7xl sm:text-8xl md:text-[132px] leading-none text-white tracking-tight">
+            Dar Zmen
+          </h1>
+          <span class="font-arabic text-4xl sm:text-6xl md:text-7xl text-sandstone leading-none" dir="rtl">
+            دار زمان
+          </span>
+        </div>
+        <p class="font-sans text-lg md:text-xl text-white/90 font-light max-w-2xl leading-relaxed mb-8">
+          The house of the old days — couscous, ojja, mloukhia, grilled fish and the dishes of the old days, in the medina of Monastir.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 mb-12">
+          <a href="#menu" class="bg-cobalt hover:bg-[#152e70] text-white px-8 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors inline-flex items-center gap-3">
+            <span>View the menu</span>
+            <span>↓</span>
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=35.77299,10.83103" target="_blank" rel="noopener noreferrer" class="border border-white/60 hover:border-white text-white hover:bg-white/10 px-8 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors inline-flex items-center gap-3">
+            <span>Get directions</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom strip on the hero -->
+    <div class="relative z-10 w-full border-t border-white/20 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-[1440px] mx-auto px-8 md:px-14 grid grid-cols-2 md:grid-cols-4 font-mono text-xs tracking-wider text-white/90">
+        <div class="py-4 md:hairline-white-r flex items-center gap-2">
+          <span class="text-sandstone">★</span> 4.1 · 174 Google reviews
+        </div>
+        <div class="py-4 px-0 md:px-6 md:hairline-white-r flex items-center">
+          Dine-in · Takeaway · Delivery
+        </div>
+        <div class="py-4 px-0 md:px-6 md:hairline-white-r flex items-center">
+          10–20 DT per person
+        </div>
+        <div class="py-4 px-0 md:px-6 flex items-center">
+          Accepts reservations
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) CHECKERBOARD STRIP -->
+  <div class="checkerboard-strip" aria-hidden="true"></div>
+
+  <!-- 4) THE HOUSE (id=house) -->
+  <section id="house" class="py-24 md:py-32 bg-limewash px-8 md:px-14 max-w-[1440px] mx-auto reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Left Column (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-sandstone mb-4">01 — THE HOUSE</span>
+        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] text-ink mb-8 font-normal">
+          Dar zmen means <i>the house of the old days</i>.
+        </h2>
+        <p class="font-sans text-base md:text-lg text-ink/80 font-light leading-relaxed mb-12">
+          Behind a stone gateway in the old walls of Monastir, Dar Zmen serves the Tunisian dishes people grew up with: couscous, ojja, mloukhia, kamounia, grilled fish from the coast and chorba. Main dishes come with bread and salad, and the tea is on the house.
+        </p>
+
+        <!-- Facts list with hairlines -->
+        <div class="border-t border-[#B8894F]/40 font-mono text-xs text-ink/90">
+          <div class="py-3.5 border-b border-[#B8894F]/30 flex justify-between items-baseline gap-4">
+            <span class="text-sandstone uppercase tracking-widest">Plus code</span>
+            <span class="text-right">QRFJ+5C Monastir</span>
+          </div>
+          <div class="py-3.5 border-b border-[#B8894F]/30 flex justify-between items-baseline gap-4">
+            <span class="text-sandstone uppercase tracking-widest">Phone</span>
+            <a href="tel:+21620181878" class="text-right hover:text-cobalt transition-colors">+216 20 181 878</a>
+          </div>
+          <div class="py-3.5 border-b border-[#B8894F]/30 flex justify-between items-baseline gap-4">
+            <span class="text-sandstone uppercase tracking-widest">Price</span>
+            <span class="text-right">10–20 DT per person</span>
+          </div>
+          <div class="py-3.5 border-b border-[#B8894F]/30 flex justify-between items-baseline gap-4">
+            <span class="text-sandstone uppercase tracking-widest">Good for</span>
+            <span class="text-right">groups, families, tourists</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Overlapping Photos (7 cols) -->
+      <div class="lg:col-span-7 relative pt-4">
+        <!-- Tall Photo (The dining room) -->
+        <div class="w-full sm:w-[85%] ml-0 sm:ml-auto">
+          <div class="img-zoom-container aspect-[3/4] overflow-hidden bg-limewashDark border border-[#B8894F]/30">
+            <img 
+              src="https://lh3.googleusercontent.com/grass-cs/AABkmLcN9p85OfEAhBzPYh70HUA2qrQYyih93xE7hLF-LpN6kS4V70BvHu-LrZZK8PcBBkH-noYfjUUzEH0qOwt8Be44BVs4s7Xzgynv_tSihegKqxMSLcZ43be03I2Kohg4nYog8SVF=w1600" 
+              alt="Dar Zmen dining room with turquoise chairs" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+          <p class="font-mono text-[11px] uppercase tracking-widest text-ink/70 mt-2 text-right">The dining room</p>
+        </div>
+
+        <!-- Overlapping Photo (The vaulted counter) -->
+        <div class="relative sm:absolute sm:bottom-[-40px] sm:left-0 w-full sm:w-[55%] mt-8 sm:mt-0 z-20">
+          <div class="img-zoom-container aspect-[4/3] overflow-hidden bg-limewashDark border border-[#B8894F]/40 shadow-none">
+            <img 
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SOfucvWZjBnNkDKExpG1IdZJRXeiTkvhilFVVFnBfxUJnoBluFSu5NAgL9OIGBi4ELj2_jVXpo8aUGENPfIFNPYqj4QkxFnlD5PCF0_PaqPEtc1lfr70LtfjIHpA5yf2VEfYdZzBLN0MVK=w1600" 
+              alt="Vaulted brick counter and kitchen at Dar Zmen" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+          <p class="font-mono text-[11px] uppercase tracking-widest text-ink/70 mt-2">The counter</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) ON THE TABLE (signature dishes) -->
+  <section class="py-24 border-t border-[#B8894F]/30 bg-limewash px-8 md:px-14 max-w-[1440px] mx-auto reveal">
+    <div class="mb-14">
+      <span class="font-mono text-xs uppercase tracking-[0.2em] text-sandstone block mb-3">02 — ON THE TABLE</span>
+      <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl text-ink font-normal">
+        Plates from the <i>old days</i>
+      </h2>
+    </div>
+
+    <!-- Editorial Staggered Row of 4 Large Photos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Dish 1 -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container aspect-[3/4] overflow-hidden bg-limewashDark border border-[#B8894F]/30 mb-3">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Rxo8luRJNGO2Qw-tzkSJbUaHsj4TmJQOYktdkQvRi2DMW13UAh2tbyhx6rHtlpDfPDEigCQ3eAxy2juqE7OsD3OXX_4ZBui1aUJM6ZtMvLv3iORPuLVTA5YXIgrpFB-w7oh8_K8s8dmOeR=w1600" 
+            alt="Couscous with lamb and chickpeas" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <div class="font-mono text-xs text-ink/90 uppercase tracking-wider flex items-baseline gap-2">
+          <span class="text-sandstone">01</span>
+          <span>Couscous with lamb &amp; chickpeas</span>
+        </div>
+      </div>
+
+      <!-- Dish 2 -->
+      <div class="flex flex-col lg:translate-y-8">
+        <div class="img-zoom-container aspect-[3/4] overflow-hidden bg-limewashDark border border-[#B8894F]/30 mb-3">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RpQHI6_7tTtVz6sWNlPVVW3F1MR0tXdgHaR7n9Gvy1khUzYXywkAKfGgBp78oNvEGkRputfMBzfFCGLX6RXoCSnGwzQjo5zUDer0nmvThGUj0bf3HzczVIoj0fKZwORbQsBOk2aeiDYYs=w1600" 
+            alt="Traditional Mloukhia" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <div class="font-mono text-xs text-ink/90 uppercase tracking-wider flex items-baseline gap-2">
+          <span class="text-sandstone">02</span>
+          <span>Mloukhia</span>
+        </div>
+      </div>
+
+      <!-- Dish 3 -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container aspect-[3/4] overflow-hidden bg-limewashDark border border-[#B8894F]/30 mb-3">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TpSGdTrEekLz5559-5gOtsBOKYa0DVcYfEse44TMvVsUq8dVQAKPHU9f-68QQMgjiWYwQmXuuNtzxxHhs3v1P803gORc-QQjzCiD5iPvUoxRePbViOTqn8pRvX27zNYzlwLzZTng3QRpXj=w1600" 
+            alt="Spaghetti with shrimp" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <div class="font-mono text-xs text-ink/90 uppercase tracking-wider flex items-baseline gap-2">
+          <span class="text-sandstone">03</span>
+          <span>Spaghetti with shrimp</span>
+        </div>
+      </div>
+
+      <!-- Dish 4 -->
+      <div class="flex flex-col lg:translate-y-8">
+        <div class="img-zoom-container aspect-[3/4] overflow-hidden bg-limewashDark border border-[#B8894F]/30 mb-3">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qah_6ofwh9BuqF-xFxw2seldAaAbf2yHZEQOLx4urgPwIreC5f7Uo5qHJkqXrwKgGS4a8Yp2qykEwPkonC94Sfm4azJQXnLdopJPOXzbP6pOBx21BScOT6vF0YOGfW8uvwRAN1LtFbYILf=w1600" 
+            alt="Grilled fish from the coast" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <div class="font-mono text-xs text-ink/90 uppercase tracking-wider flex items-baseline gap-2">
+          <span class="text-sandstone">04</span>
+          <span>Grilled fish</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) MENU (id=menu) — alt background #EAE2D3 -->
+  <section id="menu" class="py-24 md:py-32 bg-limewashDark border-t border-b border-[#B8894F]/40 reveal">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-14">
+      
+      <!-- Menu Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-[#B8894F]/30 pb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-[0.2em] text-sandstone block mb-3">03 — THE MENU</span>
+          <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl text-ink font-normal">
+            From the printed menu
+          </h2>
+        </div>
+        <p class="font-mono text-xs text-ink/70 uppercase tracking-wider max-w-xs md:text-right">
+          Prices in Tunisian dinars.<br>Dishes of the day change.
+        </p>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="flex flex-wrap gap-2 md:gap-3 mb-12 border-b border-[#B8894F]/30 pb-4">
+        <button onclick="switchTab('starters', this)" class="tab-btn active px-5 py-2.5 font-mono text-xs uppercase tracking-widest border border-ink/20 transition-all">
+          Starters
+        </button>
+        <button onclick="switchTab('grills', this)" class="tab-btn px-5 py-2.5 font-mono text-xs uppercase tracking-widest border border-ink/20 bg-transparent text-ink hover:border-cobalt transition-all">
+          Grills &amp; fish
+        </button>
+        <button onclick="switchTab('old-days', this)" class="tab-btn px-5 py-2.5 font-mono text-xs uppercase tracking-widest border border-ink/20 bg-transparent text-ink hover:border-cobalt transition-all">
+          Dishes of the old days
+        </button>
+        <button onclick="switchTab('daily', this)" class="tab-btn px-5 py-2.5 font-mono text-xs uppercase tracking-widest border border-ink/20 bg-transparent text-ink hover:border-cobalt transition-all">
+          Of the day
+        </button>
+      </div>
+
+      <!-- PANEL 1: STARTERS -->
+      <div id="panel-starters" class="menu-panel active grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- Photo (5 cols) -->
+        <div class="lg:col-span-5">
+          <div class="img-zoom-container aspect-[4/5] bg-limewash border border-[#B8894F]/30 sticky top-28">
+            <img 
+              src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmfMDUqcpVTJPEwquW9N77q_eLRCig0-98MMrXDOEEhNLqFLH9jjoPWvb-xL4XHlkT1gjs6FE0j21ZI7jDeJ0SvahQJisr_wNNjHIRYPA_g_v5xM5qilvUxteOZuSKCq5ACk8FoAJGCso2o=w1600" 
+              alt="Starters at Dar Zmen" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+        </div>
+        <!-- List (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col divide-y divide-[#B8894F]/25">
+          
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Barley chorba (bowl)</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">شربة شعير</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">3 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Grilled salad (mechouia)</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">سلاطة مشوية</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">7 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Tunisian salad</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">سلاطة تونسية</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">7 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Mixed salad</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">سلاطة متنوعة</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">7 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Rice salad</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">سلاطة روز</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">6 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Lentil salad</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">سلاطة عدس</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">6 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Lettuce salad</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">سلاطة خس</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">6 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Ojja with eggs</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">عجة</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">7 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Ojja merguez</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">عجة بالمرقاز</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">12 DT</div>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between group">
+            <div>
+              <div class="font-serif text-[22px] text-ink leading-snug">Ojja escalope</div>
+              <div class="font-arabic text-sm text-ink/60" dir="rtl">عجة بالسكلوب</div>
+            </div>
+            <div class="menu-leader"></div>
+            <div class="font-mono text-base font-bold text-cobalt shrink-0">12 DT</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PANEL 2: GRILLS & FISH -->
+      <div id="panel-grills" class="menu-panel grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <div class="img-zoom-container aspect-[4/5] bg-limewash border border-[#B8894F]/30 sticky top-28">
+            <img 
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Qah_6ofwh9BuqF-xFxw2seldAaAbf2yHZEQOLx4urgPwIreC5f7Uo5qHJkqXrwKgGS4a8Yp2qykEwPkonC94Sfm4azJQXnLdopJPOXzbP6pOBx21BScOT6vF0YOGfW8uvwRAN1LtFbYILf=w1600" 
+              alt="Grilled fresh fish" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+        </div>
+        <div class="lg:col-span-7 flex flex-col divide-y divide-[#B8894F]/25">
+          
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Whole roast chicken</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">27 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Whole grilled chicken</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">29 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">½ grilled chicken</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">20 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">¼ chicken grilled or roast</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">13 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled liver</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">22 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Escalope, grilled or breaded</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">15 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Cordon bleu</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">17 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Escalope brochettes</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">17 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Mixed grill</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">32 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled lamb cutlets</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">30 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Shrimp — sautéed, grilled or breaded</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">25 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled sea bream (warata)</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">20 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Double warata</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">35 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled sea bass (karous)</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">20 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Red mullet (trilia), grilled or breaded</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">15 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled lambouka</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">15 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled sardines</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">14 DT</span>
+          </div>
+
+          <div class="py-3 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Grilled merguez</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">15 DT</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PANEL 3: DISHES OF THE OLD DAYS -->
+      <div id="panel-old-days" class="menu-panel grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <div class="img-zoom-container aspect-[4/5] bg-limewash border border-[#B8894F]/30 sticky top-28">
+            <img 
+              src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SnCKKH6RXNJb3oSypkSDCEhIwfZZSeYtpGqdP-S7y7XJtGXNMvFiGY29pCMhHZx9Yq1BmTVtWux1iw2dSuKHkKYkYtIUyvRlegX4UTGBVafP0IPbzmr0Eh_9BdyEGPJMFt0ItVH_Wlr3DM=w1600" 
+              alt="Couscous & stew on striped mergoum" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+        </div>
+        <div class="lg:col-span-7 flex flex-col divide-y divide-[#B8894F]/25">
+          <div class="py-2 text-sandstone font-arabic text-xl mb-2" dir="rtl">أطباقنا الزمنية</div>
+
+          <div class="py-3.5 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Half roast lamb's head</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">18 DT</span>
+          </div>
+
+          <div class="py-3.5 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Chakchouka with broad beans &amp; merguez</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">14 DT</span>
+          </div>
+
+          <div class="py-3.5 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Lamb qalaya</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">19 DT</span>
+          </div>
+
+          <div class="py-3.5 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Lamb kamounia</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">19 DT</span>
+          </div>
+
+          <div class="py-3.5 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Mloukhia with beef</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">18.5 DT</span>
+          </div>
+
+          <div class="py-3.5 flex items-baseline justify-between">
+            <span class="font-serif text-[22px] text-ink">Minced-meat lasagne</span>
+            <div class="menu-leader"></div>
+            <span class="font-mono text-base font-bold text-cobalt shrink-0">14 DT</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PANEL 4: OF THE DAY -->
+      <div id="panel-daily" class="menu-panel grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5">
+          <div class="img-zoom-container aspect-[4/5] bg-limewash border border-[#B8894F]/30 sticky top-28">
+            <img 
+              src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWndBBWKHd1cU-ITKJIJwMRvROB67ZWqsyPy_wSvDCwqwTyVyxMyk3gB1g2U2W5_-Qz9rGdQxx8spuGm9v7S44dCMt7jlirxMqU-lamLXImgpd1Vu5YITxQQrUVptAUQpcju_Bt9=w1600" 
+              alt="Dishes of the day at the counter" 
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover img-zoom"
+            />
+          </div>
+        </div>
+        <div class="lg:col-span-7 flex flex-col">
+          <div class="border-b border-[#B8894F]/30 pb-4 mb-6">
+            <span class="font-mono text-xs text-sandstone uppercase tracking-widest block mb-1">Today's Selection</span>
+            <p class="font-serif text-3xl text-ink font-normal">Ask at the counter for today's pots.</p>
+          </div>
+          
+          <p class="font-sans text-lg text-ink/90 font-light leading-relaxed mb-8">
+            Couscous with lamb, beef or fish · Kouskous farfoucha with grilled fish · Kamounia · Jelbana · Loubya · Mermez · Nwasser · Makarouna fella · Rice jerbi · Madfouna · Chebtiya · Stuffed calamari · Spaghetti with shrimp or seafood · Briks.
+          </p>
+
+          <div class="border border-[#B8894F]/40 p-6 bg-limewash">
+            <div class="font-mono text-xs uppercase tracking-wider text-ink mb-2">Note</div>
+            <p class="font-serif text-xl italic text-ink/80">
+              "Ask at the counter for today's pots."
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7) GALLERY (id=gallery) -->
+  <section id="gallery" class="py-24 bg-limewash px-8 md:px-14 max-w-[1440px] mx-auto reveal">
+    <div class="mb-12">
+      <span class="font-mono text-xs uppercase tracking-[0.2em] text-sandstone block mb-3">04 — THE HOUSE IN PICTURES</span>
+      <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl text-ink font-normal">
+        Moments &amp; details
+      </h2>
+    </div>
+
+    <!-- Immersive Asymmetric Mosaic (0–8px gaps, no card boxes) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+      <!-- 1: alley arch at night (tall) -->
+      <div class="lg:col-span-2 lg:row-span-2 flex flex-col">
+        <div class="img-zoom-container h-full min-h-[460px] overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ReGqp1RPh3Z5izSHilQpK7XyUZTcSx-7L8aP4vqVbUzAOSVs2gcS1sBVB03fNPjkYUFJtqh47G4aTgduI-s-tSE9cMrdOcRa7jpSoyXeZwBKBIQDK3HgrvE_dOtT-zCYTGTFhWC_CE63B3=w1600" 
+            alt="Alley arch at night leading to Dar Zmen" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Alley arch at night</span>
+      </div>
+
+      <!-- 2: checker floor & counter -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QY4uOxVdiUnnOsfL9HFg5R01YW-4rrwL_wbvaTWDe9j78hfGwYjAGaaFAF5BEXrIJNo5Kzc4nSPZXc89mIVwaep2zPD6ihoC6_WY9SMtkulvSokULdIiidUTmgjbETihdDITU-C1Ew-ZHl=w1600" 
+            alt="Checker floor and counter" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Checker floor &amp; counter</span>
+      </div>
+
+      <!-- 3: blue door -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QTHCjw1fnYyhnmMqTZOdsuMfruPmqt68H0Bup_fDzuu00wNePK98Q4nOubiX0THk0gsKj0poym65sNddoc1Kq5dmz4ord1wvxv-AZhXKparPTkE5m5T_y9bgTdd3RknZdF87TTw_EPELQ=w1600" 
+            alt="Blue door in the medina" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Medina blue door</span>
+      </div>
+
+      <!-- 4: couscous & stew on striped mergoum -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SnCKKH6RXNJb3oSypkSDCEhIwfZZSeYtpGqdP-S7y7XJtGXNMvFiGY29pCMhHZx9Yq1BmTVtWux1iw2dSuKHkKYkYtIUyvRlegX4UTGBVafP0IPbzmr0Eh_9BdyEGPJMFt0ItVH_Wlr3DM=w1600" 
+            alt="Couscous and stew on striped mergoum" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Couscous &amp; stew on mergoum</span>
+      </div>
+
+      <!-- 5: couscous with merguez -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tv_mDxk-Ja0i4i_HdPrF-fnnMOV5Xl3M7WGLKngIeYJPdWOJFb-em2_Et1IEN3hjdqdTQlQs31WBQBZTbQjK60CNbxWMK6nPYSNB1ZB58fPKhh6Y-pP5255l7ysvE5UhmZZ2AGmpiw0Uvt=w1600" 
+            alt="Couscous with merguez" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+      </div>
+
+      <!-- 6: lantern alley -->
+      <div class="lg:col-span-2 flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SrDp-9ZqHwq0crhyuCT6eqAKkLgOlTpkSz4Uo-q7A37iv-_ZpzUs12mqa1IvD90x0WTsXbRMrwlw543ZffyoOIQBa6yeEl8ApqWZE6yTmKaYNkraUflZ7s7Jj77ETC7GUqIhoQuGFVO_fI=w1600" 
+            alt="Lantern alley in Monastir medina" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Lantern alley</span>
+      </div>
+
+      <!-- 7: ojja -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RXFckc-bhpZ8O5xtEE_Yao2mMahyF1onKQFkUAHn0XV3ZPXI7_5ejhdEXqk3JLSg0PjEOqLagE9lttYjz4DBdyOODXzhfrbDKuhWrYDH0gZDtzBq51fy7qrVHZo4l-ZT1rCCh3=w1600" 
+            alt="Hot ojja" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Ojja</span>
+      </div>
+
+      <!-- 8: dishes of the day at the counter -->
+      <div class="flex flex-col">
+        <div class="img-zoom-container h-64 overflow-hidden bg-limewashDark border border-[#B8894F]/20">
+          <img 
+            src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWndBBWKHd1cU-ITKJIJwMRvROB67ZWqsyPy_wSvDCwqwTyVyxMyk3gB1g2U2W5_-Qz9rGdQxx8spuGm9v7S44dCMt7jlirxMqU-lamLXImgpd1Vu5YITxQQrUVptAUQpcju_Bt9=w1600" 
+            alt="Dishes of the day at the counter" 
+            referrerpolicy="no-referrer"
+            class="w-full h-full object-cover img-zoom"
+          />
+        </div>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mt-1.5">Daily pots</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8) REVIEWS (id=reviews) — the ONE dark section #15171C -->
+  <section id="reviews" class="py-24 md:py-32 bg-ink text-white reveal">
+    <div class="max-w-[1440px] mx-auto px-8 md:px-14">
+      
+      <!-- Eyebrow -->
+      <span class="font-mono text-xs uppercase tracking-[0.2em] text-sandstone block mb-12">
+        05 — WHAT GUESTS SAY
+      </span>
+
+      <!-- Rating Top Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pb-16 border-b border-white/15">
+        
+        <!-- Left Column: Big score and star distribution -->
+        <div class="lg:col-span-4 flex flex-col">
+          <div class="flex items-baseline gap-4 mb-2">
+            <span class="font-serif text-7xl md:text-8xl text-white font-normal leading-none">4.1</span>
+            <div class="flex flex-col">
+              <span class="text-sandstone text-xl">★★★★☆</span>
+              <span class="font-mono text-xs uppercase tracking-wider text-white/70">174 Google reviews</span>
+            </div>
+          </div>
+
+          <!-- Star distribution as thin horizontal bars -->
+          <div class="mt-8 flex flex-col gap-2.5 font-mono text-xs text-white/80 max-w-xs">
+            <div class="flex items-center gap-3">
+              <span class="w-7">5★</span>
+              <div class="flex-1 h-[2px] bg-white/10 relative">
+                <div class="h-full bg-sandstone" style="width: 66%;"></div>
+              </div>
+              <span class="w-8 text-right text-white/50">115</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7">4★</span>
+              <div class="flex-1 h-[2px] bg-white/10 relative">
+                <div class="h-full bg-sandstone" style="width: 11%;"></div>
+              </div>
+              <span class="w-8 text-right text-white/50">19</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7">3★</span>
+              <div class="flex-1 h-[2px] bg-white/10 relative">
+                <div class="h-full bg-sandstone" style="width: 5%;"></div>
+              </div>
+              <span class="w-8 text-right text-white/50">9</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7">2★</span>
+              <div class="flex-1 h-[2px] bg-white/10 relative">
+                <div class="h-full bg-sandstone" style="width: 2%;"></div>
+              </div>
+              <span class="w-8 text-right text-white/50">3</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-7">1★</span>
+              <div class="flex-1 h-[2px] bg-white/10 relative">
+                <div class="h-full bg-sandstone" style="width: 16%;"></div>
+              </div>
+              <span class="w-8 text-right text-white/50">28</span>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps?cid=8740625965181019232" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-sandstone hover:text-white transition-colors">
+            <span>Read all reviews on Google</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Right Column: Featured Pull Quote -->
+        <div class="lg:col-span-8 lg:pl-6 lg:border-l border-white/15">
+          <blockquote class="font-serif text-3xl sm:text-4xl md:text-[40px] leading-tight text-white font-normal italic mb-6">
+            "So friendly, they gave us a lot of food on the house (Just say &quot;aslema&quot; and you become family). And the food is to die for. Best Salata mechouia I've ever had."
+          </blockquote>
+          <div class="font-mono text-xs uppercase tracking-widest text-white/60">
+            — Eric Huang · <span class="text-sandstone">★★★★★</span> · translated by Google
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3-column row of smaller quotes separated by vertical hairlines (no cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 pt-12 divide-y md:divide-y-0 md:divide-x divide-white/15">
+        
+        <div class="py-6 md:py-0 md:pr-8 flex flex-col justify-between">
+          <p class="font-sans text-base text-white/85 font-light leading-relaxed mb-6">
+            "Delicious local Tunisian food in a relaxed setting. The shrimp spaghetti is a must-try: super flavourful! Most main dishes come with bread and salad, which is a lovely touch."
+          </p>
+          <div class="font-mono text-xs text-white/60 uppercase tracking-wider">
+            — Hei Lee, Local Guide <span class="text-sandstone">★5</span>
+          </div>
+        </div>
+
+        <div class="py-6 md:py-0 md:px-8 flex flex-col justify-between">
+          <p class="font-sans text-base text-white/85 font-light leading-relaxed mb-6">
+            "Unbelievable big shrimps, very fresh and well grilled fish, big portion, boss was friendly… Highly recommended if you find yourself in Monastir."
+          </p>
+          <div class="font-mono text-xs text-white/60 uppercase tracking-wider">
+            — Yuheng Zhang, Local Guide <span class="text-sandstone">★5</span>
+          </div>
+        </div>
+
+        <div class="py-6 md:py-0 md:pl-8 flex flex-col justify-between">
+          <p class="font-sans text-base text-white/85 font-light leading-relaxed mb-6">
+            "Very good customer service thank you so much we had free tea and soup everything was delicious great food and quality thanks for the staff"
+          </p>
+          <div class="font-mono text-xs text-white/60 uppercase tracking-wider">
+            — Jazz <span class="text-sandstone">★5</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9) VISIT (id=visit) -->
+  <section id="visit" class="py-24 md:py-32 bg-limewash px-8 md:px-14 max-w-[1440px] mx-auto reveal">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Left Column: Details & Buttons (6 cols) -->
+      <div class="lg:col-span-6 flex flex-col">
+        <span class="font-mono text-xs uppercase tracking-[0.2em] text-sandstone mb-4">06 — FIND US</span>
+        <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl text-ink font-normal leading-tight mb-8">
+          Through the gate, <i>in the medina.</i>
+        </h2>
+
+        <!-- Mono list with hairlines -->
+        <div class="border-t border-[#B8894F]/40 font-mono text-xs text-ink/90 divide-y divide-[#B8894F]/30 mb-8">
+          
+          <div class="py-4 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1 sm:gap-4">
+            <span class="text-sandstone uppercase tracking-widest shrink-0">Where</span>
+            <span class="sm:text-right">QRFJ+5C Monastir, Tunisia (old town, near the post office and the fish market)</span>
+          </div>
+
+          <div class="py-4 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1 sm:gap-4">
+            <span class="text-sandstone uppercase tracking-widest shrink-0">Phone</span>
+            <a href="tel:+21620181878" class="sm:text-right hover:text-cobalt transition-colors">+216 20 181 878</a>
+          </div>
+
+          <div class="py-4 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1 sm:gap-4">
+            <span class="text-sandstone uppercase tracking-widest shrink-0">Hours</span>
+            <span class="sm:text-right">Open 24 hours (as listed on Google)</span>
+          </div>
+
+          <div class="py-4 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1 sm:gap-4">
+            <span class="text-sandstone uppercase tracking-widest shrink-0">Services</span>
+            <span class="sm:text-right">Dine-in · Takeaway · Delivery on Glovo</span>
+          </div>
+
+          <div class="py-4 flex flex-col sm:flex-row justify-between sm:items-baseline gap-1 sm:gap-4">
+            <span class="text-sandstone uppercase tracking-widest shrink-0">Parking</span>
+            <span class="sm:text-right">Free street parking and free parking lot</span>
+          </div>
+
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=35.77299,10.83103" target="_blank" rel="noopener noreferrer" class="bg-cobalt hover:bg-[#152e70] text-white px-8 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors inline-flex items-center gap-3">
+            <span>Get directions</span>
+            <span>↗</span>
+          </a>
+          <a href="tel:+21620181878" class="border border-ink/40 hover:border-ink text-ink hover:bg-black/5 px-8 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors inline-flex items-center gap-3">
+            <span>Call</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Real Google Maps embed (6 cols) -->
+      <div class="lg:col-span-6">
+        <div class="border border-[#B8894F]/40 bg-limewashDark overflow-hidden">
+          <iframe 
+            src="https://maps.google.com/maps?q=35.77299,10.83103&z=17&output=embed" 
+            width="100%" 
+            height="520" 
+            style="border:0; filter: grayscale(0.3); display: block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Map location of Dar Zmen in Monastir">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10) FINAL CTA — full-bleed photo of the lantern-lit alley -->
+  <section class="relative w-full py-32 md:py-44 flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0 img-zoom-container">
+      <img 
+        src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SrDp-9ZqHwq0crhyuCT6eqAKkLgOlTpkSz4Uo-q7A37iv-_ZpzUs12mqa1IvD90x0WTsXbRMrwlw543ZffyoOIQBa6yeEl8ApqWZE6yTmKaYNkraUflZ7s7Jj77ETC7GUqIhoQuGFVO_fI=w1600" 
+        alt="Lantern lit alley in Monastir" 
+        referrerpolicy="no-referrer"
+        class="w-full h-full object-cover img-zoom"
+      />
+      <!-- Dark scrim -->
+      <div class="absolute inset-0 bg-black/80"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-8 text-center flex flex-col items-center">
+      <h2 class="font-serif text-6xl sm:text-7xl md:text-8xl text-white font-normal mb-3">
+        Visit us.
+      </h2>
+      <div class="font-arabic text-3xl sm:text-4xl text-sandstone mb-10" dir="rtl">
+        مرحبا بيكم
+      </div>
+
+      <!-- Row of four equal text buttons -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-2xl">
+        <a href="tel:+21620181878" class="border border-white/40 hover:border-white text-white hover:bg-white/10 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2">
+          <span>Call</span>
+          <span>→</span>
+        </a>
+        <a href="https://wa.me/21620181878" target="_blank" rel="noopener noreferrer" class="border border-white/40 hover:border-white text-white hover:bg-white/10 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2">
+          <span>WhatsApp</span>
+          <span>↗</span>
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=35.77299,10.83103" target="_blank" rel="noopener noreferrer" class="border border-white/40 hover:border-white text-white hover:bg-white/10 py-3.5 font-mono text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2">
+          <span>Get directions</span>
+          <span>↗</span>
+        </a>
+        <a href="tel:+21620181878" class="bg-cobalt hover:bg-[#152e70] text-white py-3.5 font-mono text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2">
+          <span>Reserve a table</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11) FOOTER -->
+  <footer class="bg-limewash border-t border-[#B8894F]/40 py-10 px-8 md:px-14">
+    <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-ink/75 uppercase tracking-wider">
+      <div class="flex items-center gap-2">
+        <span class="font-serif text-lg lowercase first-letter:uppercase text-ink font-normal">Dar Zmen</span>
+        <span class="text-sandstone">·</span>
+        <span class="font-arabic text-sm text-sandstone" dir="rtl">دار زمان</span>
+      </div>
+      <div class="text-center">
+        QRFJ+5C Monastir · <a href="tel:+21620181878" class="hover:text-cobalt transition-colors">+216 20 181 878</a>
+      </div>
+      <div class="text-right text-ink/50">
+        Photos: Google Maps contributors
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subtle Javascript for Tabs & Scroll Animations -->
+  <script>
+    function switchTab(tabId, btnElement) {
+      // Deactivate all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.remove('bg-cobalt', 'text-white', 'border-cobalt');
+        btn.classList.add('bg-transparent', 'text-ink');
+      });
+
+      // Activate clicked button
+      btnElement.classList.add('active');
+      btnElement.classList.remove('bg-transparent', 'text-ink');
+
+      // Hide all panels
+      document.querySelectorAll('.menu-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // Show targeted panel
+      const targetPanel = document.getElementById('panel-' + tabId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    }
+
+    // Scroll fade-in effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>

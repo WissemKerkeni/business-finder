@@ -1,0 +1,8 @@
+{
+  "name": "Dar Zmen Monastir",
+  "short_name": "Dar Zmen",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#15171C",
+  "background_color": "#F3EEE4",
+  "display": "browser"
+}
