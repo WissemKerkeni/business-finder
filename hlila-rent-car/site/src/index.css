@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-asphalt: #0E0F11;
+  --color-graphite: #181A1E;
+  --color-line: #2A2D33;
+  --color-chalk: #ECEAE4;
+  --color-chalk-dim: #A3A7AF;
+  --color-swoosh: #E01B1B;
+  --color-swoosh-dark: #C11515;
+  /* swoosh lightened for small text on asphalt (AA contrast) */
+  --color-swoosh-text: #FF4A4A;
+  --color-sand: #F4DDA0;
+  --font-cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-asphalt font-sans text-chalk antialiased; }
+  :focus-visible { outline: 2px solid var(--color-swoosh); outline-offset: 3px; }
+  [hidden] { display: none !important; }
+  input[type='date'] { color-scheme: dark; }
+  select option { background: var(--color-asphalt); color: var(--color-chalk); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+  @media (max-width: 1023px) { body { padding-bottom: calc(52px + env(safe-area-inset-bottom)); } }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+.zoom img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.zoom:hover img { transform: scale(1.04); }

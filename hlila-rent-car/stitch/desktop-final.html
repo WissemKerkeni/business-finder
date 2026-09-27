@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hlila Rent Car — Location de voitures à Monastir</title>
+<meta name="description" content="Hlila Rent Car, location de voitures à Monastir : citadines, berlines et SUV en boîte manuelle ou automatique. Demande sur WhatsApp au +216 24 200 450."/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Barlow Condensed, Hanken Grotesk, Space Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&amp;family=Hanken+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            asphalt: '#0E0F11',
+            'asphalt-light': '#181A1E',
+            'asphalt-border': '#272A30',
+            chalk: '#ECEAE4',
+            'chalk-dim': '#9EA3AD',
+            swoosh: '#E01B1B',
+            'swoosh-hover': '#C51414',
+            'sand-cream': '#F4DDA0',
+          },
+          fontFamily: {
+            condensed: ['"Barlow Condensed"', 'sans-serif'],
+            body: ['"Hanken Grotesk"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Strict styling requirements: No border-radius > 4px, No box-shadows, No gradients */
+    * {
+      border-radius: 0px;
+    }
+    .rounded-sm-custom {
+      border-radius: 4px !important;
+    }
+    .hairline-b {
+      border-bottom: 1px solid #272A30;
+    }
+    .hairline-t {
+      border-top: 1px solid #272A30;
+    }
+    .hairline-l {
+      border-left: 1px solid #272A30;
+    }
+    .hairline-r {
+      border-right: 1px solid #272A30;
+    }
+    .hairline-all {
+      border: 1px solid #272A30;
+    }
+    /* Scrim on hero photo only */
+    .hero-scrim {
+      background: linear-gradient(180deg, rgba(14, 15, 17, 0.45) 0%, rgba(14, 15, 17, 0.85) 75%, #0E0F11 100%);
+    }
+    /* Google Maps Grayscale */
+    .map-grayscale {
+      filter: grayscale(100%) invert(92%) contrast(85%);
+    }
+    /* Custom select styling */
+    select option {
+      background-color: #0E0F11;
+      color: #ECEAE4;
+    }
+    [hidden]{display:none!important}
+    #chips::-webkit-scrollbar{display:none}
+  </style>
+</head>
+<body class="bg-asphalt text-chalk font-body antialiased selection:bg-swoosh selection:text-chalk">
+<!-- 1) HEADER (transparent over hero) -->
+<header class="absolute top-0 left-0 w-full z-50 hairline-b bg-asphalt/40 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+<!-- Left: Wordmark -->
+<a class="flex flex-col group" href="#">
+<span class="font-condensed font-black italic text-2xl tracking-wider text-chalk flex items-baseline gap-1">
+          HLILA RENT CAR
+        </span>
+<div class="w-24 h-[2px] bg-swoosh mt-[-2px]"></div>
+<span class="font-mono text-[9px] tracking-[0.25em] text-chalk-dim uppercase mt-1">
+          LOCATION DE VOITURES
+        </span>
+</a>
+<!-- Center: Nav links -->
+<nav class="hidden lg:flex items-center space-x-8 text-xs font-mono tracking-widest uppercase">
+<a class="text-chalk hover:text-swoosh transition-colors" href="#flotte">Flotte</a>
+<span class="text-chalk-dim/40">·</span>
+<a class="text-chalk hover:text-swoosh transition-colors" href="#reserver">Réserver</a>
+<span class="text-chalk-dim/40">·</span>
+<a class="text-chalk hover:text-swoosh transition-colors" href="#livraison">Livraison</a>
+<span class="text-chalk-dim/40">·</span>
+<a class="text-chalk hover:text-swoosh transition-colors" href="#avis">Avis</a>
+<span class="text-chalk-dim/40">·</span>
+<a class="text-chalk hover:text-swoosh transition-colors" href="#contact">Contact</a>
+</nav>
+<!-- Right: Phone & WhatsApp CTA -->
+<div class="flex items-center gap-4 lg:gap-6">
+<a class="hidden sm:inline font-mono text-sm tracking-wider text-chalk hover:text-swoosh transition-colors" href="tel:+21624200450">
+          +216 24 200 450
+        </a>
+<a class="bg-swoosh hover:bg-swoosh-hover text-chalk font-mono text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2 transition-colors" href="https://wa.me/21624200450" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg>
+          WhatsApp
+        </a>
+<button id="menu-btn" type="button" class="lg:hidden text-chalk text-2xl leading-none" aria-label="Ouvrir le menu">☰</button>
+</div>
+</div>
+</header>
+<!-- 2) HERO (fits one 900px viewport) -->
+<section id="top" class="relative min-h-[100svh] lg:min-h-0 lg:h-[900px] w-full flex flex-col justify-end overflow-hidden hairline-b pt-28">
+<!-- Full-bleed photo with scrim -->
+<div class="absolute inset-0 z-0">
+<img src="photos/maps_06.jpg" width="2400" height="1371" alt="MG ZS blanc, MG5 gris et MG ZS noir alignés sous l&#x27;abri de Hlila Rent Car à Monastir" class="w-full h-full object-cover object-center" fetchpriority="high" />
+<div class="absolute inset-0 hero-scrim"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-[1440px] mx-auto w-full px-8 pb-12">
+<!-- Monastir red tag -->
+<div class="mb-3">
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-swoosh font-bold">
+          MONASTIR · LOCATION DE VOITURES
+        </span>
+</div>
+<!-- Headline & Sub -->
+<h1 class="font-condensed font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight uppercase text-chalk leading-none mb-4">
+        LOUEZ VOTRE VOITURE À MONASTIR
+      </h1>
+<p class="font-body text-chalk-dim text-lg max-w-3xl leading-relaxed mb-4">
+        Citadines, berlines et SUV en boîte manuelle ou automatique. Livraison à l'aéroport sur demande.
+      </p>
+<!-- Rating row -->
+<div class="flex items-center space-x-2 text-sm font-mono text-chalk mb-8">
+<span class="font-bold text-chalk">5,0</span>
+<span class="text-swoosh tracking-widest">★★★★★</span>
+<span class="text-chalk-dim">·</span>
+<span class="text-chalk-dim">34 avis Google</span>
+</div>
+<!-- Quick Request Bar -->
+<div class="bg-asphalt/90 backdrop-blur-md hairline-all p-4 rounded-sm-custom">
+<form id="request" novalidate class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-end">
+<!-- Field 1: Lieu -->
+<div class="flex flex-col">
+<label class="font-mono text-[10px] uppercase tracking-wider text-chalk-dim mb-1.5">Lieu de prise en charge</label>
+<select name="lieu" aria-label="Lieu de prise en charge" class="bg-asphalt-light hairline-all text-chalk text-xs font-mono py-2.5 px-3 rounded-sm-custom focus:outline-none focus:border-swoosh cursor-pointer">
+<option>Agence — Monastir</option>
+<option>Aéroport</option>
+<option>Autre adresse</option>
+</select>
+</div>
+<!-- Field 2: Date départ -->
+<div class="flex flex-col">
+<label class="font-mono text-[10px] uppercase tracking-wider text-chalk-dim mb-1.5">Date de départ</label>
+<input name="from" aria-label="Date de départ" style="color-scheme:dark" class="bg-asphalt-light hairline-all text-chalk text-xs font-mono py-2 px-3 rounded-sm-custom focus:outline-none focus:border-swoosh" type="date"/>
+</div>
+<!-- Field 3: Date retour -->
+<div class="flex flex-col">
+<label class="font-mono text-[10px] uppercase tracking-wider text-chalk-dim mb-1.5">Date de retour</label>
+<input name="to" aria-label="Date de retour" style="color-scheme:dark" class="bg-asphalt-light hairline-all text-chalk text-xs font-mono py-2 px-3 rounded-sm-custom focus:outline-none focus:border-swoosh" type="date"/>
+</div>
+<!-- Field 4: Voiture -->
+<div class="flex flex-col">
+<label class="font-mono text-[10px] uppercase tracking-wider text-chalk-dim mb-1.5">Voiture</label>
+<select name="car" aria-label="Voiture" class="bg-asphalt-light hairline-all text-chalk text-xs font-mono py-2.5 px-3 rounded-sm-custom focus:outline-none focus:border-swoosh cursor-pointer">
+<option>Toutes</option>
+<option>MG ZS</option>
+<option>MG5</option>
+<option>Seat Arona</option>
+<option>Seat Ibiza</option>
+<option>Skoda Fabia</option>
+<option>Skoda Kushaq</option>
+<option>Skoda Scala</option>
+<option>Mahindra XUV300</option>
+<option>Hyundai i20</option>
+<option>Hyundai i10</option>
+</select>
+</div>
+<!-- CTA Button -->
+<div id="autre-wrap" class="hidden flex flex-col sm:col-span-2 lg:col-span-5 order-last"><label class="font-mono text-[10px] uppercase tracking-wider text-chalk-dim mb-1.5" for="autre">Adresse de prise en charge</label><input id="autre" name="autre" type="text" placeholder="Hôtel, adresse…" class="bg-asphalt-light hairline-all text-chalk text-xs font-mono py-2.5 px-3 rounded-sm-custom focus:outline-none focus:border-swoosh"/></div>
+<button class="sm:col-span-2 lg:col-span-1 bg-swoosh hover:bg-swoosh-hover text-chalk font-mono text-xs font-bold uppercase tracking-wider py-2.5 px-4 rounded-sm-custom h-[42px] flex items-center justify-center gap-2 transition-colors" type="submit">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg>
+<span>Demander sur WhatsApp</span>
+</button>
+</form>
+<p class="font-mono text-[10px] text-chalk-dim/70 mt-2.5">
+          Votre demande s'ouvre dans WhatsApp — rien n'est envoyé ailleurs.
+        </p>
+<p id="rq-error" role="alert" class="hidden font-mono text-[11px] text-swoosh mt-2"></p>
+</div>
+</div>
+</section>
+<!-- 3) FLOTTE SECTION -->
+<section class="w-full py-20 lg:py-24 hairline-b" id="flotte">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between mb-6 lg:mb-12 gap-6">
+<div>
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-swoosh font-bold block mb-2">SÉLECTION</span>
+<h2 class="font-condensed font-black text-5xl lg:text-6xl tracking-tight uppercase text-chalk">LA FLOTTE</h2>
+<p class="font-body text-chalk-dim text-base mt-2">10 modèles. Prix sur demande — réponse sur WhatsApp.</p>
+</div>
+</div>
+<div id="chips" role="toolbar" aria-label="Filtrer la flotte" class="sticky top-0 z-30 -mx-4 px-4 sm:mx-0 sm:px-0 py-3 bg-asphalt/95 backdrop-blur flex gap-2 overflow-x-auto text-xs font-mono uppercase tracking-wider mb-2 lg:mb-6 lg:static lg:bg-transparent lg:backdrop-blur-none lg:px-0 lg:mx-0">
+<button type="button" data-filter="all" aria-pressed="true" class="chip shrink-0 hairline-all px-4 py-2 rounded-sm-custom whitespace-nowrap transition-colors">Tous</button><button type="button" data-filter="suv" aria-pressed="false" class="chip shrink-0 hairline-all px-4 py-2 rounded-sm-custom whitespace-nowrap transition-colors">SUV</button><button type="button" data-filter="city" aria-pressed="false" class="chip shrink-0 hairline-all px-4 py-2 rounded-sm-custom whitespace-nowrap transition-colors">Citadines & compactes</button><button type="button" data-filter="sedan" aria-pressed="false" class="chip shrink-0 hairline-all px-4 py-2 rounded-sm-custom whitespace-nowrap transition-colors">Berline</button><button type="button" data-filter="auto" aria-pressed="false" class="chip shrink-0 hairline-all px-4 py-2 rounded-sm-custom whitespace-nowrap transition-colors">Automatique</button>
+</div>
+<div class="hairline-t" id="fleet-list">
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="suv auto">
+<div class="w-full lg:w-[55%] relative"><button type="button" class="cycle block w-full aspect-[16/10] bg-asphalt-light overflow-hidden relative" data-photos='[{&quot;src&quot;: &quot;photos/maps_05.jpg&quot;, &quot;alt&quot;: &quot;MG ZS noir sous l&#x27;abri de l&#x27;agence Hlila Rent Car&quot;, &quot;w&quot;: 1600, &quot;h&quot;: 1387}, {&quot;src&quot;: &quot;photos/fb_09.jpg&quot;, &quot;alt&quot;: &quot;MG ZS noir dans une rue de Monastir&quot;, &quot;w&quot;: 1536, &quot;h&quot;: 1434}, {&quot;src&quot;: &quot;photos/maps_09.jpg&quot;, &quot;alt&quot;: &quot;MG ZS noir, vue arrière, centre de Monastir&quot;, &quot;w&quot;: 1600, &quot;h&quot;: 1200}]' aria-label="Photo suivante — MG ZS"><img src="photos/maps_05.jpg" width="1600" height="1387" alt="MG ZS noir sous l&#x27;abri de l&#x27;agence Hlila Rent Car" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /><span class="counter absolute bottom-3 right-3 bg-asphalt/80 backdrop-blur font-mono text-[11px] px-2.5 py-1 text-chalk hairline-all pointer-events-none">1/3</span></button></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">MG ZS</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">SUV · Boîte automatique</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20MG%20ZS.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="MG ZS"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="sedan auto">
+<div class="w-full lg:w-[55%] relative"><div class="aspect-[16/10] bg-asphalt-light overflow-hidden"><img src="photos/maps_02.jpg" width="1500" height="1600" alt="MG5 gris sous l&#x27;abri de l&#x27;agence" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /></div></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">MG5</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">Berline · Automatique ou manuelle</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20MG5.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="MG5"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="suv auto">
+<div class="w-full lg:w-[55%] relative"><div class="aspect-[16/10] bg-asphalt-light overflow-hidden"><img src="photos/ig_arona.jpg" width="1440" height="1440" alt="Seat Arona blanc de Hlila Rent Car" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /></div></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">Seat Arona</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">SUV · Boîte automatique</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Seat%20Arona.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Seat Arona"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="city auto">
+<div class="w-full lg:w-[55%] relative"><button type="button" class="cycle block w-full aspect-[16/10] bg-asphalt-light overflow-hidden relative" data-photos='[{&quot;src&quot;: &quot;photos/fb_06.jpg&quot;, &quot;alt&quot;: &quot;Seat Ibiza blanche, vue avant&quot;, &quot;w&quot;: 1536, &quot;h&quot;: 1434}, {&quot;src&quot;: &quot;photos/fb_04.jpg&quot;, &quot;alt&quot;: &quot;Seat Ibiza noire et blanche avec l&#x27;autocollant Hlila&quot;, &quot;w&quot;: 1536, &quot;h&quot;: 1332}, {&quot;src&quot;: &quot;photos/fb_13.jpg&quot;, &quot;alt&quot;: &quot;Seat Ibiza noire&quot;, &quot;w&quot;: 1600, &quot;h&quot;: 1200}]' aria-label="Photo suivante — Seat Ibiza"><img src="photos/fb_06.jpg" width="1536" height="1434" alt="Seat Ibiza blanche, vue avant" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /><span class="counter absolute bottom-3 right-3 bg-asphalt/80 backdrop-blur font-mono text-[11px] px-2.5 py-1 text-chalk hairline-all pointer-events-none">1/3</span></button></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">Seat Ibiza</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">Citadine · Automatique ou manuelle</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Seat%20Ibiza.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Seat Ibiza"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="city">
+<div class="w-full lg:w-[55%] relative"><button type="button" class="cycle block w-full aspect-[16/10] bg-asphalt-light overflow-hidden relative" data-photos='[{&quot;src&quot;: &quot;photos/fb_07.jpg&quot;, &quot;alt&quot;: &quot;Deux Skoda Fabia blanches&quot;, &quot;w&quot;: 1536, &quot;h&quot;: 696}, {&quot;src&quot;: &quot;photos/fb_11.jpg&quot;, &quot;alt&quot;: &quot;Deux Skoda Fabia noires&quot;, &quot;w&quot;: 1536, &quot;h&quot;: 655}, {&quot;src&quot;: &quot;photos/fb_01.jpg&quot;, &quot;alt&quot;: &quot;Skoda Fabia grise, noire et bleue&quot;, &quot;w&quot;: 1600, &quot;h&quot;: 840}]' aria-label="Photo suivante — Skoda Fabia"><img src="photos/fb_07.jpg" width="1536" height="696" alt="Deux Skoda Fabia blanches" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /><span class="counter absolute bottom-3 right-3 bg-asphalt/80 backdrop-blur font-mono text-[11px] px-2.5 py-1 text-chalk hairline-all pointer-events-none">1/3</span></button></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">Skoda Fabia</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">Citadine · Boîte manuelle</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Skoda%20Fabia.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Skoda Fabia"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="suv">
+<div class="w-full lg:w-[55%] relative"><button type="button" class="cycle block w-full aspect-[16/10] bg-asphalt-light overflow-hidden relative" data-photos='[{&quot;src&quot;: &quot;photos/ig_xuv300.jpg&quot;, &quot;alt&quot;: &quot;Mahindra XUV300 blanc, vue avant&quot;, &quot;w&quot;: 1440, &quot;h&quot;: 1546}, {&quot;src&quot;: &quot;photos/ig_xuv300_2.jpg&quot;, &quot;alt&quot;: &quot;Mahindra XUV300 blanc sous les palmiers&quot;, &quot;w&quot;: 1440, &quot;h&quot;: 1546}]' aria-label="Photo suivante — Mahindra XUV300"><img src="photos/ig_xuv300.jpg" width="1440" height="1546" alt="Mahindra XUV300 blanc, vue avant" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /><span class="counter absolute bottom-3 right-3 bg-asphalt/80 backdrop-blur font-mono text-[11px] px-2.5 py-1 text-chalk hairline-all pointer-events-none">1/2</span></button></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">Mahindra XUV300</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">SUV</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Mahindra%20XUV300.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Mahindra XUV300"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="city">
+<div class="w-full lg:w-[55%] relative"><button type="button" class="cycle block w-full aspect-[16/10] bg-asphalt-light overflow-hidden relative" data-photos='[{&quot;src&quot;: &quot;photos/fb_15.jpg&quot;, &quot;alt&quot;: &quot;Hyundai i20 noire, vue avant&quot;, &quot;w&quot;: 1536, &quot;h&quot;: 1393}, {&quot;src&quot;: &quot;photos/fb_10.jpg&quot;, &quot;alt&quot;: &quot;Hyundai i20 rouge et blanche&quot;, &quot;w&quot;: 1600, &quot;h&quot;: 1499}]' aria-label="Photo suivante — Hyundai i20"><img src="photos/fb_15.jpg" width="1536" height="1393" alt="Hyundai i20 noire, vue avant" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /><span class="counter absolute bottom-3 right-3 bg-asphalt/80 backdrop-blur font-mono text-[11px] px-2.5 py-1 text-chalk hairline-all pointer-events-none">1/2</span></button></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">Hyundai i20</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">Citadine · Boîte manuelle</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Hyundai%20i20.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Hyundai i20"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-8 lg:py-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-10" data-tags="city">
+<div class="w-full lg:w-[55%] relative"><div class="aspect-[16/10] bg-asphalt-light overflow-hidden"><img src="photos/maps_10.jpg" width="1600" height="1477" alt="Hyundai Grand i10 blanche" class="car-img w-full h-full object-cover" loading="lazy" decoding="async" /></div></div>
+<div class="w-full lg:w-[45%] flex flex-col justify-center">
+<h3 class="font-condensed font-black text-4xl lg:text-5xl tracking-tight uppercase text-chalk mb-3">Hyundai i10</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest mb-6">Citadine · Boîte manuelle</p>
+<div class="hairline-b w-full mb-6"></div>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<span class="font-mono font-bold text-sm tracking-wider text-swoosh">PRIX SUR DEMANDE</span>
+<a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Hyundai%20i10.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Hyundai i10"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a>
+</div>
+</div>
+</div>
+<div class="car hairline-b py-6 grid grid-cols-1 sm:grid-cols-[1fr_auto] lg:grid-cols-[260px_1fr_auto_auto] items-center gap-3 lg:gap-8" data-tags="suv auto">
+<h3 class="font-condensed font-black text-3xl tracking-tight uppercase text-chalk">Skoda Kushaq</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest">SUV · Boîte automatique</p>
+<span class="font-mono text-xs text-chalk-dim/70 uppercase tracking-wider">Prix et photo sur demande</span>
+<div><a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Skoda%20Kushaq.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Skoda Kushaq"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a></div>
+</div>
+<div class="car hairline-b py-6 grid grid-cols-1 sm:grid-cols-[1fr_auto] lg:grid-cols-[260px_1fr_auto_auto] items-center gap-3 lg:gap-8" data-tags="city">
+<h3 class="font-condensed font-black text-3xl tracking-tight uppercase text-chalk">Skoda Scala</h3>
+<p class="font-mono text-xs text-chalk-dim uppercase tracking-widest">Compacte</p>
+<span class="font-mono text-xs text-chalk-dim/70 uppercase tracking-wider">Prix et photo sur demande</span>
+<div><a class="hairline-all hover:bg-swoosh hover:border-swoosh text-chalk font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-sm-custom inline-flex items-center gap-2.5 transition-colors" href="https://wa.me/21624200450?text=Bonjour%2C%20je%20voudrais%20louer%20la%20Skoda%20Scala.%20Pouvez-vous%20m%27indiquer%20la%20disponibilit%C3%A9%20et%20le%20prix%20%3F" rel="noopener" target="_blank" data-car="Skoda Scala"><svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg><span>Demander cette voiture</span></a></div>
+</div>
+</div>
+<p id="fleet-empty" class="hidden py-10 font-mono text-sm text-chalk-dim">Aucun modèle dans cette catégorie.</p>
+</div>
+</section>
+<!-- 4) COMMENT RÉSERVER -->
+<section class="w-full py-24 hairline-b" id="reserver">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+<div class="mb-16">
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-swoosh font-bold block mb-2">PROCÉDURE</span>
+<h2 class="font-condensed font-black text-6xl tracking-tight uppercase text-chalk">
+          COMMENT RÉSERVER
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 hairline-all">
+<!-- Step 1 -->
+<div class="p-10 hairline-r flex flex-col justify-between min-h-[300px]">
+<div>
+<span class="font-mono font-bold text-5xl text-swoosh block mb-6">01</span>
+<h3 class="font-condensed font-bold text-3xl uppercase text-chalk mb-3">
+              Choisissez une voiture
+            </h3>
+</div>
+<p class="font-body text-chalk-dim text-sm leading-relaxed">
+            Parcourez la flotte ou indiquez simplement vos dates.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="p-10 hairline-r flex flex-col justify-between min-h-[300px]">
+<div>
+<span class="font-mono font-bold text-5xl text-swoosh block mb-6">02</span>
+<h3 class="font-condensed font-bold text-3xl uppercase text-chalk mb-3">
+              Envoyez votre demande
+            </h3>
+</div>
+<p class="font-body text-chalk-dim text-sm leading-relaxed">
+            Le bouton ouvre WhatsApp avec votre message prêt à envoyer.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="p-10 flex flex-col justify-between min-h-[300px]">
+<div>
+<span class="font-mono font-bold text-5xl text-swoosh block mb-6">03</span>
+<h3 class="font-condensed font-bold text-3xl uppercase text-chalk mb-3">
+              Confirmez les détails
+            </h3>
+</div>
+<p class="font-body text-chalk-dim text-sm leading-relaxed">
+            L'agence vous répond pour la disponibilité, le prix et la remise des clés.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 5) LIVRAISON -->
+<section class="w-full py-24 hairline-b" id="livraison">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+<div class="mb-16">
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-swoosh font-bold block mb-2">SERVICES</span>
+<h2 class="font-condensed font-black text-6xl tracking-tight uppercase text-chalk">
+          LIVRAISON
+        </h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Photo side -->
+<div class="aspect-[16/11] bg-asphalt-light overflow-hidden hairline-all">
+<img src="photos/fb_09.jpg" width="1536" height="1434" alt="MG ZS noir de Hlila Rent Car dans une rue de Monastir" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+</div>
+<!-- Tabular list & quote side -->
+<div class="flex flex-col justify-between h-full py-4">
+<div class="hairline-t">
+<!-- Row 1 -->
+<div class="hairline-b py-6 flex items-baseline gap-6">
+<span class="font-mono font-bold text-sm tracking-widest text-swoosh w-36 shrink-0">AGENCE</span>
+<span class="font-body text-chalk text-base">Monastir, derrière la municipalité</span>
+</div>
+<!-- Row 2 -->
+<div class="hairline-b py-6 flex items-baseline gap-6">
+<span class="font-mono font-bold text-sm tracking-widest text-swoosh w-36 shrink-0">AÉROPORT</span>
+<span class="font-body text-chalk text-base">Livraison et restitution à l'aéroport sur demande</span>
+</div>
+<!-- Row 3 -->
+<div class="hairline-b py-6 flex items-baseline gap-6">
+<span class="font-mono font-bold text-sm tracking-widest text-swoosh w-36 shrink-0">TOUTE LA TUNISIE</span>
+<span class="font-body text-chalk text-base">Transferts sur demande</span>
+</div>
+</div>
+<!-- Small quote under it -->
+<div class="mt-12 p-6 bg-asphalt-light hairline-all">
+<p class="font-body italic text-chalk text-sm mb-3">
+              « J'ai récupéré la voiture à l'aéroport et je l'ai déposée à l'aéroport. »
+            </p>
+<p class="font-mono text-xs text-chalk-dim tracking-wider uppercase">
+              — Aymen Zaier, avis Google
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6) GALERIE -->
+<section class="w-full py-20 lg:py-24 hairline-b">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-swoosh font-bold block mb-2">EN IMAGES</span>
+<h2 class="font-condensed font-black text-5xl lg:text-6xl tracking-tight uppercase text-chalk mb-10 lg:mb-12">GALERIE</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[280px] gap-3">
+<figure class="lg:col-span-8 lg:row-span-2 overflow-hidden bg-asphalt-light min-h-[240px]"><img src="photos/fb_01.jpg" width="1600" height="840" alt="Skoda Fabia de la flotte Hlila Rent Car" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" /></figure>
+<figure class="lg:col-span-4  overflow-hidden bg-asphalt-light min-h-[240px]"><img src="photos/maps_09.jpg" width="1600" height="1200" alt="MG ZS noir devant les arcades du centre de Monastir" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" /></figure>
+<figure class="lg:col-span-4  overflow-hidden bg-asphalt-light min-h-[240px]"><img src="photos/fb_14.jpg" width="1600" height="1200" alt="Intérieur MG avec toit panoramique" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" /></figure>
+<figure class="lg:col-span-4  overflow-hidden bg-asphalt-light min-h-[240px]"><img src="photos/ig_xuv300_2.jpg" width="1440" height="1546" alt="Mahindra XUV300 blanc sous les palmiers" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" /></figure>
+<figure class="lg:col-span-4  overflow-hidden bg-asphalt-light min-h-[240px]"><img src="photos/fb_04.jpg" width="1536" height="1332" alt="Seat Ibiza avec l&#x27;autocollant Hlila Rent Car" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" /></figure>
+<figure class="lg:col-span-4  overflow-hidden bg-asphalt-light min-h-[240px]"><img src="photos/fb_10.jpg" width="1600" height="1499" alt="Hyundai i20 rouge et blanche" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" /></figure>
+</div>
+</div>
+</section>
+<!-- 7) AVIS SECTION (The ONE sand cream #F4DDA0 band with asphalt text) -->
+<section class="w-full py-24 bg-sand-cream text-asphalt hairline-b" id="avis">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+<!-- Top rating summary -->
+<div class="flex flex-col md:flex-row items-start md:items-end justify-between pb-12 border-b border-asphalt/20 gap-8">
+<div>
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-asphalt/70 font-bold block mb-2">TÉMOIGNAGES</span>
+<div class="flex items-baseline gap-4">
+<span class="font-condensed font-black text-8xl leading-none">5,0</span>
+<div>
+<div class="text-swoosh text-2xl tracking-widest leading-none mb-1">★★★★★</div>
+<span class="font-mono text-sm font-bold tracking-wider text-asphalt/80">34 avis Google</span>
+</div>
+</div>
+</div>
+<!-- Distribution bars -->
+<div class="w-full md:w-72 font-mono text-xs space-y-1.5">
+<div class="flex items-center gap-2">
+<span class="w-6">5★</span>
+<div class="flex-1 bg-asphalt/15 h-2">
+<div class="bg-asphalt h-2 w-full"></div>
+</div>
+<span class="w-6 text-right">34</span>
+</div>
+<div class="flex items-center gap-2 text-asphalt/40">
+<span class="w-6">4★</span>
+<div class="flex-1 bg-asphalt/15 h-2">
+<div class="bg-asphalt h-2 w-0"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+<div class="flex items-center gap-2 text-asphalt/40">
+<span class="w-6">3★</span>
+<div class="flex-1 bg-asphalt/15 h-2">
+<div class="bg-asphalt h-2 w-0"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+<div class="flex items-center gap-2 text-asphalt/40">
+<span class="w-6">2★</span>
+<div class="flex-1 bg-asphalt/15 h-2">
+<div class="bg-asphalt h-2 w-0"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+<div class="flex items-center gap-2 text-asphalt/40">
+<span class="w-6">1★</span>
+<div class="flex-1 bg-asphalt/15 h-2">
+<div class="bg-asphalt h-2 w-0"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+</div>
+</div>
+<!-- 3 quotes in columns separated by vertical hairlines -->
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-asphalt/20 py-12 border-b border-asphalt/20">
+<!-- Quote 1 -->
+<div class="py-6 md:py-0 md:px-8 first:pl-0 flex flex-col justify-between min-h-[160px]">
+<p class="font-body text-base italic leading-relaxed text-asphalt mb-6">
+            « J'ai réservé la voiture 1 semaine à l'avance et je l'ai trouvée devant l'aéroport à l'heure ! »
+          </p>
+<p class="font-mono text-xs font-bold uppercase tracking-wider text-asphalt/80">
+            — Hamza Gaddour
+          </p>
+</div>
+<!-- Quote 2 -->
+<div class="py-6 md:py-0 md:px-8 flex flex-col justify-between min-h-[160px]">
+<p class="font-body text-base italic leading-relaxed text-asphalt mb-6">
+            « Service impeccable ! Le véhicule était propre, récent et conforme à la réservation. »
+          </p>
+<p class="font-mono text-xs font-bold uppercase tracking-wider text-asphalt/80">
+            — Younes Bouzguenda
+          </p>
+</div>
+<!-- Quote 3 -->
+<div class="py-6 md:py-0 md:px-8 last:pr-0 flex flex-col justify-between min-h-[160px]">
+<p class="font-body text-base italic leading-relaxed text-asphalt mb-6">
+            « Merci à Aymen pour sa communication claire, sa disponibilité et son professionnalisme. »
+          </p>
+<p class="font-mono text-xs font-bold uppercase tracking-wider text-asphalt/80">
+            — Houssem Benmahmoud, Local Guide
+          </p>
+</div>
+</div>
+<!-- Link to Google Reviews -->
+<div class="pt-8 flex justify-end">
+<a class="font-mono text-xs uppercase tracking-widest font-bold text-asphalt hover:text-swoosh flex items-center gap-2 transition-colors" href="https://www.google.com/maps?cid=7663601000825115734" rel="noopener noreferrer" target="_blank">
+<span>Voir tous les avis sur Google</span>
+<svg class="w-4 h-4 fill-none stroke-current stroke-2" viewbox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- 8) CONTACT SECTION -->
+<section class="w-full py-24 hairline-b" id="contact">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8">
+<div class="mb-16">
+<span class="font-mono text-xs uppercase tracking-[0.25em] text-swoosh font-bold block mb-2">COORDONNÉES</span>
+<h2 class="font-condensed font-black text-6xl tracking-tight uppercase text-chalk">
+          CONTACT
+        </h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+<!-- Left: Google Maps iframe (grayscale filter) -->
+<div class="aspect-[16/11] bg-asphalt-light overflow-hidden hairline-all w-full">
+<iframe allowfullscreen="" class="w-full h-full border-0 map-grayscale" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=35.7737102,10.8334399&amp;z=17&amp;output=embed">
+</iframe>
+</div>
+<!-- Right: Tabular list -->
+<div class="hairline-t">
+<!-- Row 1: Adresse -->
+<div class="hairline-b py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="font-mono text-xs font-bold tracking-widest uppercase text-swoosh w-48">ADRESSE</span>
+<span class="font-body text-chalk text-base text-right">Derrière la municipalité, Monastir 5000</span>
+</div>
+<!-- Row 2: Horaires -->
+<div class="hairline-b py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="font-mono text-xs font-bold tracking-widest uppercase text-swoosh w-48">HORAIRES</span>
+<span class="font-body text-chalk text-base text-right">Ouvert tous les jours, 24h/24</span>
+</div>
+<!-- Row 3: Téléphone / WhatsApp -->
+<div class="hairline-b py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="font-mono text-xs font-bold tracking-widest uppercase text-swoosh w-48">TÉLÉPHONE / WHATSAPP</span>
+<a class="font-mono text-sm text-chalk hover:text-swoosh transition-colors text-right" href="tel:+21624200450">
+              +216 24 200 450
+            </a>
+</div>
+<!-- Row 4: Téléphone 2 -->
+<div class="hairline-b py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="font-mono text-xs font-bold tracking-widest uppercase text-swoosh w-48">TÉLÉPHONE</span>
+<a class="font-mono text-sm text-chalk hover:text-swoosh transition-colors text-right" href="tel:+21658900450">
+              +216 58 900 450
+            </a>
+</div>
+<!-- Row 5: E-mail -->
+<div class="hairline-b py-6 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<span class="font-mono text-xs font-bold tracking-widest uppercase text-swoosh w-48">E-MAIL</span>
+<a class="font-mono text-sm text-chalk hover:text-swoosh transition-colors text-right" href="mailto:hlilarentcar@gmail.com">
+              hlilarentcar@gmail.com
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9) FINAL CTA BAND -->
+<section class="w-full py-28 hairline-b bg-asphalt-light">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8 text-center flex flex-col items-center">
+<h2 class="font-condensed font-black text-6xl md:text-8xl tracking-tight uppercase text-chalk mb-10">
+        PRÊT À PRENDRE LA ROUTE ?
+      </h2>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<!-- Appeler -->
+<a class="hairline-all hover:border-chalk text-chalk font-mono text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-sm-custom transition-colors" href="tel:+21624200450">
+          Appeler
+        </a>
+<!-- WhatsApp -->
+<a class="bg-swoosh hover:bg-swoosh-hover text-chalk font-mono text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-sm-custom inline-flex items-center gap-2 transition-colors" href="https://wa.me/21624200450" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span>WhatsApp</span>
+</a>
+<!-- Itinéraire -->
+<a class="hairline-all hover:border-chalk text-chalk font-mono text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-sm-custom transition-colors" href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7737102,10.8334399" rel="noopener noreferrer" target="_blank">
+          Itinéraire
+        </a>
+</div>
+</div>
+</section>
+<!-- 10) FOOTER -->
+<footer class="w-full py-12 pb-24 lg:pb-12 bg-asphalt">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Left: Wordmark & location -->
+<div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left">
+<div>
+<span class="whitespace-nowrap font-condensed font-black italic text-xl tracking-wider text-chalk">
+            HLILA RENT CAR
+          </span>
+<div class="w-16 h-[2px] bg-swoosh mt-[-1px]"></div>
+</div>
+<span class="text-chalk-dim text-sm font-mono">
+          Hlila Rent Car · Monastir
+        </span>
+</div>
+<!-- Center: Social links -->
+<div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 font-mono text-xs tracking-wider uppercase text-chalk-dim">
+<a class="hover:text-swoosh transition-colors" href="https://www.facebook.com/people/Hlila-Rent-Car/61561616923566/" rel="noopener noreferrer" target="_blank">Facebook</a>
+<span>·</span>
+<a class="hover:text-swoosh transition-colors" href="https://www.instagram.com/hlila_rentcar_monastir/" rel="noopener noreferrer" target="_blank">Instagram (@hlila_rentcar_monastir)</a>
+</div>
+<!-- Right: Copyright -->
+<div class="font-mono text-xs text-chalk-dim/60">
+        © 2026 Hlila Rent Car
+      </div>
+</div>
+</footer>
+
+<!-- Mobile drawer -->
+<div id="drawer" class="fixed inset-0 z-[60] hidden lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+<div class="absolute inset-0 bg-asphalt/80" data-close></div>
+<nav class="absolute right-0 top-0 h-full w-[82%] max-w-sm bg-asphalt hairline-l p-6 flex flex-col gap-1 font-mono uppercase tracking-widest text-sm">
+<button type="button" class="self-end text-chalk text-2xl mb-6" data-close aria-label="Fermer">✕</button>
+<a class="py-3 hairline-b" href="#flotte" data-close>Flotte</a>
+<a class="py-3 hairline-b" href="#reserver" data-close>Réserver</a>
+<a class="py-3 hairline-b" href="#livraison" data-close>Livraison</a>
+<a class="py-3 hairline-b" href="#avis" data-close>Avis</a>
+<a class="py-3 hairline-b" href="#contact" data-close>Contact</a>
+<p class="mt-8 text-[11px] text-chalk-dim normal-case tracking-normal">Ouvert tous les jours, 24h/24<br/>Derrière la municipalité, Monastir</p>
+<a class="mt-4 text-chalk" href="tel:+21624200450">+216 24 200 450</a>
+<a class="mt-2 text-chalk" href="tel:+21658900450">+216 58 900 450</a>
+</nav>
+</div>
+<!-- Mobile bottom action bar -->
+<nav id="actionbar" aria-label="Actions rapides" class="fixed bottom-0 inset-x-0 z-50 grid grid-cols-3 bg-asphalt hairline-t font-mono text-[11px] uppercase tracking-wider translate-y-full transition-transform lg:hidden">
+<a class="py-4 text-center text-chalk hairline-r" href="tel:+21624200450">Appeler</a>
+<a class="py-4 text-center text-chalk bg-swoosh" href="https://wa.me/21624200450" target="_blank" rel="noopener">WhatsApp</a>
+<a class="py-4 text-center text-chalk hairline-l" href="https://www.google.com/maps/dir/?api=1&destination=35.7737102,10.8334399" target="_blank" rel="noopener">Itinéraire</a>
+</nav>
+
+<script>
+(() => {
+  const WA = "21624200450";
+  // Fleet filters
+  const chips = [...document.querySelectorAll('#chips .chip')];
+  const cars = [...document.querySelectorAll('#fleet-list .car')];
+  const setChip = (k) => {
+    chips.forEach(c => { const on = c.dataset.filter === k; c.setAttribute('aria-pressed', on);
+      c.classList.toggle('bg-swoosh', on); c.classList.toggle('border-swoosh', on); c.classList.toggle('text-chalk', on);
+      c.classList.toggle('font-bold', on); c.classList.toggle('text-chalk-dim', !on); });
+    let n = 0;
+    cars.forEach(el => { const show = k === 'all' || el.dataset.tags.split(' ').includes(k); el.hidden = !show; if (show) n++; });
+    document.getElementById('fleet-empty').classList.toggle('hidden', n > 0);
+  };
+  chips.forEach(c => c.addEventListener('click', () => setChip(c.dataset.filter)));
+  setChip('all');
+  // Photo cycling
+  document.querySelectorAll('.cycle').forEach(btn => {
+    const list = JSON.parse(btn.dataset.photos); let i = 0;
+    const im = btn.querySelector('img'); const ct = btn.querySelector('.counter');
+    btn.addEventListener('click', () => { i = (i + 1) % list.length; const p = list[i];
+      im.src = p.src; im.alt = p.alt; im.width = p.w; im.height = p.h; if (ct) ct.textContent = (i + 1) + '/' + list.length; });
+  });
+  // Request bar -> WhatsApp
+  const f = document.getElementById('request');
+  const fmt = (v) => v ? v.split('-').reverse().join('/') : '';
+  const out = document.getElementById('rq-error');
+  const build = () => {
+    const lieuSel = f.lieu.value; const autre = f.autre.value.trim();
+    const LIEUX = { 'Agence — Monastir': "l'agence de Monastir", 'Aéroport': "l'aéroport" };
+    const lieu = lieuSel === 'Autre adresse' ? (autre || 'une autre adresse') : (LIEUX[lieuSel] || lieuSel);
+    const car = f.car.value === 'Toutes' ? 'une voiture' : 'la ' + f.car.value;
+    let t = 'Bonjour, je voudrais louer ' + car;
+    if (f.from.value) t += ' du ' + fmt(f.from.value);
+    if (f.to.value) t += ' au ' + fmt(f.to.value);
+    t += ', prise en charge à ' + lieu + '.';
+    return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
+  };
+  f.lieu.addEventListener('change', () => document.getElementById('autre-wrap').classList.toggle('hidden', f.lieu.value !== 'Autre adresse'));
+  f.from.addEventListener('change', () => { f.to.min = f.from.value; });
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (f.from.value && f.to.value && f.to.value <= f.from.value) {
+      out.textContent = 'La date de retour doit être après la date de départ.'; out.classList.remove('hidden'); f.to.focus(); return;
+    }
+    out.classList.add('hidden');
+    const url = build(); f.dataset.last = url; window.open(url, '_blank', 'noopener');
+  });
+  const today = new Date().toISOString().slice(0, 10); f.from.min = today; f.to.min = today;
+  // Drawer
+  const drawer = document.getElementById('drawer');
+  document.getElementById('menu-btn').addEventListener('click', () => drawer.classList.remove('hidden'));
+  drawer.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', () => drawer.classList.add('hidden')));
+  // Action bar after hero
+  const bar = document.getElementById('actionbar'); const hero = document.getElementById('top');
+  new IntersectionObserver(([e]) => bar.classList.toggle('translate-y-full', e.isIntersecting)).observe(hero);
+})();
+</script>
+</body>
+</html>

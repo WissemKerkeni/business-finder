@@ -1,0 +1,8 @@
+{
+  "name": "Hlila Rent Car Monastir",
+  "short_name": "Hlila Rent Car",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#0E0F11",
+  "background_color": "#0E0F11",
+  "display": "browser"
+}

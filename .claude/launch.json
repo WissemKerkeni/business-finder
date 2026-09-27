@@ -88,6 +88,35 @@
         "--strictPort"
       ],
       "port": 4175
+    },
+    {
+      "name": "hlila-rent-car-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "hlila-rent-car",
+        "-p",
+        "4182",
+        "-c-1",
+        "--silent"
+      ],
+      "port": 4182
+    },
+    {
+      "name": "hlila-rent-car-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "hlila-rent-car/site",
+        "run",
+        "preview",
+        "--",
+        "--port",
+        "4176",
+        "--strictPort"
+      ],
+      "port": 4176
     }
   ]
 }
