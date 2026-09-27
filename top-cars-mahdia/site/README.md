@@ -5,7 +5,7 @@ The design follows the Stitch concept and `../stitch/desktop-final.html` ("Charc
 
 Booking is a WhatsApp request only: no booking engine, payments, accounts or backend.
 
-**Live:** https://top-cars-mahdia.vercel.app (Vercel project `top-cars-mahdia`).
+**Live:** https://top-cars-mahdia.vercel.app (Vercel project `top-cars-mahdia`, `prj_KAyzqwR9rkXuyraJpQEYxgsArgPu`, team `team_ODIYw5HwL1ZT6MkftJt0ZpW3`; first production deploy `dpl_E92wnHkKq7vChRfUMJz4a55RJ8ts` on 2026-09-27). `SITE_URL` is set in the Vercel production env; deploy from this folder with `npx vercel deploy --prod --yes`.
 
 ```bash
 npm install
