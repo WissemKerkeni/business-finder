@@ -100,6 +100,8 @@ export function headTags(siteUrl: string) {
     `<link rel="canonical" href="${url}">`,
     meta('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1'),
     meta('name', 'theme-color', '#07090A'),
+    // Google Search Console ownership (HTML-tag method)
+    meta('name', 'google-site-verification', 'BxC7Pzcc0thkpie9OR38pOv2gAkHXDST6njeZCD2aL0'),
     // Local signals
     meta('name', 'geo.region', r.address.regionCode),
     meta('name', 'geo.placename', r.address.locality),
