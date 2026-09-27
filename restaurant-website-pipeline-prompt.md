@@ -31,8 +31,12 @@ Build a website proposal for a restaurant from my leads list: research, then des
   - If something is missing, design around the gap.
   - If two sources disagree (e.g. a Google price vs. the printed-menu price), use the printed menu and list the conflict for the owner.
 - **Don't mix restaurants.** After every phase, grep `[SLUG]/` for other restaurants' names, addresses, phones and handles (e.g. "La Cucina", "Place 3 Août", "96 455 150"). Italian words that match another client's name must not be used as section titles either.
-- **Photos:** only real Google Maps photos, hot-linked from `lh3.googleusercontent.com` with `referrerpolicy="no-referrer"`.
-  - Label a photo as a dish only if Google tags it that way or it clearly shows that dish.
+- **Photos:** only real photos from Google Maps and the restaurant's own Facebook and Instagram. No stock or AI images.
+  - **Always the largest version.** Google Maps: replace the size suffix (`=w…-h…-k-no`, `=s…`) with `=s0` (or `=w2400` if that fails). Facebook: open each photo in the photo viewer and take the full-size `scontent…fbcdn.net` `<img>` `src` exactly as given (editing its parameters breaks the signature); walk the Photos tab and albums. Instagram: open each post (`/p/<code>/`), take the largest `srcset` candidate (usually 1080w), and step through every carousel slide.
+  - Google Maps photos are hot-linked from `lh3.googleusercontent.com` with `referrerpolicy="no-referrer"`. Facebook/Instagram URLs expire (`oe=`), so download those straight away (browser `fetch` → blob, or `curl` with the browser's user agent) into `[SLUG]/_scratch/photos-raw/`, and serve optimised WebP copies from `site/public/photos/` (max 2400px hero, 1600px others, `srcset` sizes). Never commit `photos-raw/`.
+  - **Quality gate** (check with PIL): reject anything under 1080px on the long side (1600px wide for the hero), blurry or heavily compressed images, screenshots, collages, flyers with text over the food, watermarks and social-media frames. Never upscale. Record every kept FB/IG photo in `[SLUG]/photo-manifest.csv` (file, source post URL, post date, original size, label).
+  - Never sign in to Facebook or Instagram. If a login wall blocks the photos, stop and ask me (I can sign in in the browser pane, or you can use Claude in Chrome with my session).
+  - Label a photo as a dish only if Google tags it that way, the post caption names it, or it clearly shows that dish.
   - Check the label against the image: a "dorade" photo whose focus is a beetroot penne does not get the dorade label.
 - **Checkpoints:** stop at each **⏸ CHECKPOINT**, show previews, and wait for my approval.
 - **Progress updates:** give a short status line during long waits (Stitch generations take about 8–12 minutes).
@@ -45,7 +49,7 @@ Build a website proposal for a restaurant from my leads list: research, then des
    - hours (expand the weekly table)
    - the About tab: services, highlights, atmosphere, reservations, payments, parking
    - the Menu tab, including every sub-tab with its prices
-2. **Photos.** Open "See photos" and walk every category tab (All, Food & drink, Vibe, By owner, Menu, dish tabs). Collect URLs from the tiles' `background-image`. Keep the list in one script, because reloading the page loses in-page variables.
+2. **Photos.** Open "See photos" and walk every category tab (All, Food & drink, Vibe, By owner, Menu, dish tabs). Collect URLs from the tiles' `background-image`. Keep the list in one script, because reloading the page loses in-page variables. Then do the same on the restaurant's Facebook and Instagram (photos, albums, posts and highlights from about the last 12 months) by the Photos rules above.
 3. **Printed menu.** Show each menu-page photo full-screen (`object-fit: contain`) and read every category and price. This is usually far more complete than Google's structured menu.
 4. **Reviews.** Take 8–10 verbatim reviews with author, stars and Local Guide badge. Mark truncation with "…".
 5. **Contact sheet.** Build one of the candidate photos (serve it from `[SLUG]/_scratch/` over the `[SLUG]-static` http-server entry in `.claude/launch.json`). Verify that each labelled URL shows what its label says. Choose:
