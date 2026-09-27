@@ -1,0 +1,8 @@
+{
+  "name": "Top Car Mahdia",
+  "short_name": "Top Car",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#141517",
+  "background_color": "#141517",
+  "display": "browser"
+}

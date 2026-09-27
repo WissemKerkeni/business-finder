@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Top Car Mahdia — Location de Voitures, Transferts &amp; Excursions</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&amp;family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              charcoal: '#1E1F22',
+              deep: '#141517',
+              red: '#E3202B',
+              offwhite: '#F2F2F0',
+              muted: '#9AA0A6'
+            }
+          },
+          borderRadius: {
+            "DEFAULT": "0px",
+            "none": "0px",
+            "sm": "0px",
+            "md": "0px",
+            "lg": "4px",
+            "xl": "4px",
+            "full": "4px"
+          },
+          fontFamily: {
+            headline: ["'Barlow Condensed'", "sans-serif"],
+            display: ["'Barlow Condensed'", "sans-serif"],
+            body: ["'Hanken Grotesk'", "sans-serif"],
+            mono: ["'Space Mono'", "monospace"],
+            label: ["'Space Mono'", "monospace"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #141517;
+      color: #F2F2F0;
+      font-family: 'Hanken Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    select {
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239AA0A6%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 0.65rem auto;
+      appearance: none;
+    }
+  </style>
+</head>
+<body class="w-full min-h-screen bg-[#141517] text-[#F2F2F0] selection:bg-[#E3202B] selection:text-white">
+<!-- =========================================================================
+       1. HEADER (DESKTOP FIXED)
+       ========================================================================= -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#141517]/95 backdrop-blur-md border-b border-white/10">
+<div class="max-w-[1440px] mx-auto h-20 px-12 flex items-center justify-between">
+<!-- Brand Logo Wordmark -->
+<a class="flex flex-col justify-center select-none group" href="#">
+<span class="font-headline italic font-extrabold text-3xl tracking-tighter text-[#E3202B] leading-none transition-colors group-hover:text-red-500">TOP CAR</span>
+<span class="font-mono text-[9px] uppercase tracking-[0.25em] text-[#9AA0A6] mt-1 leading-none">LOCATION de VOITURE</span>
+</a>
+<!-- Center Navigation Links -->
+<nav class="hidden md:flex items-center gap-10 font-headline uppercase font-bold tracking-wider text-base">
+<a class="text-neutral-300 hover:text-[#E3202B] transition-colors py-1" href="#flotte">FLOTTE</a>
+<a class="text-neutral-300 hover:text-[#E3202B] transition-colors py-1" href="#services">SERVICES</a>
+<a class="text-neutral-300 hover:text-[#E3202B] transition-colors py-1" href="#excursions">EXCURSIONS</a>
+<a class="text-neutral-300 hover:text-[#E3202B] transition-colors py-1" href="#avis">AVIS</a>
+<a class="text-neutral-300 hover:text-[#E3202B] transition-colors py-1" href="#contact">CONTACT</a>
+</nav>
+<!-- Right Contact Action -->
+<div class="flex items-center gap-6">
+<a class="font-mono text-sm tracking-wider text-[#F2F2F0] hover:text-[#E3202B] transition-colors flex items-center gap-2" href="tel:50202203">
+<span class="material-symbols-outlined text-sm text-[#E3202B]" data-icon="call">call</span>
+<span>50 202 203</span>
+</a>
+<a class="bg-[#E3202B] hover:bg-red-700 text-white font-headline uppercase font-bold tracking-wider px-6 py-2.5 text-sm transition-all duration-150 active:scale-[0.99] flex items-center gap-2" href="https://wa.me/21650202203" rel="noopener noreferrer" style="border-radius: 4px;" target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="chat">chat</span>
+<span>WHATSAPP</span>
+</a>
+</div>
+</div>
+</header>
+<!-- =========================================================================
+       2. HERO SECTION (900px VIEWPORT HEIGHT)
+       ========================================================================= -->
+<section class="relative w-full h-[900px] overflow-hidden pt-20 bg-[#141517] flex flex-col justify-between">
+<!-- Full Bleed Photo Background -->
+<div class="absolute inset-0 w-full h-full z-0">
+<img alt="View through a car windshield of the Roman amphitheatre of El Jem in Tunisia under a clear blue Mediterranean sky" class="w-full h-full object-cover object-center filter brightness-95" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAosUyBT6tPX7Setk5P0qF0fcbWGky6Iv0EcGDVHuqfIEdrxUxNuLGxbqpMqPsLu6oamCASOi3R5917-gGRZTUN7xmRzEbyal9XXjjxgh9Yad_srC9kSarm2sh8RZESBiYvgJU9qV4Z_gzfRScnHlqM3KabNdNHgYIjQzeaV5RNXQI4eqmqlTw0WUge0zjMEebYtwhTAN1DxEtaGzIpTPJ798srXXOpoYySMdKkIr4rbtnMtbfQ6omRK_NAH8zmFzqRzu1B6oxWJKo"/>
+<!-- Dark flat scrim covering the left 60% for crisp editorial legibility -->
+<div class="absolute inset-0 bg-gradient-to-r from-[#141517] via-[#141517]/90 via-55% to-transparent w-full h-full pointer-events-none"></div>
+<div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#141517] to-transparent pointer-events-none"></div>
+</div>
+<!-- Hero Content (Left Anchor) -->
+<div class="relative z-10 max-w-[1440px] mx-auto px-12 w-full pt-16">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-[#E3202B] mb-4 font-bold">
+<span class="w-2 h-2 bg-[#E3202B]"></span>
+<span>MAHDIA · TUNISIE</span>
+</div>
+<h1 class="font-headline font-extrabold uppercase text-[76px] leading-[0.92] tracking-tight text-[#F2F2F0] mb-6">
+          LOCATION DE VOITURES, TRANSFERTS &amp; EXCURSIONS
+        </h1>
+<p class="font-body text-xl text-[#F2F2F0]/90 font-normal leading-relaxed max-w-2xl mb-8">
+          Agence Top Car, avenue Taher Sfar à Mahdia. Voitures, vans et utilitaires, avec ou sans chauffeur.
+        </p>
+<!-- Rating Row -->
+<div class="inline-flex items-center gap-3 font-mono text-sm tracking-wide text-neutral-300 py-1.5 px-3 bg-black/40 border border-white/10 backdrop-blur-sm">
+<span class="text-white font-bold">4,8</span>
+<span class="text-[#E3202B]">★★★★★</span>
+<span class="text-neutral-400">·</span>
+<span class="text-neutral-300">54 avis Google</span>
+</div>
+</div>
+</div>
+<!-- Attached QUICK REQUEST BAR (Docked bottom) -->
+<div class="relative z-20 w-full bg-[#1E1F22] border-t border-b border-white/15">
+<div class="max-w-[1440px] mx-auto px-12 py-5">
+<form class="flex flex-col gap-2" onsubmit="event.preventDefault(); window.open('https://wa.me/21650202203?text=' + encodeURIComponent('Bonjour Top Car, demande de réservation: ' + document.getElementById('svc').value + ' | Prise en charge: ' + document.getElementById('loc').value + ' | Du: ' + document.getElementById('d1').value + ' Au: ' + document.getElementById('d2').value + ' | Véhicule: ' + document.getElementById('veh').value), '_blank');">
+<div class="grid grid-cols-12 gap-0 border border-white/15 divide-x divide-white/15 bg-[#141517]">
+<!-- Field 1: Service -->
+<div class="col-span-3 px-4 py-3 flex flex-col justify-center">
+<label class="font-mono text-[11px] uppercase tracking-wider text-[#9AA0A6] mb-1" for="svc">Service</label>
+<select class="bg-transparent border-none text-[#F2F2F0] font-headline font-bold text-base focus:ring-0 p-0 cursor-pointer pr-6" id="svc">
+<option class="bg-[#1E1F22] text-white" value="Location de voiture">Location de voiture</option>
+<option class="bg-[#1E1F22] text-white" value="Transfert aéroport">Transfert aéroport</option>
+<option class="bg-[#1E1F22] text-white" value="Excursion avec chauffeur">Excursion avec chauffeur</option>
+</select>
+</div>
+<!-- Field 2: Lieu -->
+<div class="col-span-2 px-4 py-3 flex flex-col justify-center">
+<label class="font-mono text-[11px] uppercase tracking-wider text-[#9AA0A6] mb-1" for="loc">Lieu de prise en charge</label>
+<input class="bg-transparent border-none text-[#F2F2F0] font-body text-sm placeholder-neutral-500 focus:ring-0 p-0 leading-tight" id="loc" placeholder="Mahdia, hôtel, aéroport..." type="text"/>
+</div>
+<!-- Field 3: Du -->
+<div class="col-span-2 px-4 py-3 flex flex-col justify-center">
+<label class="font-mono text-[11px] uppercase tracking-wider text-[#9AA0A6] mb-1" for="d1">Du</label>
+<input class="bg-transparent border-none text-[#F2F2F0] font-mono text-sm focus:ring-0 p-0" id="d1" type="date"/>
+</div>
+<!-- Field 4: Au -->
+<div class="col-span-2 px-4 py-3 flex flex-col justify-center">
+<label class="font-mono text-[11px] uppercase tracking-wider text-[#9AA0A6] mb-1" for="d2">Au</label>
+<input class="bg-transparent border-none text-[#F2F2F0] font-mono text-sm focus:ring-0 p-0" id="d2" type="date"/>
+</div>
+<!-- Field 5: Véhicule -->
+<div class="col-span-3 px-4 py-3 flex items-center justify-between gap-3">
+<div class="flex-1 flex flex-col justify-center">
+<label class="font-mono text-[11px] uppercase tracking-wider text-[#9AA0A6] mb-1" for="veh">Véhicule</label>
+<select class="bg-transparent border-none text-[#F2F2F0] font-headline font-bold text-base focus:ring-0 p-0 cursor-pointer pr-6" id="veh">
+<option class="bg-[#1E1F22] text-white" value="Non spécifié / Tous modèles">Tous types</option>
+<option class="bg-[#1E1F22] text-white" value="Kia Picanto">Kia Picanto (Citadine)</option>
+<option class="bg-[#1E1F22] text-white" value="Fiat 500">Fiat 500 (Citadine)</option>
+<option class="bg-[#1E1F22] text-white" value="Kia Rio">Kia Rio (Citadine)</option>
+<option class="bg-[#1E1F22] text-white" value="MG 5">MG 5 (Berline)</option>
+<option class="bg-[#1E1F22] text-white" value="MG ZS">MG ZS (SUV)</option>
+<option class="bg-[#1E1F22] text-white" value="Peugeot Expert / Traveller">Peugeot Expert 9 pl.</option>
+<option class="bg-[#1E1F22] text-white" value="Utilitaire">Utilitaire (Berlingo/Jumpy)</option>
+</select>
+</div>
+<!-- Action Button -->
+<button class="bg-[#E3202B] hover:bg-red-700 text-white font-headline uppercase font-bold tracking-wider px-5 py-3 text-sm shrink-0 flex items-center gap-2 transition-colors cursor-pointer" style="border-radius: 4px;" type="submit">
+<span>Envoyer sur WhatsApp</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Micro disclaimer -->
+<p class="font-mono text-xs text-neutral-400 pl-1">
+            Votre demande s'ouvre dans WhatsApp. Réponse de l'agence par message.
+          </p>
+</form>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       3. RED BAND (FULL WIDTH THIN STRIP)
+       ========================================================================= -->
+<aside class="w-full bg-[#E3202B] text-white py-3.5 px-8 text-center border-y border-red-700">
+<p class="font-headline font-extrabold tracking-[0.2em] uppercase text-sm sm:text-base">
+      ROULEZ EN TOUTE SÉCURITÉ — TOP CAR, C'EST SÛR.
+    </p>
+</aside>
+<!-- =========================================================================
+       4. FLOTTE SECTION (TYPOGRAPHIC ARCHITECTURAL TABLE)
+       ========================================================================= -->
+<section class="w-full bg-[#141517] py-24 px-12 border-b border-white/10" id="flotte">
+<div class="max-w-[1440px] mx-auto">
+<!-- Section Title & Intro -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+<div>
+<span class="font-mono text-xs uppercase tracking-[0.2em] text-[#E3202B] font-bold block mb-2">01 / PARC AUTOMOBILE</span>
+<h2 class="font-headline uppercase font-extrabold text-7xl md:text-8xl tracking-tight text-[#F2F2F0] leading-none">
+            LA FLOTTE
+          </h2>
+</div>
+<p class="font-body text-base md:text-lg text-neutral-400 max-w-md pb-1">
+          Les modèles présentés par l'agence. Disponibilités et tarifs sur demande.
+        </p>
+</div>
+<!-- Filter Chips (4px radius per design system) -->
+<div class="flex items-center gap-3 py-8 overflow-x-auto border-b border-white/10">
+<button class="bg-[#E3202B] text-white font-mono text-xs uppercase tracking-wider px-5 py-2 transition-colors cursor-pointer" style="border-radius: 4px;">
+          Tous
+        </button>
+<button class="border border-white/20 hover:border-white text-neutral-300 hover:text-white font-mono text-xs uppercase tracking-wider px-5 py-2 transition-colors cursor-pointer" style="border-radius: 4px;">
+          Citadines
+        </button>
+<button class="border border-white/20 hover:border-white text-neutral-300 hover:text-white font-mono text-xs uppercase tracking-wider px-5 py-2 transition-colors cursor-pointer" style="border-radius: 4px;">
+          Berlines &amp; SUV
+        </button>
+<button class="border border-white/20 hover:border-white text-neutral-300 hover:text-white font-mono text-xs uppercase tracking-wider px-5 py-2 transition-colors cursor-pointer" style="border-radius: 4px;">
+          Vans
+        </button>
+<button class="border border-white/20 hover:border-white text-neutral-300 hover:text-white font-mono text-xs uppercase tracking-wider px-5 py-2 transition-colors cursor-pointer" style="border-radius: 4px;">
+          Utilitaires
+        </button>
+</div>
+<!-- Typographic Fleet Rows (Strictly NO car photos) -->
+<div class="divide-y divide-white/10 font-body">
+<!-- Row 01 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">01</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl md:text-5xl tracking-tight text-[#F2F2F0]">KIA PICANTO</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">Citadine</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20KIA%20PICANTO" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+<!-- Row 02 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">02</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl md:text-5xl tracking-tight text-[#F2F2F0]">FIAT 500</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">Citadine</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20FIAT%20500" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+<!-- Row 03 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">03</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl md:text-5xl tracking-tight text-[#F2F2F0]">KIA RIO</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">Citadine</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20KIA%20RIO" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+<!-- Row 04 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">04</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl md:text-5xl tracking-tight text-[#F2F2F0]">MG 5</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">Berline</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20MG%205" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+<!-- Row 05 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">05</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl md:text-5xl tracking-tight text-[#F2F2F0]">MG ZS</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">SUV</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20MG%20ZS" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+<!-- Row 06 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">06</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl md:text-5xl tracking-tight text-[#F2F2F0]">PEUGEOT EXPERT / TRAVELLER</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">Van · jusqu'à 9 places</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20PEUGEOT%20EXPERT" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+<!-- Row 07 -->
+<div class="group py-7 flex items-center justify-between gap-6 hover:bg-[#1E1F22]/50 transition-colors px-4">
+<div class="flex items-center gap-8 md:gap-14 flex-1">
+<span class="font-mono text-sm tracking-widest text-neutral-500 group-hover:text-[#E3202B] transition-colors">07</span>
+<h3 class="font-headline font-extrabold uppercase text-3xl md:text-4xl tracking-tight text-[#F2F2F0]">UTILITAIRES (Citroën Berlingo, Jumpy)</h3>
+</div>
+<div class="w-48 text-left">
+<span class="font-mono text-xs uppercase tracking-wider text-neutral-400">Utilitaire</span>
+</div>
+<div class="w-48 text-right">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] font-bold">Prix sur demande</span>
+</div>
+<div class="w-56 text-right">
+<a class="inline-block border border-white/25 hover:border-white hover:bg-white hover:text-black text-neutral-200 font-mono text-xs uppercase tracking-wider px-4 py-2.5 transition-all" href="https://wa.me/21650202203?text=Demande%20de%20disponibilit%C3%A9%20pour%20UTILITAIRE" style="border-radius: 4px;" target="_blank">
+              Demander ce véhicule
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       5. SERVICES SECTION (3 COLUMNS SEPARATED BY VERTICAL HAIRLINES)
+       ========================================================================= -->
+<section class="w-full bg-[#1E1F22] py-24 px-12 border-b border-white/10" id="services">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-14">
+<span class="font-mono text-xs uppercase tracking-[0.2em] text-[#E3202B] font-bold block mb-2">02 / PRESTATIONS</span>
+<h2 class="font-headline uppercase font-extrabold text-6xl tracking-tight text-[#F2F2F0]">SERVICES</h2>
+</div>
+<!-- 3 Equal Columns - Flat, no cards, divided by hairline borders -->
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-t border-b border-white/10">
+<!-- Column 1 -->
+<div class="py-10 md:py-12 md:pr-10">
+<div class="font-mono text-3xl font-bold text-[#E3202B] mb-6">01</div>
+<h3 class="font-headline font-bold uppercase text-3xl tracking-tight text-[#F2F2F0] mb-4">
+            LOCATION DE VOITURES
+          </h3>
+<p class="font-body text-neutral-400 text-lg leading-relaxed">
+            Citadines, berlines, SUV et utilitaires, à réserver par simple message.
+          </p>
+</div>
+<!-- Column 2 -->
+<div class="py-10 md:py-12 md:px-10">
+<div class="font-mono text-3xl font-bold text-[#E3202B] mb-6">02</div>
+<h3 class="font-headline font-bold uppercase text-3xl tracking-tight text-[#F2F2F0] mb-4">
+            TRANSFERTS AÉROPORT
+          </h3>
+<p class="font-body text-neutral-400 text-lg leading-relaxed">
+            Accueil à l'aéroport et trajet jusqu'à votre hôtel, avec chauffeur.
+          </p>
+</div>
+<!-- Column 3 -->
+<div class="py-10 md:py-12 md:pl-10">
+<div class="font-mono text-3xl font-bold text-[#E3202B] mb-6">03</div>
+<h3 class="font-headline font-bold uppercase text-3xl tracking-tight text-[#F2F2F0] mb-4">
+            EXCURSIONS AVEC CHAUFFEUR
+          </h3>
+<p class="font-body text-neutral-400 text-lg leading-relaxed">
+            Journées à El Jem, Kairouan, Sousse, Sidi Bou Saïd ou Tunis, au départ de Mahdia.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       6. COMMENT RÉSERVER (3 STEPS HORIZONTAL FLOW)
+       ========================================================================= -->
+<section class="w-full bg-[#141517] py-24 px-12 border-b border-white/10">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-14">
+<span class="font-mono text-xs uppercase tracking-[0.2em] text-[#E3202B] font-bold block mb-2">03 / PROCÉDURE RAPIDE</span>
+<h2 class="font-headline uppercase font-extrabold text-6xl tracking-tight text-[#F2F2F0]">COMMENT RÉSERVER</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-t border-b border-white/10">
+<div class="py-12 md:pr-10 flex flex-col justify-between">
+<div>
+<span class="font-mono text-5xl font-extrabold text-[#E3202B] block mb-6 leading-none">1</span>
+<h3 class="font-headline font-bold uppercase text-2xl tracking-tight text-[#F2F2F0]">
+              Choisissez un véhicule ou un service
+            </h3>
+</div>
+</div>
+<div class="py-12 md:px-10 flex flex-col justify-between">
+<div>
+<span class="font-mono text-5xl font-extrabold text-[#E3202B] block mb-6 leading-none">2</span>
+<h3 class="font-headline font-bold uppercase text-2xl tracking-tight text-[#F2F2F0]">
+              Envoyez votre demande sur WhatsApp
+            </h3>
+</div>
+</div>
+<div class="py-12 md:pl-10 flex flex-col justify-between">
+<div>
+<span class="font-mono text-5xl font-extrabold text-[#E3202B] block mb-6 leading-none">3</span>
+<h3 class="font-headline font-bold uppercase text-2xl tracking-tight text-[#F2F2F0]">
+              L'agence confirme les détails avec vous
+            </h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       7. EXCURSIONS / GALERIE (5 REAL PHOTOS ASYMMETRIC GRID)
+       ========================================================================= -->
+<section class="w-full bg-[#1E1F22] py-24 px-12 border-b border-white/10" id="excursions">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex items-baseline justify-between mb-12 border-b border-white/10 pb-6">
+<div>
+<span class="font-mono text-xs uppercase tracking-[0.2em] text-[#E3202B] font-bold block mb-2">04 / DESTINATIONS</span>
+<h2 class="font-headline uppercase font-extrabold text-7xl tracking-tight text-[#F2F2F0]">
+            EXCURSIONS &amp; PAYSAGES
+          </h2>
+</div>
+<span class="font-mono text-xs uppercase tracking-widest text-neutral-400">GALERIE</span>
+</div>
+<!-- Asymmetric Editorial Grid (Strictly NO rounded corners, NO text overlays on images) -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Photo 1: Large feature left (7 cols) -->
+<div class="col-span-12 lg:col-span-7 flex flex-col">
+<div class="overflow-hidden bg-[#141517] border border-white/10 aspect-[16/10]">
+<img alt="Arches and stone corridors inside the Roman amphitheatre of El Jem Tunisia" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzUowhVjC4GXL-nRs_rXyoCmyz1grguoKho22EjXHbLTJuSJpvXO8ROKINK33HEDqykDZH9pWyUW589moWEhlXERmilcmeYKulRfBh_xFjIxyKL8lbefketxRib8zBHrdK6uHFKY4ntwmrb7CuQ_ClZP6mRTa_jcy5P5_bQWm-BE3OQ67zl5mfnEuD8QcdtygW8g09JH01A0psfTxefMmV6NI3BXfQ2itBbwQik7NnEhdrv1rJUb-GjPcYOAEeSMJuK9GVdkOk0uU"/>
+</div>
+<span class="font-mono text-xs text-neutral-400 mt-3 block tracking-wider uppercase">
+            Amphithéâtre d'El Jem — Arches et galeries antiques
+          </span>
+</div>
+<!-- Photo 2: Right companion (5 cols) -->
+<div class="col-span-12 lg:col-span-5 flex flex-col">
+<div class="overflow-hidden bg-[#141517] border border-white/10 aspect-[16/10] lg:aspect-auto lg:h-[calc(100%-2rem)]">
+<img alt="Mahdia Tunisia Mediterranean rocky cape and coastline with ancient ruined stone gate arch overlooking blue sea" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAD6ZGPyWkx3If8lBE77ab190TBdYcYKeyYT_hNWi8ctfJpYRgDAetn4sw4kNt7PXtY1adpR4aHhDFXyV6PyGijBGKXA5GD2_uzAljDMlw4WWdBVoT3yTp3FDLGMw-92NfoExaZl_7CecswCrXgTQf7-nl-ad8fSeKhmGWkZmZXj-FByNYpS70A6H8BAlaU1V8ViyowOHLtDyUx6mETQuIgwaHvoVZ_O53rQvr5z1o0tDRGXjS4nNdccblItHkfgccnxxCRWLZMe0"/>
+</div>
+<span class="font-mono text-xs text-neutral-400 mt-3 block tracking-wider uppercase">
+            Cap de Mahdia — Porte marine et côte rocheuse
+          </span>
+</div>
+<!-- Row 2: 3 Balanced photo columns -->
+<!-- Photo 3 -->
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<div class="overflow-hidden bg-[#141517] border border-white/10 aspect-[4/3]">
+<img alt="Tunisian seaview seaside cafe terrace with blue umbrellas overlooking turquoise Mediterranean sea" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxFxzL99qwXHuv_bE7v9n-K70Cr-LHozi_GfBfgdnbxLoMRdenVDeMJ_f6ttvD-rhviaCpXYREEYLNOmCM0cEscHMFjcwxiSkXApZeeMx90UB0r5topoHQWN44SA99r78cH7v9RfvrEh39CGEYGPbIr6iKxILIlW8cGf-KDfOrJlyNEWFsLFLVmTlxpHgBfIhZ25YzeWBbH4Y4eqKMzGTeR0H30rTXDL2cHoSljd6s5q9SyiL31nKePLRYt0cyLdR15IEi4HEpyKY"/>
+</div>
+<span class="font-mono text-xs text-neutral-400 mt-3 block tracking-wider uppercase">
+            Terrasse vue mer — Café surplombant la Méditerranée
+          </span>
+</div>
+<!-- Photo 4 -->
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<div class="overflow-hidden bg-[#141517] border border-white/10 aspect-[4/3]">
+<img alt="Bardo national museum gallery in Tunisia with white classical Roman arches and marble statues" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD7C8IhVEuIRAUwW7kMSSFgb27xG0yBfrXvzg8a7PFmXVNVtwsEawok0vwHNaKcD8y68O3Fy1WjwAesbOOMb_z8M-kenUQrIj8suODcEdsatjp-mt9iJB37_OD0YlFHSWZ76m9_lFRE0uiWNG7GvtDYs9F3pJrTQYh4X4AymLqL3LcQtmmVD2crnj-fWBnspREZD3yq32K5VMzP765FZhWuddKABSCr669yIlUm42h-FWQU7_FQz5MovZoJRCQu6H6QeLaGbxdQpM"/>
+</div>
+<span class="font-mono text-xs text-neutral-400 mt-3 block tracking-wider uppercase">
+            Musée du Bardo — Galeries classiques et marbres romains
+          </span>
+</div>
+<!-- Photo 5 -->
+<div class="col-span-12 md:col-span-4 flex flex-col">
+<div class="overflow-hidden bg-[#141517] border border-white/10 aspect-[4/3]">
+<img alt="Tunisian coastal street scene with a dromedary camel walking calmly by historic stone buildings" class="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyityc7Y-8jEWavFWQqmeBka1ypUilINMmyUrtqv04BdMTyZtq_ApaFuQ8XY2i-7hRCCyfm7RUPrtjyxd7wTONYBhfGBpSS-veUwGF-W5oKgymoXwAm_cccpTvARMPyf13XP3J-DICBTQjoiUrDv4yqfQY6z5ROteHOuJbyg6sfnGaAVgBrz-zjB9rYkLbyUL-EDsivGbL9qqJGcHHJ_8eRnw60t1Fi_PTvP6NFRqcq61Wr3JDINNDw0f2N0l7ZqRQiscseVY1FY8"/>
+</div>
+<span class="font-mono text-xs text-neutral-400 mt-3 block tracking-wider uppercase">
+            Scène côtière — Ruelle historique et dromadaire
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       8. AVIS GOOGLE (EDITORIAL PULL-QUOTES & METRICS)
+       ========================================================================= -->
+<section class="w-full bg-[#141517] py-24 px-12 border-b border-white/10" id="avis">
+<div class="max-w-[1440px] mx-auto">
+<!-- Metrics Overview Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-10 pb-16 border-b border-white/10">
+<div class="flex items-baseline gap-6">
+<span class="font-headline font-extrabold text-[120px] leading-none text-[#F2F2F0]">4,8</span>
+<div>
+<div class="text-2xl text-[#E3202B] mb-2 tracking-widest">★★★★★</div>
+<div class="font-mono text-sm uppercase tracking-widest text-neutral-400">54 avis</div>
+</div>
+</div>
+<!-- Proportional hairlines distribution -->
+<div class="w-full max-w-lg space-y-2 font-mono text-xs text-neutral-400">
+<!-- 5 stars -->
+<div class="flex items-center gap-3">
+<span class="w-8">5★</span>
+<div class="flex-1 h-1.5 bg-neutral-800">
+<div class="h-full bg-[#E3202B]" style="width: 94.4%;"></div>
+</div>
+<span class="w-6 text-right text-neutral-300 font-bold">51</span>
+</div>
+<!-- 4 stars -->
+<div class="flex items-center gap-3">
+<span class="w-8">4★</span>
+<div class="flex-1 h-1.5 bg-neutral-800">
+<div class="h-full bg-[#E3202B]" style="width: 0%;"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+<!-- 3 stars -->
+<div class="flex items-center gap-3">
+<span class="w-8">3★</span>
+<div class="flex-1 h-1.5 bg-neutral-800">
+<div class="h-full bg-[#E3202B]" style="width: 0%;"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+<!-- 2 stars -->
+<div class="flex items-center gap-3">
+<span class="w-8">2★</span>
+<div class="flex-1 h-1.5 bg-neutral-800">
+<div class="h-full bg-[#E3202B]" style="width: 0%;"></div>
+</div>
+<span class="w-6 text-right">0</span>
+</div>
+<!-- 1 star -->
+<div class="flex items-center gap-3">
+<span class="w-8">1★</span>
+<div class="flex-1 h-1.5 bg-neutral-800">
+<div class="h-full bg-neutral-600" style="width: 5.6%;"></div>
+</div>
+<span class="w-6 text-right">3</span>
+</div>
+</div>
+</div>
+<!-- 3 Large Pull-Quotes in a row separated by vertical hairlines -->
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 pt-16 pb-12">
+<!-- Quote 1 -->
+<blockquote class="py-8 md:py-0 md:pr-10 flex flex-col justify-between">
+<p class="font-body text-xl text-neutral-200 leading-relaxed italic mb-8">
+            « Service irréprochable du début à la fin. Le chauffeur était parfaitement ponctuel, présent à l'aéroport à notre arrivée… »
+          </p>
+<cite class="font-mono text-xs uppercase tracking-wider text-[#E3202B] not-italic font-bold">
+            — H B, Local Guide
+          </cite>
+</blockquote>
+<!-- Quote 2 -->
+<blockquote class="py-8 md:py-0 md:px-10 flex flex-col justify-between">
+<p class="font-body text-xl text-neutral-200 leading-relaxed italic mb-8">
+            « …aux véhicules de simples berlines en montant de catégorie jusqu'au van 9 places en super état et toujours nettes… »
+          </p>
+<cite class="font-mono text-xs uppercase tracking-wider text-[#E3202B] not-italic font-bold">
+            — martial remacle
+          </cite>
+</blockquote>
+<!-- Quote 3 -->
+<blockquote class="py-8 md:py-0 md:pl-10 flex flex-col justify-between">
+<p class="font-body text-xl text-neutral-200 leading-relaxed italic mb-8">
+            « Super agence! Tout s'est bien passé pour notre transfert sfax/ Mahdia et notre journée à Kairouan et el jem. »
+          </p>
+<cite class="font-mono text-xs uppercase tracking-wider text-[#E3202B] not-italic font-bold">
+            — marie-aude martin
+          </cite>
+</blockquote>
+</div>
+<!-- Link to all reviews -->
+<div class="pt-8 border-t border-white/10 flex justify-end">
+<a class="font-mono text-xs uppercase tracking-[0.15em] text-[#F2F2F0] hover:text-[#E3202B] transition-colors inline-flex items-center gap-2 underline underline-offset-4 decoration-[#E3202B]" href="https://maps.google.com/?q=Top+Car+Mahdia" rel="noopener noreferrer" target="_blank">
+<span>Voir tous les avis sur Google</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       9. CONTACT / ACCÈS (2 COLUMNS: MAP & DETAILS)
+       ========================================================================= -->
+<section class="w-full bg-[#1E1F22] py-24 px-12 border-b border-white/10" id="contact">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-14">
+<span class="font-mono text-xs uppercase tracking-[0.2em] text-[#E3202B] font-bold block mb-2">05 / COORDONNÉES</span>
+<h2 class="font-headline uppercase font-extrabold text-7xl tracking-tight text-[#F2F2F0]">CONTACT &amp; ACCÈS</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Large Styled Dark Map Box -->
+<div class="lg:col-span-7 bg-[#141517] border border-white/10 h-[480px] relative flex flex-col justify-between p-8 overflow-hidden">
+<!-- Stylized cartographic vector background lines -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<line stroke="#E3202B" stroke-width="2" x1="0" x2="1000" y1="280" y2="120"></line>
+<line stroke="#FFFFFF" stroke-width="1.5" x1="200" x2="600" y1="0" y2="600"></line>
+</svg>
+</div>
+<!-- Map Header Info Overlay -->
+<div class="relative z-10 bg-[#1E1F22]/90 border border-white/10 p-5 max-w-sm backdrop-blur-sm">
+<span class="font-mono text-[10px] uppercase tracking-widest text-[#E3202B] block mb-1">LOCALISATION GPS</span>
+<div class="font-headline uppercase font-bold text-xl text-white">Top Car Mahdia</div>
+<div class="font-body text-xs text-neutral-300 mt-1">Avenue Taher Sfar, Mahdia</div>
+</div>
+<!-- Center marker pin -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-10 h-10 bg-[#E3202B] text-white flex items-center justify-center font-bold text-lg shadow-lg">
+<span class="material-symbols-outlined text-xl" data-icon="location_on">location_on</span>
+</div>
+<div class="w-2 h-2 bg-white mt-1"></div>
+</div>
+<!-- Map Bottom Actions -->
+<div class="relative z-10 flex justify-between items-center bg-black/60 px-4 py-3 border border-white/10 backdrop-blur-sm">
+<span class="font-mono text-xs text-neutral-400">35.5047° N, 11.0622° E</span>
+<a class="font-mono text-xs uppercase tracking-wider text-white hover:text-[#E3202B] transition-colors flex items-center gap-1.5" href="https://maps.google.com/?q=Top+Car+Mahdia+Avenue+Taher+Sfar" rel="noopener noreferrer" target="_blank">
+<span>Ouvrir dans Google Maps</span>
+<span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Right: Agency Detailed Information -->
+<div class="lg:col-span-5 flex flex-col divide-y divide-white/10">
+<div class="pb-8">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E3202B] block mb-2 font-bold">AGENCE COMMERCIALE</span>
+<h3 class="font-headline font-extrabold uppercase text-4xl text-[#F2F2F0] mb-2 tracking-tight">AGENCE TOP CAR</h3>
+<p class="font-body text-lg text-neutral-300">Avenue Taher Sfar, Mahdia 5111</p>
+</div>
+<!-- Hours Table -->
+<div class="py-8">
+<span class="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-4">HORAIRES D'OUVERTURE</span>
+<div class="space-y-3 font-mono text-sm">
+<div class="flex justify-between items-center">
+<span class="text-neutral-300">Lundi – Samedi :</span>
+<span class="text-white font-bold">09:00 – 19:00</span>
+</div>
+<div class="flex justify-between items-center text-neutral-400">
+<span>Dimanche :</span>
+<span class="text-[#E3202B] font-bold">Fermé</span>
+</div>
+</div>
+</div>
+<!-- Direct Contacts -->
+<div class="pt-8 space-y-6">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-1">Téléphone / WhatsApp</span>
+<a class="font-mono text-2xl font-bold text-[#F2F2F0] hover:text-[#E3202B] transition-colors block" href="tel:50202203">
+                50 202 203
+              </a>
+</div>
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-1">E-mail</span>
+<a class="font-mono text-base text-neutral-300 hover:text-white transition-colors block" href="mailto:topcarmahdia@gmail.com">
+                topcarmahdia@gmail.com
+              </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       10. FINAL CTA BAND (FULL WIDTH SIGNAL RED)
+       ========================================================================= -->
+<section class="w-full bg-[#E3202B] text-white py-20 px-12 text-center">
+<div class="max-w-[1440px] mx-auto flex flex-col items-center">
+<h2 class="font-headline font-extrabold uppercase text-5xl md:text-7xl lg:text-8xl tracking-tight mb-10 max-w-5xl leading-none">
+        UN MESSAGE, ET VOTRE VOITURE EST PRÊTE.
+      </h2>
+<!-- 3 Sharp Rectangular Buttons -->
+<div class="flex flex-wrap items-center justify-center gap-5 w-full max-w-2xl">
+<a class="flex-1 min-w-[160px] bg-white text-black hover:bg-neutral-200 font-headline uppercase font-extrabold tracking-wider text-lg py-4 px-8 transition-colors flex items-center justify-center gap-2" href="tel:50202203" style="border-radius: 4px;">
+<span class="material-symbols-outlined text-xl" data-icon="call">call</span>
+<span>Appeler</span>
+</a>
+<a class="flex-1 min-w-[160px] bg-[#141517] text-white hover:bg-black font-headline uppercase font-extrabold tracking-wider text-lg py-4 px-8 transition-colors flex items-center justify-center gap-2" href="https://wa.me/21650202203" rel="noopener noreferrer" style="border-radius: 4px;" target="_blank">
+<span class="material-symbols-outlined text-xl" data-icon="chat">chat</span>
+<span>WhatsApp</span>
+</a>
+<a class="flex-1 min-w-[160px] border-2 border-white hover:bg-white hover:text-[#E3202B] text-white font-headline uppercase font-extrabold tracking-wider text-lg py-3.5 px-8 transition-all flex items-center justify-center gap-2" href="https://maps.google.com/?q=Top+Car+Mahdia" rel="noopener noreferrer" style="border-radius: 4px;" target="_blank">
+<span class="material-symbols-outlined text-xl" data-icon="directions">directions</span>
+<span>Itinéraire</span>
+</a>
+</div>
+</div>
+</section>
+<!-- =========================================================================
+       11. FOOTER (CLEAN DOCKED BOTTOM)
+       ========================================================================= -->
+<footer class="w-full bg-[#141517] py-12 px-12 border-t border-white/10 text-xs text-neutral-400">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Location -->
+<div class="flex flex-wrap items-center gap-6">
+<span class="font-headline italic font-extrabold text-2xl tracking-tighter text-[#E3202B]">TOP CAR</span>
+<span class="text-neutral-500">|</span>
+<span class="font-body text-neutral-400">Avenue Taher Sfar, Mahdia 5111</span>
+<span class="text-neutral-500">|</span>
+<a class="font-mono text-neutral-300 hover:text-white transition-colors" href="tel:50202203">50 202 203</a>
+</div>
+<!-- Links & Copyright -->
+<div class="flex items-center gap-6 font-mono text-[11px] uppercase tracking-wider">
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://facebook.com" rel="noopener noreferrer" target="_blank">Facebook</a>
+<span class="text-neutral-600">·</span>
+<span class="text-neutral-500">© Top Car Mahdia</span>
+</div>
+</div>
+</footer>
+</body></html>

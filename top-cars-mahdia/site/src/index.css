@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep: #141517;
+  --color-charcoal: #1E1F22;
+  --color-line: #2E3034;
+  --color-chalk: #F2F2F0;
+  --color-chalk-dim: #9AA0A6;
+  --color-signal: #E3202B;
+  --color-signal-dark: #C0161F;
+  /* signal lightened for small text on charcoal (AA contrast) */
+  --color-signal-text: #FF4D55;
+  --font-cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-deep font-sans text-chalk antialiased; }
+  :focus-visible { outline: 2px solid var(--color-signal); outline-offset: 3px; }
+  [hidden] { display: none !important; }
+  input[type='date'] { color-scheme: dark; }
+  select option { background: var(--color-charcoal); color: var(--color-chalk); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+  @media (max-width: 1023px) { body { padding-bottom: calc(52px + env(safe-area-inset-bottom)); } }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}

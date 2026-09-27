@@ -117,6 +117,35 @@
         "--strictPort"
       ],
       "port": 4176
+    },
+    {
+      "name": "top-cars-mahdia-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "top-cars-mahdia",
+        "-p",
+        "4183",
+        "-c-1",
+        "--silent"
+      ],
+      "port": 4183
+    },
+    {
+      "name": "top-cars-mahdia-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "top-cars-mahdia/site",
+        "run",
+        "preview",
+        "--",
+        "--port",
+        "4177",
+        "--strictPort"
+      ],
+      "port": 4177
     }
   ]
 }

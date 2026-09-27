@@ -1,0 +1,13 @@
+_scratch/*
+!_scratch/build_final.py
+!_scratch/prep_photos.py
+!_scratch/optimize_photos.py
+!_scratch/sheet.py
+!_scratch/render.sh
+!_scratch/render-site.sh
+!_scratch/receiver.py
+!_scratch/dl_maps.py
+!_scratch/dl_fb.py
+stitch/render*.html
+stitch/mobile-frame.html
+stitch/mobile-bar-frame.html
