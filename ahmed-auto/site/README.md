@@ -5,7 +5,7 @@ The design follows `../stitch/desktop-final.html` and the Stitch render `../stit
 
 It is an informational showroom: an enquiry is a WhatsApp message or a phone call. No sales, payments, accounts, reservations or backend.
 
-**Live:** https://ahmed-auto.vercel.app (Vercel project `ahmed-auto`, details added after the first deploy).
+**Live:** https://ahmed-auto.vercel.app (Vercel project `ahmed-auto`, `prj_Ok4T7acPfxpfspMAThZZMDkCTmcJ`, team `team_ODIYw5HwL1ZT6MkftJt0ZpW3`; first production deploy `dpl_7peDNYBiTMUTbvxJPZ1n1Jr3sRQJ` on 2026-09-28). `SITE_URL` is set in the Vercel production env; deploy from this folder with `npx vercel deploy --prod --yes`.
 
 ```bash
 npm install
