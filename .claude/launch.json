@@ -146,6 +146,35 @@
         "--strictPort"
       ],
       "port": 4177
+    },
+    {
+      "name": "ahmed-auto-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "ahmed-auto",
+        "-p",
+        "4184",
+        "-c-1",
+        "--silent"
+      ],
+      "port": 4184
+    },
+    {
+      "name": "ahmed-auto-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "ahmed-auto/site",
+        "run",
+        "preview",
+        "--",
+        "--port",
+        "4178",
+        "--strictPort"
+      ],
+      "port": 4178
     }
   ]
 }
