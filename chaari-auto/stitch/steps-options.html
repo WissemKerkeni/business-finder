@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440, initial-scale=1.0">
+  <title>Chaari Auto — Explorations « Service clé en main » (Options A, B, C)</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Geist:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0C0C0D',
+              surface: '#121214',
+              surfaceHover: '#18181B',
+              border: '#2A2A2E',
+              borderLight: '#38383E',
+              red: '#E70013',
+              redHover: '#C80010',
+              text: '#F4F4F2',
+              muted: '#8E8E93',
+            }
+          },
+          fontFamily: {
+            headline: ['"Archivo Narrow"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+            sans: ['"Geist"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0C0C0D;
+      color: #F4F4F2;
+      font-family: 'Geist', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Outlined number stroke effect */
+    .stroke-number {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 150px;
+      line-height: 0.85;
+      color: transparent;
+      -webkit-text-stroke: 1.5px #38383E;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+    .group:hover .stroke-number,
+    .stroke-number.active-red {
+      -webkit-text-stroke: 1.5px #E70013;
+      color: rgba(231, 0, 19, 0.04);
+      text-shadow: 0 0 24px rgba(231, 0, 19, 0.25);
+    }
+
+    .hairline-b {
+      border-bottom: 1px solid #2A2A2E;
+    }
+    .hairline-t {
+      border-top: 1px solid #2A2A2E;
+    }
+    .hairline-r {
+      border-right: 1px solid #2A2A2E;
+    }
+    .hairline-l {
+      border-left: 1px solid #2A2A2E;
+    }
+    .hairline-all {
+      border: 1px solid #2A2A2E;
+    }
+  </style>
+</head>
+<body class="bg-[#0C0C0D] text-[#F4F4F2] selection:bg-[#E70013] selection:text-white">
+
+  <!-- Main Canvas Container: 1440px fixed width desktop presentation -->
+  <main class="w-[1440px] mx-auto min-h-screen relative bg-[#0C0C0D]">
+
+    <!-- ========================================== -->
+    <!-- OPTION A: EDITORIAL NUMBERS                -->
+    <!-- ========================================== -->
+    <section class="relative w-full border-b border-[#2A2A2E] px-16 py-20">
+      
+      <!-- Top Tag -->
+      <div class="mb-12 flex items-center justify-between">
+        <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-xs font-bold tracking-widest text-[#E70013] bg-[#E70013]/10 border border-[#E70013]/30 uppercase">
+          <span class="w-1.5 h-1.5 bg-[#E70013] rounded-full inline-block"></span>
+          OPTION A
+        </span>
+      </div>
+
+      <!-- Main Layout: Narrow Left Column (Title & CTAs) + 4 Tall Columns on Right -->
+      <div class="grid grid-cols-12 gap-0 border-t border-b border-[#2A2A2E]">
+        
+        <!-- Left Sidebar: Title, Kicker & Buttons -->
+        <div class="col-span-4 pr-12 py-12 flex flex-col justify-between border-r border-[#2A2A2E]">
+          <div>
+            <!-- Kicker -->
+            <div class="font-mono text-xs font-bold uppercase tracking-widest text-[#E70013] mb-4">
+              Nos services incluent
+            </div>
+            <!-- Main Section Title -->
+            <h2 class="font-headline text-5xl font-extrabold uppercase tracking-tight leading-[1.05] text-[#F4F4F2] max-w-[340px]">
+              Service clé en main
+            </h2>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col gap-3 pt-12">
+            <a href="#" class="inline-flex items-center justify-center px-6 py-4 bg-[#E70013] hover:bg-[#C80010] text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors duration-150">
+              WhatsApp +49 177 8629077
+            </a>
+            <a href="#" class="inline-flex items-center justify-center px-6 py-4 bg-transparent hover:bg-white/5 text-[#F4F4F2] border border-[#2A2A2E] hover:border-[#8E8E93] font-mono text-xs font-bold uppercase tracking-wider transition-all duration-150">
+              Votre demande
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 4 Tall Columns Separated by Hairlines -->
+        <div class="col-span-8 grid grid-cols-4">
+          
+          <!-- Column 01 -->
+          <div class="group relative px-6 py-12 border-r border-[#2A2A2E] flex flex-col justify-between transition-colors duration-200 hover:bg-[#121214]">
+            <div class="flex flex-col">
+              <div class="stroke-number">01</div>
+              <div class="w-10 h-[2px] bg-[#E70013] mt-6 mb-8 group-hover:w-16 transition-all duration-200"></div>
+            </div>
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#F4F4F2] leading-tight">
+              Achat de votre voiture
+            </h3>
+          </div>
+
+          <!-- Column 02 (Previewed Active/Hover) -->
+          <div class="group relative px-6 py-12 border-r border-[#2A2A2E] flex flex-col justify-between bg-[#121214]">
+            <div class="flex flex-col">
+              <div class="stroke-number active-red">02</div>
+              <div class="w-16 h-[2px] bg-[#E70013] mt-6 mb-8"></div>
+            </div>
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#F4F4F2] leading-tight">
+              Préparation du dossier d'exportation
+            </h3>
+          </div>
+
+          <!-- Column 03 -->
+          <div class="group relative px-6 py-12 border-r border-[#2A2A2E] flex flex-col justify-between transition-colors duration-200 hover:bg-[#121214]">
+            <div class="flex flex-col">
+              <div class="stroke-number">03</div>
+              <div class="w-10 h-[2px] bg-[#E70013] mt-6 mb-8 group-hover:w-16 transition-all duration-200"></div>
+            </div>
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#F4F4F2] leading-tight">
+              Carte grise et assurance
+            </h3>
+          </div>
+
+          <!-- Column 04 -->
+          <div class="group relative px-6 py-12 flex flex-col justify-between transition-colors duration-200 hover:bg-[#121214]">
+            <div class="flex flex-col">
+              <div class="stroke-number">04</div>
+              <div class="w-10 h-[2px] bg-[#E70013] mt-6 mb-8 group-hover:w-16 transition-all duration-200"></div>
+            </div>
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#F4F4F2] leading-tight">
+              Gestion complète jusqu'à la livraison
+            </h3>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================== -->
+    <!-- OPTION B: ROUTE TIMELINE                   -->
+    <!-- ========================================== -->
+    <section class="relative w-full border-b border-[#2A2A2E] px-16 py-24">
+      
+      <!-- Top Tag -->
+      <div class="mb-14 flex items-center justify-between">
+        <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-xs font-bold tracking-widest text-[#E70013] bg-[#E70013]/10 border border-[#E70013]/30 uppercase">
+          <span class="w-1.5 h-1.5 bg-[#E70013] rounded-full inline-block"></span>
+          OPTION B
+        </span>
+      </div>
+
+      <!-- Centered Header -->
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="font-mono text-xs font-bold uppercase tracking-widest text-[#E70013] mb-3">
+          Nos services incluent
+        </div>
+        <h2 class="font-headline text-5xl font-extrabold uppercase tracking-tight leading-none text-[#F4F4F2]">
+          Service clé en main
+        </h2>
+      </div>
+
+      <!-- Route Timeline Container -->
+      <div class="relative w-full mb-20">
+        
+        <!-- Continuous Horizontal Road/Line Across the Page -->
+        <!-- Red segment (completed journey from Europe through step 02) + Grey segment -->
+        <div class="absolute top-[80px] left-[6%] right-[6%] h-[2px] bg-[#2A2A2E] z-0">
+          <div class="h-full bg-[#E70013] w-[45%]"></div>
+        </div>
+
+        <!-- Four Stops along the line -->
+        <div class="relative z-10 grid grid-cols-4 gap-8">
+          
+          <!-- Stop 01: Completed / Past -->
+          <div class="flex flex-col items-center text-center group">
+            <!-- Top Box: Big Mono Number + Outlined Line Icon -->
+            <div class="w-24 h-24 bg-[#0C0C0D] border-2 border-[#E70013] flex flex-col items-center justify-center p-3 mb-8 shadow-[0_0_20px_rgba(231,0,19,0.15)]">
+              <span class="font-mono text-sm font-bold text-[#E70013] leading-none mb-1.5">01</span>
+              <!-- Line Icon: Car -->
+              <svg class="w-8 h-8 text-[#E70013]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 17h8m-9-5l1.5-4.5a2 2 0 011.9-1.5h7.2a2 2 0 011.9 1.5L21 12m-18 0v5a1 1 0 001 1h1a2 2 0 004 0h8a2 2 0 004 0h1a1 1 0 001-1v-5m-18 0h18M6.5 17a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm11 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+              </svg>
+            </div>
+            
+            <!-- Stop Title Below Line -->
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#F4F4F2] max-w-[220px] leading-snug">
+              Achat de votre voiture
+            </h3>
+          </div>
+
+          <!-- Stop 02: Active Milestone -->
+          <div class="flex flex-col items-center text-center group">
+            <!-- Top Box: Big Mono Number + Outlined Line Icon -->
+            <div class="w-24 h-24 bg-[#121214] border-2 border-[#E70013] flex flex-col items-center justify-center p-3 mb-8 shadow-[0_0_24px_rgba(231,0,19,0.3)]">
+              <span class="font-mono text-sm font-bold text-[#E70013] leading-none mb-1.5">02</span>
+              <!-- Line Icon: Document / Export file -->
+              <svg class="w-8 h-8 text-[#E70013]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+
+            <!-- Stop Title Below Line -->
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#F4F4F2] max-w-[240px] leading-snug">
+              Préparation du dossier d'exportation
+            </h3>
+          </div>
+
+          <!-- Stop 03: Upcoming Milestone -->
+          <div class="flex flex-col items-center text-center group">
+            <!-- Top Box: Big Mono Number + Outlined Line Icon (Grey) -->
+            <div class="w-24 h-24 bg-[#0C0C0D] border border-[#2A2A2E] group-hover:border-[#8E8E93] flex flex-col items-center justify-center p-3 mb-8 transition-colors duration-200">
+              <span class="font-mono text-sm font-bold text-[#8E8E93] leading-none mb-1.5">03</span>
+              <!-- Line Icon: Card + Shield (Registration & Insurance) -->
+              <svg class="w-8 h-8 text-[#8E8E93] group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+
+            <!-- Stop Title Below Line -->
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#8E8E93] group-hover:text-[#F4F4F2] max-w-[220px] leading-snug transition-colors duration-200">
+              Carte grise et assurance
+            </h3>
+          </div>
+
+          <!-- Stop 04: Upcoming Delivery Milestone -->
+          <div class="flex flex-col items-center text-center group">
+            <!-- Top Box: Big Mono Number + Outlined Line Icon (Grey) -->
+            <div class="w-24 h-24 bg-[#0C0C0D] border border-[#2A2A2E] group-hover:border-[#8E8E93] flex flex-col items-center justify-center p-3 mb-8 transition-colors duration-200">
+              <span class="font-mono text-sm font-bold text-[#8E8E93] leading-none mb-1.5">04</span>
+              <!-- Line Icon: Key / Handover -->
+              <svg class="w-8 h-8 text-[#8E8E93] group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+            </div>
+
+            <!-- Stop Title Below Line -->
+            <h3 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#8E8E93] group-hover:text-[#F4F4F2] max-w-[250px] leading-snug transition-colors duration-200">
+              Gestion complète jusqu'à la livraison
+            </h3>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Buttons Centred Below Timeline -->
+      <div class="flex items-center justify-center gap-4">
+        <a href="#" class="px-8 py-4 bg-[#E70013] hover:bg-[#C80010] text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors duration-150">
+          WhatsApp +49 177 8629077
+        </a>
+        <a href="#" class="px-8 py-4 bg-transparent hover:bg-white/5 text-[#F4F4F2] border border-[#2A2A2E] hover:border-[#8E8E93] font-mono text-xs font-bold uppercase tracking-wider transition-all duration-150">
+          Votre demande
+        </a>
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================== -->
+    <!-- OPTION C: STACKED ROWS                     -->
+    <!-- ========================================== -->
+    <section class="relative w-full px-16 py-24">
+      
+      <!-- Top Tag -->
+      <div class="mb-14 flex items-center justify-between">
+        <span class="inline-flex items-center gap-2 px-3 py-1 font-mono text-xs font-bold tracking-widest text-[#E70013] bg-[#E70013]/10 border border-[#E70013]/30 uppercase">
+          <span class="w-1.5 h-1.5 bg-[#E70013] rounded-full inline-block"></span>
+          OPTION C
+        </span>
+      </div>
+
+      <!-- Grid: Left Sticky Column + Right 4 Stacked Rows -->
+      <div class="grid grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Title, Kicker and Buttons -->
+        <div class="col-span-4 sticky top-12 pr-6">
+          <div class="font-mono text-xs font-bold uppercase tracking-widest text-[#E70013] mb-4">
+            Nos services incluent
+          </div>
+          <h2 class="font-headline text-5xl font-extrabold uppercase tracking-tight leading-[1.05] text-[#F4F4F2] mb-12">
+            Service clé en main
+          </h2>
+
+          <div class="flex flex-col gap-3 max-w-[280px]">
+            <a href="#" class="inline-flex items-center justify-center px-6 py-4 bg-[#E70013] hover:bg-[#C80010] text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors duration-150">
+              WhatsApp +49 177 8629077
+            </a>
+            <a href="#" class="inline-flex items-center justify-center px-6 py-4 bg-transparent hover:bg-white/5 text-[#F4F4F2] border border-[#2A2A2E] hover:border-[#8E8E93] font-mono text-xs font-bold uppercase tracking-wider transition-all duration-150">
+              Votre demande
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: 4 Full-Width Rows Separated by Hairlines -->
+        <div class="col-span-8 border-t border-b border-[#2A2A2E]">
+          
+          <!-- Row 01 -->
+          <div class="group flex items-center justify-between px-8 py-10 border-b border-[#2A2A2E] transition-all duration-150 hover:bg-[#18181B] hover:border-l-4 hover:border-l-[#E70013]">
+            <!-- Big Mono Number on Left -->
+            <div class="w-24 shrink-0 font-mono text-3xl font-bold text-[#8E8E93] group-hover:text-[#E70013] transition-colors">
+              01
+            </div>
+
+            <!-- Step Title in Very Large Uppercase in Middle -->
+            <h3 class="font-headline text-3xl font-bold uppercase tracking-tight text-[#F4F4F2] flex-grow pr-8 leading-tight">
+              Achat de votre voiture
+            </h3>
+
+            <!-- Line Icon on Right -->
+            <div class="shrink-0 text-[#8E8E93] group-hover:text-[#F4F4F2] transition-colors">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 17h8m-9-5l1.5-4.5a2 2 0 011.9-1.5h7.2a2 2 0 011.9 1.5L21 12m-18 0v5a1 1 0 001 1h1a2 2 0 004 0h8a2 2 0 004 0h1a1 1 0 001-1v-5m-18 0h18M6.5 17a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm11 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Row 02 (Hover / Active State Shown by Default) -->
+          <div class="group flex items-center justify-between px-8 py-10 border-b border-[#2A2A2E] bg-[#18181B] border-l-4 border-l-[#E70013] transition-all duration-150">
+            <!-- Big Mono Number on Left -->
+            <div class="w-24 shrink-0 font-mono text-3xl font-bold text-[#E70013]">
+              02
+            </div>
+
+            <!-- Step Title in Very Large Uppercase in Middle -->
+            <h3 class="font-headline text-3xl font-bold uppercase tracking-tight text-[#F4F4F2] flex-grow pr-8 leading-tight">
+              Préparation du dossier d'exportation
+            </h3>
+
+            <!-- Line Icon on Right -->
+            <div class="shrink-0 text-[#E70013]">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Row 03 -->
+          <div class="group flex items-center justify-between px-8 py-10 border-b border-[#2A2A2E] transition-all duration-150 hover:bg-[#18181B] hover:border-l-4 hover:border-l-[#E70013]">
+            <!-- Big Mono Number on Left -->
+            <div class="w-24 shrink-0 font-mono text-3xl font-bold text-[#8E8E93] group-hover:text-[#E70013] transition-colors">
+              03
+            </div>
+
+            <!-- Step Title in Very Large Uppercase in Middle -->
+            <h3 class="font-headline text-3xl font-bold uppercase tracking-tight text-[#F4F4F2] flex-grow pr-8 leading-tight">
+              Carte grise et assurance
+            </h3>
+
+            <!-- Line Icon on Right -->
+            <div class="shrink-0 text-[#8E8E93] group-hover:text-[#F4F4F2] transition-colors">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Row 04 -->
+          <div class="group flex items-center justify-between px-8 py-10 transition-all duration-150 hover:bg-[#18181B] hover:border-l-4 hover:border-l-[#E70013]">
+            <!-- Big Mono Number on Left -->
+            <div class="w-24 shrink-0 font-mono text-3xl font-bold text-[#8E8E93] group-hover:text-[#E70013] transition-colors">
+              04
+            </div>
+
+            <!-- Step Title in Very Large Uppercase in Middle -->
+            <h3 class="font-headline text-3xl font-bold uppercase tracking-tight text-[#F4F4F2] flex-grow pr-8 leading-tight">
+              Gestion complète jusqu'à la livraison
+            </h3>
+
+            <!-- Line Icon on Right -->
+            <div class="shrink-0 text-[#8E8E93] group-hover:text-[#F4F4F2] transition-colors">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
