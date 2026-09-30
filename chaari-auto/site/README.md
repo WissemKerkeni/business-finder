@@ -5,7 +5,7 @@ The design follows `../stitch/desktop-final.html` and the Stitch screen `../stit
 
 It is an informational site: a request is a WhatsApp message or a phone call. No payments, accounts, quote calculator or backend. The request form only builds a pre-filled `wa.me` message.
 
-**Live:** https://chaari-auto.vercel.app (deployment details are added after the first deploy).
+**Live:** https://chaari-auto.vercel.app (Vercel project `chaari-auto`, `prj_cj7fnXN6ezbkYzg7DyGyR39BhPPA`, team `team_ODIYw5HwL1ZT6MkftJt0ZpW3`; first production deploy `dpl_BbSJ71iogepXBsCQzUs4cBtV342e` on 2026-09-30). `SITE_URL` is set in the Vercel production env. Deploy from this folder with `npx vercel deploy --prod --yes`; `.vercelignore` keeps `dist/` out of the upload (Vercel builds from source).
 
 ```bash
 npm install
