@@ -175,6 +175,35 @@
         "--strictPort"
       ],
       "port": 4178
+    },
+    {
+      "name": "chaari-auto-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "chaari-auto",
+        "-p",
+        "4185",
+        "-c-1",
+        "--silent"
+      ],
+      "port": 4185
+    },
+    {
+      "name": "chaari-auto-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "chaari-auto/site",
+        "run",
+        "preview",
+        "--",
+        "--port",
+        "4179",
+        "--strictPort"
+      ],
+      "port": 4179
     }
   ]
 }

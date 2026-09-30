@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chaari Auto — Export Automobile Europe → Tunisie</title>
+<!-- Fonts: Archivo Narrow, Geist, Space Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,600;0,700;1,700&amp;family=Geist:wght@400;500;600&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            base: "#0C0C0D",
+            raised: "#151517",
+            hairline: "#2A2A2E",
+            textPrimary: "#F4F4F2",
+            textSecondary: "#A3A3A8",
+            plateWhite: "#F7F7F5",
+            accentRed: "#E70013"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          fontFamily: {
+            headline: ["'Archivo Narrow'", "sans-serif"],
+            display: ["'Archivo Narrow'", "sans-serif"],
+            body: ["'Geist'", "sans-serif"],
+            mono: ["'Space Mono'", "monospace"],
+            label: ["'Space Mono'", "monospace"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0C0C0D;
+      color: #F4F4F2;
+      font-family: 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      selection-background-color: #E70013;
+      selection-color: #FFFFFF;
+    }
+    ::selection {
+      background: #E70013;
+      color: #FFFFFF;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Tabular figures for specs & steps */
+    .font-mono {
+      font-feature-settings: "tnum";
+    }
+  </style>
+</head>
+<body class="bg-[#0C0C0D] text-[#F4F4F2] antialiased selection:bg-[#E70013] selection:text-white">
+<!-- 1. HEADER (Shared Component TopNavBar) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0C0C0D]/85 backdrop-blur-md border-b border-[#2A2A2E]">
+<div class="max-w-[1320px] mx-auto px-6 h-20 w-full flex justify-between items-center">
+<!-- German Plate Wordmark -->
+<a class="inline-flex items-center px-3 py-1 bg-[#F7F7F5] text-[#0C0C0D] border border-[#0C0C0D] font-mono font-bold tracking-widest text-sm rounded-[3px] shadow-sm select-none" href="#">
+        CHAARI AUTO
+      </a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-8 text-sm font-label uppercase tracking-widest">
+<a class="text-[#A3A3A8] hover:text-[#E70013] transition-colors duration-150 pb-1" href="#service">Le service</a>
+<a class="text-[#A3A3A8] hover:text-[#E70013] transition-colors duration-150 pb-1" href="#demande">Votre demande</a>
+<a class="text-[#E70013] font-bold border-b border-[#E70013] pb-1" href="#voitures">Export pour la Tunisie</a>
+<a class="text-[#A3A3A8] hover:text-[#E70013] transition-colors duration-150 pb-1" href="#videos">Vidéos</a>
+<a class="text-[#A3A3A8] hover:text-[#E70013] transition-colors duration-150 pb-1" href="#avis">Avis</a>
+<a class="text-[#A3A3A8] hover:text-[#E70013] transition-colors duration-150 pb-1" href="#contact">Contact</a>
+</nav>
+<!-- Trailing Action: WhatsApp -->
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#E70013] text-[#F7F7F5] hover:bg-[#c90010] active:opacity-80 font-mono text-xs uppercase tracking-wider font-bold rounded-[3px] transition-all" href="https://wa.me/491778629077" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+</header>
+<main>
+<!-- 2. HERO -->
+<section class="relative min-h-screen flex flex-col justify-end pt-32 pb-16 overflow-hidden border-b border-[#2A2A2E]">
+<!-- Background Image with Left Editorial Scrim -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center filter brightness-60" data-alt="Cinematic luxury black Mercedes GLE SUV parked inside a dark moody studio warehouse in Germany, subtle rim lighting accentuating aerodynamic metal curves, dramatic shadows and pure deep dark tones, ultra crisp automotive editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCflxBmNH_xl7TiKHj2B7gaEXEhgT48UE6jQd3-deEsdjpq7ZXbuBTQkA0sghpf1M9auFQ5jrQFV_aZsyd5WksvMmiAy98KndDxy35VGN9obX6ZUyM3yw1_HdhuJfETc-bMfga9Q-F_IaqgnVZHv1Ri00ukYGT39qwnfG3nPlG0bOA3uPdc52Xyh3tTSJrekip0xXId_whFkVza_2SO9Cm38kEzY973B91xgmoQjvT7wl-2DbsekocN4DFZ31VtrIcFina9f-eBxYbF"/>
+<!-- Scrim -->
+<div class="absolute inset-0 bg-gradient-to-r from-[#0C0C0D] via-[#0C0C0D]/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0C0C0D] via-transparent to-[#0C0C0D]/40"></div>
+</div>
+<div class="relative z-10 max-w-[1320px] mx-auto px-6 w-full">
+<!-- Location Label -->
+<div class="mb-6 inline-block font-mono text-xs uppercase tracking-[0.16em] text-[#A3A3A8] bg-[#151517]/80 px-3 py-1 border border-[#2A2A2E]">
+          BIETIGHEIM-BISSINGEN (ALLEMAGNE) → TUNISIE
+        </div>
+<!-- Archivo Narrow Headline -->
+<h1 class="font-headline font-bold uppercase tracking-[-0.02em] text-[#F4F4F2] text-5xl md:text-7xl lg:text-[88px] leading-[0.95] max-w-4xl mb-8">
+          Spécialiste de l'exportation de voitures d'Europe vers la Tunisie
+        </h1>
+<!-- Editorial Description Paragraph -->
+<p class="font-body text-[#F4F4F2] text-lg md:text-xl max-w-2xl font-normal leading-relaxed mb-10">
+          Tunisiens résidant à l'étranger, nous vous proposons un service clé en main pour acheter votre voiture de rêve sans aucune difficulté !
+        </p>
+<!-- CTA Row -->
+<div class="flex flex-wrap items-center gap-4 mb-20">
+<a class="inline-flex items-center gap-3 px-6 py-4 bg-[#E70013] text-white hover:bg-[#c90010] font-mono text-sm uppercase tracking-wider font-bold rounded-[3px] transition-colors" href="https://wa.me/491778629077" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span>WhatsApp +49 177 8629077</span>
+</a>
+<a class="inline-flex items-center px-6 py-4 border border-[#F4F4F2] text-[#F4F4F2] hover:bg-[#F4F4F2] hover:text-[#0C0C0D] font-mono text-sm uppercase tracking-wider rounded-[3px] transition-colors" href="#service">
+            Comment ça marche
+          </a>
+</div>
+<!-- Trust Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 border-t border-[#2A2A2E] pt-6 font-mono text-xs uppercase tracking-[0.08em] text-[#A3A3A8]">
+<div class="py-2 md:py-0 md:pr-6 flex items-center gap-2">
+<span class="text-[#E70013]">★</span>
+<span class="text-[#F4F4F2] font-bold">5,0</span>
+<span>— 89 avis Google</span>
+</div>
+<div class="py-2 md:py-0 md:px-6 md:border-l border-[#2A2A2E] flex items-center">
+            Lindenstraße 16, Bietigheim-Bissingen
+          </div>
+<div class="py-2 md:py-0 md:pl-6 md:border-l border-[#2A2A2E] flex items-center">
+            Lun–Ven 9h–18h · Sam 9h–14h
+          </div>
+</div>
+</div>
+</section>
+<!-- 3. LE SERVICE, ÉTAPE PAR ÉTAPE -->
+<section class="py-28 border-b border-[#2A2A2E] bg-[#0C0C0D]" id="service">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="mb-16">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Nos services incluent</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2]">
+            Service clé en main
+          </h2>
+</div>
+<!-- Four steps on ONE horizontal line connected by hairline -->
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-0 pt-6">
+<!-- Step 01 -->
+<div class="relative md:pr-8 md:border-r border-[#2A2A2E]">
+<div class="flex items-baseline gap-2 mb-3">
+<span class="font-mono text-3xl md:text-4xl font-bold text-[#F4F4F2]">01</span>
+<div class="h-[2px] w-6 bg-[#E70013]"></div>
+</div>
+<h3 class="font-headline font-bold uppercase text-lg text-[#F4F4F2] tracking-normal">
+              01 — Achat de votre voiture
+            </h3>
+</div>
+<!-- Step 02 -->
+<div class="relative md:px-8 md:border-r border-[#2A2A2E]">
+<div class="flex items-baseline gap-2 mb-3">
+<span class="font-mono text-3xl md:text-4xl font-bold text-[#F4F4F2]">02</span>
+<div class="h-[2px] w-6 bg-[#E70013]"></div>
+</div>
+<h3 class="font-headline font-bold uppercase text-lg text-[#F4F4F2] tracking-normal">
+              02 — Préparation du dossier d'exportation
+            </h3>
+</div>
+<!-- Step 03 -->
+<div class="relative md:px-8 md:border-r border-[#2A2A2E]">
+<div class="flex items-baseline gap-2 mb-3">
+<span class="font-mono text-3xl md:text-4xl font-bold text-[#F4F4F2]">03</span>
+<div class="h-[2px] w-6 bg-[#E70013]"></div>
+</div>
+<h3 class="font-headline font-bold uppercase text-lg text-[#F4F4F2] tracking-normal">
+              03 — Carte grise et assurance
+            </h3>
+</div>
+<!-- Step 04 -->
+<div class="relative md:pl-8">
+<div class="flex items-baseline gap-2 mb-3">
+<span class="font-mono text-3xl md:text-4xl font-bold text-[#F4F4F2]">04</span>
+<div class="h-[2px] w-6 bg-[#E70013]"></div>
+</div>
+<h3 class="font-headline font-bold uppercase text-lg text-[#F4F4F2] tracking-normal">
+              04 — Gestion complète jusqu'à la livraison
+            </h3>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. POUR QUI -->
+<section class="border-b border-[#2A2A2E] bg-[#0C0C0D]">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[640px]">
+<!-- Left Column -->
+<div class="lg:col-span-6 py-20 lg:pr-16 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-[#2A2A2E]">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-4">Pour qui</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2] mb-8 leading-[1.05]">
+              Pour les Tunisiens résidant à l'étranger
+            </h2>
+<p class="font-body text-[#A3A3A8] text-lg leading-relaxed max-w-xl">
+              Export de voitures de l'Europe vers la Tunisie et la France : Chaari Auto s'occupe de l'achat de votre voiture, du dossier d'exportation, de la carte grise et de l'assurance.
+            </p>
+</div>
+<!-- Right Column: Tall Photo Mercedes GLE 53 AMG Front View with CHAARI AUTO plate -->
+<div class="lg:col-span-6 relative overflow-hidden bg-[#151517] min-h-[480px]">
+<img class="w-full h-full object-cover object-center" data-alt="Dramatic studio front view portrait of a luxury black Mercedes GLE 53 AMG luxury performance SUV, mounted with a sleek white front number plate reading CHAARI AUTO, sharp studio rim highlights cutting through atmospheric deep black automotive shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGT9-b0-oBbfsu0l5K3AQndH5EhWQF-IEsUX7QrIAo621SdPoYRqfpukL0ag3Bblm-n6oKJt1MA87rwHPK7YiMyXwts8LwAQ9xPb7Va8QVvpCNX0NcmptQl1O2eA-GSwlmiM_1MafYeGJsxCfIrdOw1-SyJXAujY6OCzn3SVqkNI6jZMlGI5zuCr36eB4f8zhSzubUtzbAHJ9d-LzrSJwZZqP1IhgHtXRVc_TKNYl8ALFw3gOi_tE-oHU0v545z8CIyR6YxMadrej"/>
+<div class="absolute bottom-6 left-6 inline-flex items-center px-3 py-1 bg-[#F7F7F5] text-[#0C0C0D] border border-[#0C0C0D] font-mono font-bold tracking-widest text-xs rounded-[3px] select-none">
+              CHAARI AUTO
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. VOTRE DEMANDE -->
+<section class="py-24 border-b border-[#2A2A2E] bg-[#0C0C0D]" id="demande">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="max-w-3xl mb-12">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Formulaire direct</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2] mb-4">
+            Votre demande
+          </h2>
+<p class="font-body text-[#A3A3A8] text-base leading-relaxed">
+            Décrivez la voiture que vous cherchez : le bouton ouvre WhatsApp avec votre message pré-rempli. Rien n'est enregistré sur ce site.
+          </p>
+</div>
+<form class="space-y-6 max-w-4xl" onsubmit="handleFormWhatsApp(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Marque et modèle souhaités -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Marque et modèle souhaités *
+              </label>
+<input class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] placeholder-[#A3A3A8]/40 px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors" id="form-model" placeholder="ex. Mercedes GLC, VW Tiguan… ou ouvert aux suggestions" required="" type="text"/>
+</div>
+<!-- Année (de – à) -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Année (de – à)
+              </label>
+<input class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] placeholder-[#A3A3A8]/40 px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors" id="form-year" placeholder="ex. 2022 – 2025" type="text"/>
+</div>
+<!-- Carburant -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Carburant
+              </label>
+<select class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors appearance-none" id="form-fuel">
+<option value="Peu importe">Peu importe</option>
+<option value="Essence">Essence</option>
+<option value="Diesel">Diesel</option>
+<option value="Hybride">Hybride</option>
+<option value="Électrique">Électrique</option>
+</select>
+</div>
+<!-- Boîte -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Boîte
+              </label>
+<select class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors appearance-none" id="form-gearbox">
+<option value="Peu importe">Peu importe</option>
+<option value="Automatique">Automatique</option>
+<option value="Manuelle">Manuelle</option>
+</select>
+</div>
+<!-- Budget -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Budget
+              </label>
+<input class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] placeholder-[#A3A3A8]/40 px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors" id="form-budget" placeholder="ex. 30 000 €" type="text"/>
+</div>
+<!-- Pays de résidence -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Pays de résidence *
+              </label>
+<input class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] placeholder-[#A3A3A8]/40 px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors" id="form-country" placeholder="ex. France, Allemagne, Italie…" required="" type="text"/>
+</div>
+<!-- Livraison à (ville) -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Livraison à (ville)
+              </label>
+<input class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] placeholder-[#A3A3A8]/40 px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors" id="form-delivery" placeholder="ex. Tunis, Sfax, Sousse…" type="text"/>
+</div>
+<!-- Votre nom -->
+<div>
+<label class="block font-mono text-xs uppercase tracking-wider text-[#A3A3A8] mb-2">
+                Votre nom *
+              </label>
+<input class="w-full bg-[#151517] border border-[#2A2A2E] text-[#F4F4F2] placeholder-[#A3A3A8]/40 px-4 py-3.5 rounded-[3px] text-sm focus:border-[#E70013] focus:ring-0 focus:outline-none transition-colors" id="form-name" placeholder="ex. Karim Chaari" required="" type="text"/>
+</div>
+</div>
+<div class="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<button class="inline-flex items-center gap-3 px-8 py-4 bg-[#E70013] text-white hover:bg-[#c90010] font-mono text-sm uppercase tracking-wider font-bold rounded-[3px] transition-colors" type="submit">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span>Envoyer sur WhatsApp</span>
+</button>
+<span class="font-mono text-xs text-[#A3A3A8] uppercase tracking-wider">* obligatoire</span>
+</div>
+</form>
+</div>
+</section>
+<!-- 6. EXPORT POUR LA TUNISIE -->
+<section class="py-24 border-b border-[#2A2A2E] bg-[#0C0C0D]" id="voitures">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="mb-14">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Publications récentes</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2] mb-3">
+            Export pour la Tunisie
+          </h2>
+<p class="font-body text-[#A3A3A8] text-base">
+            Quelques voitures publiées par Chaari Auto sur Instagram et Facebook.
+          </p>
+</div>
+<!-- Gallery Grid (7 items, luxury automotive editorial) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+<!-- Item 1 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Side profile photograph of a jet black Mercedes C AMG 2024 luxury executive saloon parked on dark polished tarmac under precise German automotive studio ceiling spotlights with CHAARI AUTO plate visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL7tz5OsXv0YFH3j2xkqnQQ-gp3-nZSusMovPoC8SlE1ubajVo4ZeJ33w2Yd4ohnVu7mYUY9ih24f9NcohwrtOds0BIMVfwqYVYbD7HbbwxYIXtpHSBkryl60Y8O5jY2LdkB8X3B2WaWLZGYWEN29cA-tLtBwJ7VgB5dkDYxCR9XCuJ0ObwQZyR0BgJmsexV40sibS1BpwG4Fz_OlTqBEooYxyvKeAg6kCsku0NtXBsjNYFD8PBZ0XGWaOBDT5gn4DwSDHgQrDECUo"/>
+<div class="absolute top-3 left-3 bg-[#E70013] text-white text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-[2px] font-bold">
+                Voiture d'un client
+              </div>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 19/02/2026</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              Mercedes C AMG · 2024
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+<!-- Item 2 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Three-quarter angle portrait photograph of a black Mercedes GLE 53 AMG performance SUV 2026 model, aggressive front grille, darkened glass and clean monochromatic ambient studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDan8-mus1sKgpX8XchGDZSr5As-sPCt91qgcdTfN9fUVwCHRSZKFeaEPa8MvQRrJIzUMmJ9HOu2PzbMv2t5egTmyCNUFwn6TDzBuT5WXRO1NTUE0Bpi9q2DOQr7SJekbookCPAWwlU9g7z36vh0dRt_6Kvi46YoBLeRjcfL3C-FZmlj0FV41GbHjqtZPlgj1vhz1IR5ynJbmh57lNXAX3lSuFb4M26bUDFx3XjLF_8fqR4NiLLH6rhL_ogAFfKM7qwGeViW4KlsHqC"/>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 12/02/2026</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              Mercedes GLE 53 AMG · 2026
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+<!-- Item 3 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Front three-quarter photograph of an obsidian silver Mercedes GLB AMG 2024 compact luxury crossover SUV parked in an architectural minimalist dark hangar with cold white horizontal tube lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoLBTpR7RleRT9fdQxeM5JxtGijipFW15U0BF1045maYT6qhe10ls6IRP_0KNV2MrQZLv6Xf-pfF9FilDnNwOU6QOnBt6tBXoiaAbu3lPiSqc6qmN1cm8hHo58E5OtA_tPPxxqmnMrOvtErJFVH0BDSoTDdHf-gbsu0SIsBe8GvUZJIRV3QPQcjamL9lg1LuoLu0i7sf1Y-nA9yv-FvWbkbM3N5A--A0P48AyNJEoRtCpqUaxbrWnq0aKjSUrOSsKczgqqpUJu8ThT"/>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 30/01/2026</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              Mercedes GLB AMG · 2024
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+<!-- Item 4 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Side profile studio photography of a silver Volkswagen Tiguan 2022 SUV resting on clean dark industrial concrete, subtle reflections on the sculpted metallic bodywork, precision automotive styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkpwdTMzBhLhwE12UNW4Cjhfsuh1s6BDqAs-q7V3Y6g1-z8MxKe_p4KfxMXBIcN3GtvPOCH8FReJ-qg5HxjemZRFdwrUwKQadFsEP7IO-VbVYk2kWFuj3Wx650LM6iaK_3riet308lh3WO2SMuZ_lWdVEvFil_v9wUYNDwcKcb6UJTmRIsE523QGdlU_cF8Pty8Vve5V4X1QT7Y3F5wwmqj7XH0oZSm5WCPjwJ_cVUxKoq8Pk3DHU3BYmlEC08FpLYTVHAgdhZHknS"/>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 20/01/2026</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              VW Tiguan · 2022
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+<!-- Item 5 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Atmospheric front angle studio shot of a deep black Toyota RAV 4 2021 SUV equipped with CHAARI AUTO number plate, high contrast low key lighting in an automotive gallery setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCYqELvLORbOt_93ygMkqN3uh3Wr-yGBluayIVr2rAZh1imomlDMjMDusp09wBYVCdffWrk_OjNFDVRo0T6dTGjMQ8IcJBEELciLDjgzpqnOfZbr2yUUfnSWwZmF4aZGdi-QddqufpJMVrdw8d9i0LQn7-K4H8Vqp2-vUusLbede5cXG3Uqn8hG5tQ2zcGqELINDz998yuW0zzrOxbk-5H48BDjBMbbeqo0GePpa6MWj8RD5IE4Rw2MDIuwcb57c2-yuclEngVvBpC"/>
+<div class="absolute top-3 left-3 bg-[#E70013] text-white text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-[2px] font-bold">
+                Voiture d'un client
+              </div>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 10/01/2026</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              Toyota RAV 4 · 2021
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+<!-- Item 6 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Rear three quarter perspective of a black Audi Q3 Sportback S-line 2023 coupe crossover, crisp LED tail lamps glow softly against a deep black studio infinity wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDLD3JFEWqxeJrMF4WjSKZG9ggnUtc9y2-E41LYtxxVD-RJHC66S9W6qmKb2fjeO_WWwrR5SIKzzlAdAkYhr6PxqzPlE7t7uoQ4Vb5TRZIK9Ee0Egv8oLYLPCotBqGeX69CFDuFHVEArsog8lJdSYHXc55ioILDXdeU0HI4TxPfx3Ky42qlq7lLBzuZhWURUHB4peISprPvqH6qcKTx4AVhN_zUufRmaBvLd4gaMMs5QNY8mwMD1RjPzgnZirOLrHV7qQ5ok94bEoM"/>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 24/12/2025</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              Audi Q3 Sportback S-line · 2023
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+<!-- Item 7 -->
+<article class="group pb-6 border-b border-[#2A2A2E]">
+<div class="relative aspect-[16/10] overflow-hidden bg-[#151517] mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Matte dark grey Mercedes GLC 220 Coupe AMG 2021 model captured under sharp angled automotive rim lighting, smooth matte paint texture standing out against deep obsidian background shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxfHY1zQ9xhVExwm0y92bD8igKizBq1uZwalGD9Lcw-tMJ8h-IryGWuDYVjge3kz5BjC-g3RFUgFKaDS0ubUu7q1KzWsDnrsudjnJrdPKVW8otFSBYUQLWiqyNnYhgbGiFJSdfir4TLpcAWgQ6xAf3ZlsS3EL6oju1ZfDkwvkJN6EQW5bcQGBP559wky5QXy4-qKe1PXTdFnzhzP0EYuJojKg6hA5MO8LTyX1h6t0zI3UB4H-jxvuJBii-CEg6E2mpmY6uSayXgBgt"/>
+</div>
+<div class="flex items-center justify-between text-xs font-mono uppercase text-[#A3A3A8] mb-2">
+<span>Publié le 20/12/2025</span>
+</div>
+<h3 class="font-headline font-bold uppercase text-xl text-[#F4F4F2] mb-3">
+              Mercedes GLC 220 Coupé AMG · 2021
+            </h3>
+<a class="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="#car-detail">
+<span>Voir les photos</span>
+<span>→</span>
+</a>
+</article>
+</div>
+</div>
+</section>
+<!-- 7. CAR DETAIL PREVIEW (Modal / Spec Panel Section) -->
+<section class="py-20 border-b border-[#2A2A2E] bg-[#151517]" id="car-detail">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="border border-[#2A2A2E] bg-[#0C0C0D] p-6 lg:p-10 relative">
+<!-- Close button -->
+<a aria-label="Fermer" class="absolute top-6 right-6 text-2xl text-[#A3A3A8] hover:text-[#F4F4F2] transition-colors font-mono" href="#voitures">
+            ×
+          </a>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Left: Carousel / Photos -->
+<div class="lg:col-span-7">
+<div class="relative aspect-[16/10] bg-[#151517] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed photographic interior and exterior close-up of a Mercedes GLE 53 AMG 2026, showcasing carbon trim, AMG steering wheel, and pristine obsidian paint under museum quality automotive lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVbRdQxq_P0kQb8x_QCwLhSHc77dOyJ7IFF7dYXr-Ek0Wc2_dYz8-30fF0BDPc5AS1vNYUk3OYLFQt5ewW6nOans3_vPy21MQ26c7wQWeIjpqjeoEn2zlAxt4kHj8CQUPyzCDaY-wTPF6BjauBdByrLnreRjfDmiC5d5TlN0_86ztTmpwkU6TFta9sxjYIVY8VIohZTp4jg2wonwDw1o0tkjiwlpqf6JYtJnHVPcATTaLO-QPdBiESis8DYqVYAcj0qsgI9TBn55rt"/>
+<!-- Plate sticker -->
+<div class="absolute top-4 left-4 inline-flex items-center px-2 py-0.5 bg-[#F7F7F5] text-[#0C0C0D] border border-[#0C0C0D] font-mono font-bold tracking-widest text-xs rounded-[2px]">
+                  CHAARI AUTO
+                </div>
+</div>
+<!-- Controls bar -->
+<div class="flex items-center justify-between border-t border-[#2A2A2E] pt-4 mt-2">
+<div class="flex items-center space-x-2">
+<button aria-label="Image précédente" class="w-9 h-9 border border-[#2A2A2E] flex items-center justify-center text-[#A3A3A8] hover:text-[#F4F4F2] hover:border-[#F4F4F2] transition-colors" type="button">
+                    &lt;
+                  </button>
+<button aria-label="Image suivante" class="w-9 h-9 border border-[#2A2A2E] flex items-center justify-center text-[#A3A3A8] hover:text-[#F4F4F2] hover:border-[#F4F4F2] transition-colors" type="button">
+                    &gt;
+                  </button>
+</div>
+<div class="font-mono text-xs uppercase tracking-widest text-[#A3A3A8]">
+                  1 / 6
+                </div>
+</div>
+</div>
+<!-- Right: Spec Table -->
+<div class="lg:col-span-5">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Détail du véhicule</span>
+<h3 class="font-headline font-bold uppercase text-2xl lg:text-4xl text-[#F4F4F2] mb-6">
+                Mercedes GLE 53 AMG · 2026
+              </h3>
+<!-- Spec Table with Hairlines -->
+<div class="border-t border-[#2A2A2E] font-mono text-xs uppercase tracking-wider mb-8 divide-y divide-[#2A2A2E]">
+<div class="py-3 flex justify-between">
+<span class="text-[#A3A3A8]">Modèle</span>
+<span class="text-[#F4F4F2] font-bold">Mercedes GLE 53 AMG</span>
+</div>
+<div class="py-3 flex justify-between">
+<span class="text-[#A3A3A8]">Année</span>
+<span class="text-[#F4F4F2] font-bold">2026</span>
+</div>
+<div class="py-3 flex justify-between">
+<span class="text-[#A3A3A8]">Kilométrage</span>
+<span class="text-[#F4F4F2] font-bold">Zéro kilométrage</span>
+</div>
+<div class="py-3 flex justify-between">
+<span class="text-[#A3A3A8]">Équipement</span>
+<span class="text-[#F4F4F2] font-bold">Toutes options</span>
+</div>
+<div class="py-3 flex justify-between">
+<span class="text-[#A3A3A8]">Publié le</span>
+<span class="text-[#F4F4F2] font-bold">12/02/2026</span>
+</div>
+<div class="py-3 flex justify-between">
+<span class="text-[#A3A3A8]">Source</span>
+<span class="text-[#F4F4F2] font-bold">Instagram</span>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-4">
+<a class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#E70013] text-white hover:bg-[#c90010] font-mono text-xs uppercase tracking-wider font-bold rounded-[3px] transition-colors" href="https://wa.me/491778629077" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-base" data-icon="chat">chat</span>
+<span>WhatsApp</span>
+</a>
+<a class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[#F4F4F2] text-[#F4F4F2] hover:bg-[#F4F4F2] hover:text-[#0C0C0D] font-mono text-xs uppercase tracking-wider rounded-[3px] transition-colors" href="tel:+491778629077">
+<span class="material-symbols-outlined text-base" data-icon="call">call</span>
+<span>Appeler</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. EN VIDÉO -->
+<section class="py-24 border-b border-[#2A2A2E] bg-[#0C0C0D]" id="videos">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="mb-14">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Présentations réelles</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2]">
+            En vidéo
+          </h2>
+</div>
+<!-- 5 Portrait (9:16) video tiles -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+<!-- Tile 1 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[9/16] overflow-hidden bg-[#151517] mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical portrait orientation video frame poster of an aggressive dark BMW XM 2026 luxury performance hybrid SUV filmed on location at night under clean urban streetlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsARu8GEAcsglJ7DMthovFJa5IeMuVEyncN1FVf5nVPauDG6_y-e7QP4l3aGGgsEKyAG4RxGbrpBvUWz1L6MKW2sa4uch08Qf4mXDEZSdd2yrADBYhcnxh-vGfCeu6djUsR4a_AXJk05Dw9WFOkvseb0W9-dvyiLJmuorq9QitbSCqPl8x6soPmb_vsGslL9g_m4wJWlFiwx4UH0PreeH4UI7vG6iIXQPdMCvPO7PHWljssFnyzZ3aIbeWHSUkBJiaKJqkiHGWNrTG"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<div class="w-12 h-12 rounded-full border border-white/60 bg-[#0C0C0D]/70 flex items-center justify-center group-hover:border-[#E70013] group-hover:text-[#E70013] text-white transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-mono text-xs text-[#F4F4F2] uppercase mb-1 leading-snug">
+              BMW XM · Modèle 2026 — Facebook, 20/08/2026
+            </p>
+<a class="font-mono text-[11px] uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+              Voir sur Facebook
+            </a>
+</div>
+<!-- Tile 2 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[9/16] overflow-hidden bg-[#151517] mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical portrait format video thumbnail featuring a Suzuki Across 2026 modern crossover vehicle showcased in a dark German vehicle compound." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIb-nP6CA6UE5h3qzfXIYk3rsdJuwCyuPZhVAL9ZrPj5k39eEKxNHOWONFdKfn2z6GIWMblDA2mzt9YR4F0FP7rcEkq-IIn-nSXszLTjRzZT6TWROanx8Qex-73C9W0_CFFCwEFEgjez8WcMXfiK8ss_NA6euDWtPqzINc8EvZcuEK9aM-jRI_aCqHgCR6xD-2hNZYA59vVhgbZ4xdF-OYqtoIzHOcG0xbyN0TfHY1sKYn3MwG0749SB8b-BLa42252RmzDs_1BWUC"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<div class="w-12 h-12 rounded-full border border-white/60 bg-[#0C0C0D]/70 flex items-center justify-center group-hover:border-[#E70013] group-hover:text-[#E70013] text-white transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-mono text-xs text-[#F4F4F2] uppercase mb-1 leading-snug">
+              Suzuki Across · Modèle 2026 — 24/08/2026
+            </p>
+<a class="font-mono text-[11px] uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+              Voir sur Facebook
+            </a>
+</div>
+<!-- Tile 3 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[9/16] overflow-hidden bg-[#151517] mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical portrait shot of a compact dark Jeep Renegade 2024 model in crisp automotive video styling with studio rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMfVmhk8ABwbpAEEdpoVvOI8khN2YTg8f2DyQdkWDwfeKBKy3KR-yfr5ZTTyPYvRWgg-Fa4iZ0KL6UcucRDZAYB5ealw-ktaRgFlXaXdqGJlP64HRcfpCYxZz7QUKW5PlzAIXIYHo6KF387JKgXFweq3TalEAMI0SBnk-NbJAex_EPeWCMgWhaSHMLVLQnIyJJsi9SN4WUyvxAjMtyzOSdgmHd1o37hKWa-NBdadGjae8k11BRfDn5bgwhp0-VVEyIWWxYxqYF5xhc"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<div class="w-12 h-12 rounded-full border border-white/60 bg-[#0C0C0D]/70 flex items-center justify-center group-hover:border-[#E70013] group-hover:text-[#E70013] text-white transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-mono text-xs text-[#F4F4F2] uppercase mb-1 leading-snug">
+              Jeep Renegade · Modèle 2024 — 12/09/2026
+            </p>
+<a class="font-mono text-[11px] uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+              Voir sur Facebook
+            </a>
+</div>
+<!-- Tile 4 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[9/16] overflow-hidden bg-[#151517] mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical portrait video still showcasing a high end Mercedes GLE AMG 2023 luxury SUV filmed inside an illuminated dark automotive bay with plate visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4MxCQM8OFl5r8o-oPkwL91k8FBn63RnbeI9EExabNQCgsvahJOPLzmiskuHgkK8boWZ7vz54DUxwDmUiMkdfRXdy-XhP_gMZG0V7Mn3n00iK1wMAFlxqaJnufUzkxLf8eu-McqaY0oIH1o6hGDW_RVRddsieKgYo3kX3OVn-md5Td7JrWsjPfIY7TZ9Ie7-Gc1E2NNgY2e1WhCLLovRhp2kzUO0dLUV7LvQ0DMF6EeOzoqJ4OtloVlQ8-eVvwIxhm66TYf0Nndcwt"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<div class="w-12 h-12 rounded-full border border-white/60 bg-[#0C0C0D]/70 flex items-center justify-center group-hover:border-[#E70013] group-hover:text-[#E70013] text-white transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-mono text-xs text-[#F4F4F2] uppercase mb-1 leading-snug">
+              Mercedes GLE AMG · Modèle 2023 — 17/09/2026
+            </p>
+<a class="font-mono text-[11px] uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+              Voir sur Facebook
+            </a>
+</div>
+<!-- Tile 5 -->
+<div class="group flex flex-col">
+<div class="relative aspect-[9/16] overflow-hidden bg-[#151517] mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vertical 9 to 16 video clip thumbnail displaying an Audi Q5 S-line 2024 luxury dark metallic crossover in moody high contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi4pOOXDvXw5NpRc-miS9yoJHsube4H5xz9tA4HvkC0GX1xibGyTOIoQd0qEspA8fUc9HbThbp-qaNOnVbS7zVwxGRqqmJ2LrYO5_ZLBEzcC3N84nWLsDg8qePf87hdeTBCoi0Vz8ZHmOSmIF1WLzTFT8kmEkTu-82Xdf6q39vWP2vlBBzeawq0anjSEOW1HU3CU77duHZ2tPapcatzkal4Xy8inNbk4eso4RcR03Z3DIK6Kdg9sMHYp3zcX58p3fIKhHgT8FYkJy7"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<div class="w-12 h-12 rounded-full border border-white/60 bg-[#0C0C0D]/70 flex items-center justify-center group-hover:border-[#E70013] group-hover:text-[#E70013] text-white transition-colors">
+<span class="material-symbols-outlined text-2xl" data-icon="play_arrow">play_arrow</span>
+</div>
+</div>
+</div>
+<p class="font-mono text-xs text-[#F4F4F2] uppercase mb-1 leading-snug">
+              Audi Q5 S-line · Modèle 2024 — 27/09/2026
+            </p>
+<a class="font-mono text-[11px] uppercase tracking-wider text-[#A3A3A8] hover:text-[#E70013] transition-colors" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+              Voir sur Facebook
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. AVIS -->
+<section class="py-24 border-b border-[#2A2A2E] bg-[#0C0C0D]" id="avis">
+<div class="max-w-[1320px] mx-auto px-6">
+<!-- Section Header with 5,0 badge -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-[#2A2A2E]">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Témoignages authentiques</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2]">
+              Avis clients
+            </h2>
+</div>
+<div class="mt-4 md:mt-0 inline-flex items-center gap-3 px-4 py-2 border border-[#2A2A2E] bg-[#151517]">
+<span class="text-[#E70013]">★</span>
+<span class="font-mono font-bold text-lg text-[#F4F4F2]">5,0</span>
+<span class="font-mono text-xs uppercase tracking-wider text-[#A3A3A8]">89 avis Google</span>
+</div>
+</div>
+<!-- 4 Quotes in a Row separated by hairlines (NO cards) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-[#2A2A2E]">
+<!-- Quote 1 -->
+<div class="lg:pr-8 flex flex-col justify-between">
+<blockquote class="font-body text-[#F4F4F2] text-base leading-relaxed mb-8">
+              « Du premier contact jusqu'à la livraison, tout s'est déroulé de manière fluide et professionnelle. »
+            </blockquote>
+<div class="font-mono text-xs uppercase tracking-wider border-t border-[#2A2A2E] pt-4">
+<span class="text-[#F4F4F2] font-bold block mb-1">mohamed walha</span>
+<span class="text-[#A3A3A8] text-[11px]">Avis Google</span>
+</div>
+</div>
+<!-- Quote 2 -->
+<div class="lg:px-8 flex flex-col justify-between">
+<blockquote class="font-body text-[#F4F4F2] text-base leading-relaxed mb-8">
+              « Mohamed est professionnel et honnête, il assure un accompagnement et un service parfait. »
+            </blockquote>
+<div class="font-mono text-xs uppercase tracking-wider border-t border-[#2A2A2E] pt-4">
+<span class="text-[#F4F4F2] font-bold block mb-1">Kais KAMMOUN</span>
+<span class="text-[#A3A3A8] text-[11px]">Avis Google</span>
+</div>
+</div>
+<!-- Quote 3 -->
+<div class="lg:px-8 flex flex-col justify-between">
+<blockquote class="font-body text-[#F4F4F2] text-base leading-relaxed mb-8">
+              « La communication a toujours été claire, les documents d'export parfaitement préparés, et la voiture était strictement conforme à la description. »
+            </blockquote>
+<div class="font-mono text-xs uppercase tracking-wider border-t border-[#2A2A2E] pt-4">
+<span class="text-[#F4F4F2] font-bold block mb-1">nourelesslem badra</span>
+<span class="text-[#A3A3A8] text-[11px]">Avis Google</span>
+</div>
+</div>
+<!-- Quote 4 -->
+<div class="lg:pl-8 flex flex-col justify-between">
+<blockquote class="font-body text-[#F4F4F2] text-base leading-relaxed mb-8">
+              « Dès le premier contact il était avec moi pas à pas au dernier moment. »
+            </blockquote>
+<div class="font-mono text-xs uppercase tracking-wider border-t border-[#2A2A2E] pt-4">
+<span class="text-[#F4F4F2] font-bold block mb-1">issam aydi</span>
+<span class="text-[#A3A3A8] text-[11px]">Avis Google</span>
+</div>
+</div>
+</div>
+<div class="mt-14 pt-8 border-t border-[#2A2A2E]">
+<a class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#F4F4F2] hover:text-[#E70013] transition-colors" href="https://google.com" rel="noopener noreferrer" target="_blank">
+<span>Tous les avis sur Google</span>
+<span>→</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 10. FAQ -->
+<section class="py-24 border-b border-[#2A2A2E] bg-[#0C0C0D]">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="max-w-2xl mb-14">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Informations utiles</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2]">
+            Questions fréquentes
+          </h2>
+</div>
+<!-- Accordion with hairline borders -->
+<div class="max-w-4xl divide-y divide-[#2A2A2E] border-y border-[#2A2A2E]">
+<!-- Item 1 (OPEN) -->
+<div class="py-6">
+<button class="w-full text-left flex justify-between items-center group cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
+<span class="font-headline font-bold uppercase text-lg md:text-xl text-[#F4F4F2]">
+                Quels services sont inclus ?
+              </span>
+<span class="font-mono text-lg text-[#E70013] transition-transform duration-200">−</span>
+</button>
+<div class="mt-4 text-[#A3A3A8] font-body text-base leading-relaxed">
+              Achat de votre voiture, préparation du dossier d'exportation, carte grise et assurance, et gestion complète jusqu'à la livraison.
+            </div>
+</div>
+<!-- Item 2 -->
+<div class="py-6">
+<button class="w-full text-left flex justify-between items-center group cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
+<span class="font-headline font-bold uppercase text-lg md:text-xl text-[#F4F4F2]">
+                À qui s'adresse le service ?
+              </span>
+<span class="font-mono text-lg text-[#A3A3A8] transition-transform duration-200">+</span>
+</button>
+<div class="mt-4 text-[#A3A3A8] font-body text-base leading-relaxed hidden">
+              Le service s'adresse en priorité aux Tunisiens résidant à l'étranger souhaitant acquérir un véhicule en Europe et l'acheminer en toute sérénité.
+            </div>
+</div>
+<!-- Item 3 -->
+<div class="py-6">
+<button class="w-full text-left flex justify-between items-center group cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
+<span class="font-headline font-bold uppercase text-lg md:text-xl text-[#F4F4F2]">
+                Où êtes-vous situés ?
+              </span>
+<span class="font-mono text-lg text-[#A3A3A8] transition-transform duration-200">+</span>
+</button>
+<div class="mt-4 text-[#A3A3A8] font-body text-base leading-relaxed hidden">
+              Notre siège est situé à Lindenstraße 16, 74321 Bietigheim-Bissingen en Allemagne.
+            </div>
+</div>
+<!-- Item 4 -->
+<div class="py-6">
+<button class="w-full text-left flex justify-between items-center group cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
+<span class="font-headline font-bold uppercase text-lg md:text-xl text-[#F4F4F2]">
+                Comment faire une demande ?
+              </span>
+<span class="font-mono text-lg text-[#A3A3A8] transition-transform duration-200">+</span>
+</button>
+<div class="mt-4 text-[#A3A3A8] font-body text-base leading-relaxed hidden">
+              Remplissez le formulaire sur ce site pour envoyer directement un message pré-rempli sur notre WhatsApp ou appelez-nous directement.
+            </div>
+</div>
+<!-- Item 5 -->
+<div class="py-6">
+<button class="w-full text-left flex justify-between items-center group cursor-pointer focus:outline-none" onclick="toggleFaq(this)">
+<span class="font-headline font-bold uppercase text-lg md:text-xl text-[#F4F4F2]">
+                Quels sont vos horaires ?
+              </span>
+<span class="font-mono text-lg text-[#A3A3A8] transition-transform duration-200">+</span>
+</button>
+<div class="mt-4 text-[#A3A3A8] font-body text-base leading-relaxed hidden">
+              Nous sommes ouverts du lundi au vendredi de 9h à 18h et le samedi de 9h à 14h. Fermé le dimanche.
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. CONTACT -->
+<section class="py-24 border-b border-[#2A2A2E] bg-[#0C0C0D]" id="contact">
+<div class="max-w-[1320px] mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Details -->
+<div class="lg:col-span-6 flex flex-col justify-center">
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block mb-2">Coordonnées</span>
+<h2 class="font-headline font-bold uppercase text-3xl md:text-5xl tracking-tight text-[#F4F4F2] mb-8">
+              Contact
+            </h2>
+<div class="divide-y divide-[#2A2A2E] border-t border-b border-[#2A2A2E] font-mono text-xs uppercase tracking-wider">
+<div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1">
+<span class="text-[#A3A3A8]">WhatsApp</span>
+<a class="text-[#F4F4F2] hover:text-[#E70013] font-bold transition-colors" href="https://wa.me/491778629077">+49 177 8629077</a>
+</div>
+<div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1">
+<span class="text-[#A3A3A8]">Téléphone</span>
+<a class="text-[#F4F4F2] hover:text-[#E70013] font-bold transition-colors" href="tel:+491778629077">+49 177 8629077</a>
+</div>
+<div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1">
+<span class="text-[#A3A3A8]">E-mail</span>
+<a class="text-[#F4F4F2] hover:text-[#E70013] font-bold transition-colors" href="mailto:chaariauto@gmail.com">chaariauto@gmail.com</a>
+</div>
+<div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1">
+<span class="text-[#A3A3A8]">Adresse</span>
+<span class="text-[#F4F4F2] font-bold">Lindenstraße 16, 74321 Bietigheim-Bissingen, Allemagne</span>
+</div>
+<div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1">
+<span class="text-[#A3A3A8]">Horaires</span>
+<span class="text-[#F4F4F2]">Lun–Ven 9h–18h · Sam 9h–14h · Dim fermé</span>
+</div>
+<div class="py-4 flex flex-col sm:flex-row sm:justify-between gap-1">
+<span class="text-[#A3A3A8]">Réseaux</span>
+<span class="text-[#F4F4F2] font-bold space-x-2">
+<a class="hover:text-[#E70013] transition-colors" href="https://facebook.com">Facebook</a> · 
+                  <a class="hover:text-[#E70013] transition-colors" href="https://instagram.com">Instagram</a> · 
+                  <a class="hover:text-[#E70013] transition-colors" href="https://tiktok.com">TikTok</a>
+</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Dark Embedded Map UI Placeholder -->
+<div class="lg:col-span-6 relative border border-[#2A2A2E] bg-[#151517] overflow-hidden min-h-[380px] flex flex-col justify-between p-6" data-location="Bietigheim-Bissingen" style="">
+<!-- Simulated High-End Dark Map Graphic Pattern -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#2A2A2E 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="relative z-10 flex justify-between items-start">
+<div>
+<span class="font-mono text-xs uppercase tracking-widest text-[#E70013] block">Localisation</span>
+<span class="font-headline font-bold uppercase text-lg text-[#F4F4F2]">Bietigheim-Bissingen</span>
+<span class="block font-mono text-[11px] text-[#A3A3A8]">48.9603° N, 9.1292° E</span>
+</div>
+<div class="inline-flex items-center px-2 py-0.5 bg-[#F7F7F5] text-[#0C0C0D] border border-[#0C0C0D] font-mono font-bold tracking-widest text-xs rounded-[2px]">
+                DE
+              </div>
+</div>
+<!-- Stylized Center Pin -->
+<div class="relative z-10 flex flex-col items-center justify-center py-12">
+<div class="w-10 h-10 rounded-full bg-[#E70013]/20 border border-[#E70013] flex items-center justify-center animate-pulse">
+<div class="w-3 h-3 rounded-full bg-[#E70013]"></div>
+</div>
+<span class="mt-3 font-mono text-xs uppercase tracking-widest text-[#F4F4F2] bg-[#0C0C0D] px-2.5 py-1 border border-[#2A2A2E]">
+                Lindenstraße 16
+              </span>
+</div>
+<div class="relative z-10 border-t border-[#2A2A2E] pt-3 flex justify-between items-center text-xs font-mono uppercase text-[#A3A3A8]">
+<span>Bade-Wurtemberg, Allemagne</span>
+<a class="hover:text-[#F4F4F2] transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">Ouvrir dans Maps →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. FINAL CTA -->
+<section class="relative py-28 overflow-hidden border-b border-[#2A2A2E]">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center filter brightness-40" data-alt="Wide cinematic composition of a deep black Mercedes GLC luxury automobile equipped with CHAARI AUTO white registration plate, parked along a dramatic architectural concrete backdrop under moody overcast skies." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGhDBWt3CX5Xr98xhE8LXIMoFXDg_0c29AFVksZB0eqTohqCqFbKIDxKAeujWZVPtWZueNuYUJp5gGiPGD9_iGOemGS5BSyCfPcvTVVDF4KKYc0Z9qHumK3muXpPjWEIDwMZo0sw0ili-_Ua5dYDBtw0fzuGf8hHr_eGFmOeYazazTlaZG9ogdjDx4oRsB3p-sf2wxZfxj-vKAPI4zNPs4c2aPErZ8kZ3tYJ1J2Ki1XD3QB432XfdfAirluqX6pHv7uYAS4W3nqln3"/>
+<div class="absolute inset-0 bg-[#0C0C0D]/80"></div>
+</div>
+<div class="relative z-10 max-w-[1320px] mx-auto px-6 text-center">
+<!-- CHAARI AUTO Plate Holder Badge -->
+<div class="mb-6 inline-flex items-center px-3 py-1 bg-[#F7F7F5] text-[#0C0C0D] border border-[#0C0C0D] font-mono font-bold tracking-widest text-sm rounded-[3px] select-none shadow-sm">
+          CHAARI AUTO
+        </div>
+<h2 class="font-headline font-bold uppercase text-4xl md:text-6xl lg:text-7xl tracking-tight text-[#F4F4F2] mb-10 max-w-4xl mx-auto">
+          Votre prochaine voiture, depuis l'Europe
+        </h2>
+<div class="flex flex-wrap items-center justify-center gap-5">
+<a class="inline-flex items-center gap-3 px-8 py-4 bg-[#E70013] text-white hover:bg-[#c90010] font-mono text-sm uppercase tracking-wider font-bold rounded-[3px] transition-colors" href="https://wa.me/491778629077" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span>WhatsApp</span>
+</a>
+<a class="inline-flex items-center gap-3 px-8 py-4 border border-[#F4F4F2] text-[#F4F4F2] hover:bg-[#F4F4F2] hover:text-[#0C0C0D] font-mono text-sm uppercase tracking-wider rounded-[3px] transition-colors" href="tel:+491778629077">
+<span class="material-symbols-outlined text-lg" data-icon="call">call</span>
+<span>Appeler</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- 13. FOOTER (Shared Component Footer) -->
+<footer class="w-full bg-[#0C0C0D] border-t border-[#2A2A2E]">
+<div class="max-w-[1320px] mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<!-- Left: Wordmark & Descriptor -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+<a class="inline-flex items-center px-2 py-0.5 bg-[#F7F7F5] text-[#0C0C0D] border border-[#0C0C0D] font-headline font-bold text-sm tracking-widest rounded-DEFAULT select-none" href="#">
+          CHAARI AUTO
+        </a>
+<span class="text-sm font-body text-[#A3A3A8]">
+          Export de voitures de l'Europe vers la Tunisie et la France
+        </span>
+</div>
+<!-- Links & Copyright -->
+<div class="flex flex-wrap items-center gap-6 text-sm font-body text-[#A3A3A8]">
+<a class="text-[#A3A3A8] hover:text-[#F4F4F2] transition-colors duration-150" href="#">Mentions légales / Impressum</a>
+<a class="text-[#A3A3A8] hover:text-[#F4F4F2] transition-colors duration-150" href="#">Datenschutz</a>
+<div class="space-x-2">
+<a class="hover:text-[#F4F4F2] transition-colors" href="https://facebook.com">Facebook</a> · 
+          <a class="hover:text-[#F4F4F2] transition-colors" href="https://instagram.com">Instagram</a> · 
+          <a class="hover:text-[#F4F4F2] transition-colors" href="https://tiktok.com">TikTok</a>
+</div>
+<span class="font-mono text-xs text-[#A3A3A8]/60">© 2026 Chaari Auto</span>
+</div>
+</div>
+</footer>
+<!-- Interactive JavaScript for FAQ & WhatsApp Form Link Generator -->
+<script>
+    function toggleFaq(button) {
+      const container = button.nextElementSibling;
+      const icon = button.querySelector('span:last-child');
+      if (container.classList.contains('hidden')) {
+        container.classList.remove('hidden');
+        icon.textContent = '−';
+        icon.classList.add('text-[#E70013]');
+      } else {
+        container.classList.add('hidden');
+        icon.textContent = '+';
+        icon.classList.remove('text-[#E70013]');
+      }
+    }
+
+    function handleFormWhatsApp(e) {
+      e.preventDefault();
+      const model = document.getElementById('form-model').value;
+      const year = document.getElementById('form-year').value;
+      const fuel = document.getElementById('form-fuel').value;
+      const gearbox = document.getElementById('form-gearbox').value;
+      const budget = document.getElementById('form-budget').value;
+      const country = document.getElementById('form-country').value;
+      const delivery = document.getElementById('form-delivery').value;
+      const name = document.getElementById('form-name').value;
+
+      let msg = `Bonjour Chaari Auto,%0A%0AJe souhaite faire une demande :%0A`;
+      msg += `• Nom: ${encodeURIComponent(name)}%0A`;
+      msg += `• Marque et modèle: ${encodeURIComponent(model)}%0A`;
+      if (year) msg += `• Année: ${encodeURIComponent(year)}%0A`;
+      if (fuel && fuel !== 'Peu importe') msg += `• Carburant: ${encodeURIComponent(fuel)}%0A`;
+      if (gearbox && gearbox !== 'Peu importe') msg += `• Boîte: ${encodeURIComponent(gearbox)}%0A`;
+      if (budget) msg += `• Budget: ${encodeURIComponent(budget)}%0A`;
+      msg += `• Pays de résidence: ${encodeURIComponent(country)}%0A`;
+      if (delivery) msg += `• Livraison: ${encodeURIComponent(delivery)}%0A`;
+
+      window.open(`https://wa.me/491778629077?text=${msg}`, '_blank');
+    }
+  </script>
+</body></html>

@@ -1,0 +1,29 @@
+# Research scratch: raw downloads, captures and render outputs stay local. Only the repeatable scripts are committed.
+_scratch/*
+!_scratch/selection.py
+!_scratch/cars.py
+!_scratch/manifests.py
+!_scratch/prep_photos.py
+!_scratch/optimize_photos.py
+!_scratch/make_clips.py
+!_scratch/site_videos.py
+!_scratch/probe.py
+!_scratch/build_final.py
+!_scratch/contact_sheet.py
+!_scratch/sheet.py
+!_scratch/vstrip.py
+!_scratch/vstrip1s.py
+!_scratch/gate.py
+!_scratch/receiver.py
+!_scratch/dl_ig.py
+!_scratch/dl_fb_videos.py
+!_scratch/ig_hook.js
+!_scratch/fb_hook.js
+!_scratch/fb_reel_extract.js
+!_scratch/fb_reel_ship.js
+!_scratch/render.sh
+!_scratch/render-site.sh
+!_scratch/annot_legal.py
+# Render copies of the static page
+stitch/render*.html
+stitch/mobile-frame.html

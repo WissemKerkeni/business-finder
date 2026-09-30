@@ -1,0 +1,77 @@
+[
+ {
+  "id": "v1-gle",
+  "file": "/videos/v1-gle.mp4",
+  "poster": "poster-v1-gle",
+  "w": 720,
+  "h": 1280,
+  "duration": 12.8,
+  "carId": "mercedes-gle-2023",
+  "postUrl": "https://www.facebook.com/reel/1303791422819156",
+  "uploadDate": "2026-09-17",
+  "segment": [
+   6.0,
+   18.8
+  ]
+ },
+ {
+  "id": "v2-renegade",
+  "file": "/videos/v2-renegade.mp4",
+  "poster": "poster-v2-renegade",
+  "w": 720,
+  "h": 1280,
+  "duration": 5.7,
+  "carId": "jeep-renegade-2024",
+  "postUrl": "https://www.facebook.com/reel/1046189004701269",
+  "uploadDate": "2026-09-12",
+  "segment": [
+   14.5,
+   20.2
+  ]
+ },
+ {
+  "id": "v3-xm",
+  "file": "/videos/v3-xm.mp4",
+  "poster": "poster-v3-xm",
+  "w": 720,
+  "h": 1280,
+  "duration": 7.5,
+  "carId": "bmw-xm-2026",
+  "postUrl": "https://www.facebook.com/reel/1629754748748951",
+  "uploadDate": "2026-08-20",
+  "segment": [
+   0.3,
+   7.8
+  ]
+ },
+ {
+  "id": "v4-q5",
+  "file": "/videos/v4-q5.mp4",
+  "poster": "poster-v4-q5",
+  "w": 720,
+  "h": 1280,
+  "duration": 5.7,
+  "carId": "audi-q5-2024",
+  "postUrl": "https://www.facebook.com/reel/2835031420206936",
+  "uploadDate": "2026-09-27",
+  "segment": [
+   1.0,
+   6.7
+  ]
+ },
+ {
+  "id": "v5-across",
+  "file": "/videos/v5-across.mp4",
+  "poster": "poster-v5-across",
+  "w": 720,
+  "h": 1280,
+  "duration": 7.5,
+  "carId": "suzuki-across-2026",
+  "postUrl": "https://www.facebook.com/reel/2261131274740566",
+  "uploadDate": "2026-08-24",
+  "segment": [
+   23.0,
+   30.5
+  ]
+ }
+]

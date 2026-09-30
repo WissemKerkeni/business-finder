@@ -1,0 +1,45 @@
+#!/bin/sh
+# Render copies of stitch/desktop-final.html -> headless Edge screenshots: desktop 1440 (hero pinned), mobile 375 (iframe),
+# open car panel, filled request form. Then trim and slice.
+cd "$(dirname "$0")/.."
+python - <<'PY'
+s = open('stitch/desktop-final.html', encoding='utf-8').read()
+s = s.replace('loading="lazy"', 'loading="eager"').replace('decoding="async"', 'decoding="sync"')
+pin = '#top{min-height:0!important;height:900px!important;max-height:none!important}\n</style>'
+open('stitch/render.html', 'w', encoding='utf-8').write(s.replace('</style>', pin, 1))
+p = s.replace('</style>', pin, 1).replace("window.addEventListener('hashchange', fromHash); fromHash();", "open('mercedes-gle53-2026', false);")
+open('stitch/render-panel.html', 'w', encoding='utf-8').write(p)
+m = s.replace('</style>', '#top{min-height:812px!important;height:812px!important}\n#actionbar{display:none!important}\n</style>', 1)
+open('stitch/render-mobile.html', 'w', encoding='utf-8').write(m)
+open('stitch/mobile-frame.html', 'w', encoding='utf-8').write(
+    '<html><body style="margin:0;background:#333"><iframe src="render-mobile.html" '
+    'style="width:375px;height:16000px;border:0;display:block"></iframe></body></html>')
+PY
+E="/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+W=$(cygpath -w "$PWD/_scratch")
+B=http://localhost:4185/stitch
+rm -f _scratch/final.png _scratch/panel.png _scratch/mobile.png
+shot() {
+  for i in 1 2 3; do
+    "$E" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=$4 --window-size=$2 --screenshot="$W/$1.png" "$B/$3" 2>/dev/null
+    for t in $(seq 1 30); do [ -f "_scratch/$1.png" ] && sleep 2 && return 0; sleep 1; done
+  done
+  echo "FAILED $1"
+}
+shot final 1440,11000 render.html 20000
+shot panel 1440,900 render-panel.html 15000
+shot mobile 500,16000 mobile-frame.html 20000
+cd _scratch && rm -f final-*.jpg mobile-*.jpg
+python - <<'PY'
+from PIL import Image
+import numpy as np
+for name, w, step, scale in (('final', 1440, 1300, 2/3), ('mobile', 375, 1600, 1), ('panel', 1440, 99999, 2/3)):
+    im = Image.open(name + '.png').convert('RGB'); im = im.crop((0, 0, w, im.height))
+    a = np.asarray(im).astype(int); bg = a[-1].mean(axis=0)
+    rows = np.where(np.abs(a - bg).sum(axis=2).max(axis=1) > 30)[0]
+    H = (rows.max() + 1) if len(rows) else im.height; im = im.crop((0, 0, w, H)); im.save(name + '-full.jpg', quality=82); print(name, im.size)
+    if step > 90000: continue
+    for k, y in enumerate(range(0, H, step)):
+        c = im.crop((0, y, w, min(H, y + step))); c = c.resize((int(c.width * scale), int(c.height * scale)))
+        c.save(f'{name}-{k:02d}.jpg', quality=80)
+PY
