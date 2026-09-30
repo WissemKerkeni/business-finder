@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { business as b, cta, faq, legal, reviews, TODO, wa } from '../data/business'
+import { business as b, cta, faq, legal, reviews, wa } from '../data/business'
 import { Photo, Plate, SectionTitle, Stars, WaIcon, Wrap, btn, rd } from './ui'
 
 /** "Pour qui", as in the Stitch design: text on the left, the photo framed on the right inside the container
@@ -141,26 +141,34 @@ export function Cta() {
   )
 }
 
-const Todo = ({ v }: { v: string }) => (v === TODO ? <span className="text-[#FFB020]">[{TODO}]</span> : <>{v}</>)
-
-/** Impressum and Datenschutz (the business is in Germany). Unknown details stay as visible placeholders: never invented. */
+/** Impressum and Datenschutz (the business is in Germany): verified facts only, no placeholders. */
 export function Legal() {
+  const h3 = 'mb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-[#D6D6D2]'
   return (
     <section id="mentions-legales" aria-labelledby="legal-title" className="border-b border-line bg-ink py-16 lg:py-20">
       <Wrap className="grid gap-10 text-sm leading-relaxed text-dim lg:grid-cols-2 lg:gap-16">
         <div>
-          <h2 id="legal-title" className="mb-4 font-head text-2xl font-bold uppercase text-chalk">Mentions légales / Impressum</h2>
-          <p className="mb-3"><strong className="text-[#D6D6D2]">Angaben gemäß § 5 DDG</strong><br />{b.name} · Forme juridique / Rechtsform : <Todo v={legal.legalForm} /><br />{b.address.street}, {b.address.postalCode} {b.address.locality}, Deutschland</p>
-          <p className="mb-3">Vertreten durch / Représenté par : <Todo v={legal.representedBy} /><br />Telefon : {b.phone} · E-Mail : {b.email}</p>
-          <p className="mb-3">Registereintrag / Registre : <Todo v={legal.register} /><br />USt-IdNr. : <Todo v={legal.vatId} /></p>
-          <p>Verantwortlich für den Inhalt : <Todo v={legal.responsible} /></p>
+          <h2 id="legal-title" className="mb-5 font-head text-2xl font-bold uppercase text-chalk">Mentions légales / Impressum</h2>
+          <p className="mb-4">
+            <span className={`${h3} block`}>Angaben gemäß § 5 DDG</span>
+            {b.name}<br />{b.address.street}<br />{b.address.postalCode} {b.address.locality}<br />Deutschland
+          </p>
+          <p>
+            <span className={`${h3} block`}>Kontakt / Contact</span>
+            Telefon / WhatsApp : <a href={`tel:${b.phoneE164}`} className="hover:text-white">{b.phone}</a><br />
+            E-Mail : <a href={`mailto:${b.email}`} className="hover:text-white">{b.email}</a>
+          </p>
         </div>
         <div>
-          <h2 id="datenschutz" className="mb-4 font-head text-2xl font-bold uppercase text-chalk">Datenschutz</h2>
-          <p className="mb-3">Responsable / Verantwortlicher : <Todo v={legal.responsible} />, {b.address.street}, {b.address.postalCode} {b.address.locality}, {b.email}.</p>
-          <p className="mb-3">Ce site n’utilise ni cookies ni outil de mesure d’audience. Les polices, les photos et les vidéos sont hébergées sur ce site. Le formulaire « Votre demande » n’envoie rien à ce site : il ouvre WhatsApp avec votre message, que vous choisissez d’envoyer ou non (WhatsApp Ireland Ltd.).</p>
-          <p className="mb-3">La carte Google Maps n’est chargée qu’après votre clic (Google Ireland Ltd.).</p>
-          <p>Hébergement : <Todo v={legal.hosting} />. Durée de conservation et droits des personnes : <Todo v={legal.retention} /></p>
+          <h2 id="datenschutz" className="mb-5 font-head text-2xl font-bold uppercase text-chalk">Datenschutz</h2>
+          <p className="mb-3">
+            <span className={`${h3} block`}>Responsable / Verantwortlicher</span>
+            {b.name}, {b.address.street}, {b.address.postalCode} {b.address.locality}, Deutschland · {b.email}
+          </p>
+          <p className="mb-3">Ce site n’utilise ni cookies ni outil de mesure d’audience et ne conserve aucune donnée personnelle. Les polices, les photos et les vidéos sont hébergées sur ce site.</p>
+          <p className="mb-3">Le formulaire « Votre demande » n’envoie rien à ce site : il ouvre WhatsApp avec votre message, que vous choisissez d’envoyer ou non (WhatsApp Ireland Ltd.). La carte Google Maps n’est chargée qu’après votre clic (Google Ireland Ltd.).</p>
+          <p className="mb-3">Hébergement : {legal.hosting}. L’hébergeur traite les données techniques nécessaires à l’affichage des pages (adresse IP, date et heure de la visite).</p>
+          <p>Vous pouvez demander l’accès, la rectification ou l’effacement de vos données en écrivant à {b.email}, et adresser une réclamation à l’autorité de contrôle : {legal.authority}.</p>
         </div>
       </Wrap>
     </section>

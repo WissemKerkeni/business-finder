@@ -44,7 +44,7 @@ Then `npm run build`, check with `npm run preview`, and redeploy: `npx vercel de
 | `public/photos/` | Self-hosted WebP (`<id>-<width>.webp`) + `og.jpg`; rear plates were already pixelated by the business, the CHAARI AUTO plate holder is their sign |
 | `public/videos/` | 5 clips, 720×1280 H.264, muted (no audio track), 14.8 MB total |
 | `src/components/Hero.tsx` | Full-height hero: the Maps photo of a Mercedes GLC Coupé framed on the right inside the 1320px container (equal side margins), dark scrim from the left, Ken Burns zoom, staggered entrance; full-bleed on phones |
-| `Steps.tsx` | 01–04 route (horizontal on desktop, vertical on phones) |
+| `Steps.tsx` | 01–04 route with an icon per step (horizontal on desktop, vertical on phones). On reveal the line draws, a car drives 01→04, the nodes light up in turn and 04 pulses (CSS in `index.css`, final state without JS or with reduced motion) |
 | `RequestForm.tsx` | "Votre demande" → `wa.me` with one line per filled field; required: model (or "ouvert aux suggestions"), country, name |
 | `Deliveries.tsx` | "Export pour la Tunisie" gallery (no availability, no price) |
 | `ForSale.tsx` | "Véhicules proposés", rendered only when `forSale` is not empty |
@@ -60,7 +60,7 @@ The hero plays a Ken Burns zoom and a staggered entrance (CSS only, so it also r
 
 ## Privacy (Germany)
 
-No cookies, no analytics, no third-party requests on load: fonts, photos and videos are self-hosted; the Google map loads only after a click; the form sends nothing to the site. The Impressum and Datenschutz sections show visible "À compléter par le propriétaire" placeholders until the owner provides the details.
+No cookies, no analytics, no third-party requests on load: fonts, photos and videos are self-hosted; the Google map loads only after a click; the form sends nothing to the site. The Impressum and Datenschutz show only verified facts, with no placeholders (user decision). Legal form, representative, register and VAT ID are not published anywhere, so they were left out; add them to `legal` in `business.ts` if the owner provides them.
 
 ## SEO / GEO
 

@@ -150,11 +150,11 @@ The hero is the Google Maps photo of the black **Mercedes GLC Coupé** with the 
 
 ## 10. Legal page (Impressum and Datenschutz)
 
-The business is based in Germany, so the site needs an **Impressum** and a **Datenschutzerklärung**. Only the address, phone and email are known. Everything else (legal form, owner name, register entry, USt-IdNr., the person responsible for content) is a placeholder marked "À compléter par le propriétaire". The site has no cookies, no analytics and no form backend, and the WhatsApp link is an outbound link.
+The business is based in Germany, so the site needs an **Impressum** and a **Datenschutzerklärung**. **User decision (2026-09-30): no placeholders on the site and no questions for the client.** The site shows only verified facts: the Impressum has the name, address, phone/WhatsApp and email. The Datenschutz has the controller (the business, with its address and email) and facts about this site: no cookies, no analytics, no stored data, the WhatsApp form, the click-to-load Google Maps, hosting on Vercel, the rights of access, rectification and deletion, and the supervisory authority for Baden-Württemberg. Fields that can't be completed from public sources were removed: legal form, representative, register entry, VAT ID and the person responsible for content. A complete Impressum normally includes the owner's full name (and the register and VAT ID if they exist). If the owner ever provides them, add them to `legal` in `site/src/data/business.ts`. `stitch/impressum-questions.png` keeps the optional question list.
 
 **Search on 2026-09-30:** Northdata had no entry for "Chaari Auto" or for "Chaari" in Bietigheim-Bissingen (only an unrelated Chaari Sàrl in Paris). A web search for "Chaari Auto" Impressum found nothing. None of the business's profiles states a legal form, owner, register or VAT number. The Instagram account is linked to the Facebook user "Mohamed Chaari", and reviewers name "Mr Mohamed Chaari", but the business never states him as owner or legal representative, so he is not named in the Impressum. **Nothing can be filled from public sources**: the owner must supply everything below.
 
-**To ask the owner (Impressum / Datenschutz):**
+**Optional, if the owner provides them later (Impressum / Datenschutz):**
 1. Exact business name as registered (Gewerbeanmeldung / Handelsregister), for example "Chaari Auto, Inh. …" or "Chaari Auto GmbH".
 2. Legal form (Einzelunternehmen, GbR, UG, GmbH…).
 3. Full name of the owner or legal representative (Inhaber / Geschäftsführer).
@@ -180,5 +180,5 @@ The business is based in Germany, so the site needs an **Impressum** and a **Dat
 8. The RAV4 2021 (10 Jan carousel, 13 Jan video, 26 Feb "Félicitations"): is it the same car?
 9. The Google Maps photos: are they all theirs (uploaded by the business)?
 10. Can Mohamed Chaari's name appear on the site?
-11. Impressum and Datenschutz details: see the 12-item list in §10 (nothing could be found in public sources).
+11. (Optional) Impressum details: see §10. The site ships without them, by user decision.
 12. Permission to reuse the reels on the site (audio removed; the business's own overlays kept).

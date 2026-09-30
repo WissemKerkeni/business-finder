@@ -71,6 +71,8 @@ html.js [data-reveal][data-in] { opacity: 1; transform: none; }
 html.js .route-line { transform: scaleX(0); transform-origin: left; transition: transform 1.6s cubic-bezier(.6,.1,.2,1) .2s; }
 html.js [data-in] .route-line { transform: scaleX(1); }
 
+html.js-init *, html.js-init *::after { transition: none !important; }
+
 /* Primary buttons: a light sweep on hover. */
 .btn-shine { position: relative; overflow: hidden; }
 .btn-shine::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 40%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent); transform: translateX(-120%) skewX(-20deg); pointer-events: none; }
@@ -89,3 +91,23 @@ html.js [data-in] .route-line { transform: scaleX(1); }
   html.js .route-line { transform: none !important; }
   .btn-shine:hover::after { animation: none; }
 }
+
+/* ---------- Steps route (Steps.tsx) ----------
+   Final state is the default (no JS, reduced motion, crawlers). With JS + motion, the route starts empty and plays on reveal:
+   the line draws, the car drives 01 → 04, each node lights up in turn, then the last node pulses. */
+.route .step-node { border-color: #E70013; color: #fff; background: #230509; box-shadow: 0 0 0 6px rgba(231,0,19,.08);
+  transition: border-color .45s, color .45s, background-color .45s, box-shadow .45s, transform .3s; }
+.route-car { left: calc(100% - 3.4rem); transition: left 2s cubic-bezier(.65,0,.35,1) .25s, opacity .3s .25s; filter: drop-shadow(0 0 8px rgba(231,0,19,.6)); }
+.route-fill, .route-fill-v { transition: transform 2s cubic-bezier(.65,0,.35,1) .25s; }
+@keyframes node-pulse { 0% { box-shadow: 0 0 0 0 rgba(231,0,19,.55); } 70% { box-shadow: 0 0 0 16px rgba(231,0,19,0); } 100% { box-shadow: 0 0 0 0 rgba(231,0,19,0); } }
+@media (prefers-reduced-motion: no-preference) {
+  html.js .route:not([data-in]) .route-fill { transform: scaleX(0); }
+  html.js .route:not([data-in]) .route-fill-v { transform: scaleY(0); }
+  html.js .route:not([data-in]) .route-car { left: 0; opacity: 0; }
+  html.js .route:not([data-in]) .step-node { border-color: #2A2A2E; color: #A3A3A8; background: #0C0C0D; box-shadow: none; }
+  html.js .route:not([data-in]) .step-body { opacity: 0; transform: translate3d(0, 18px, 0); }
+  html.js .route .step-body { transition: opacity .7s, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: calc(.35s + var(--i) * .5s); }
+  html.js .route[data-in] .step-node { transition-delay: calc(.25s + var(--i) * .5s); }
+  html.js .route[data-in] .step:last-child .step-node { animation: node-pulse 2s ease-out 2.4s infinite; }
+}
+html.js .route[data-in] .step:hover .step-node, .route .step:hover .step-node { transition-delay: 0s; }

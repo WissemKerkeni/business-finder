@@ -21,7 +21,10 @@ const idFromHash = () => {
  *  (a data attribute, not a class, so React re-renders never remove it). */
 function useReveal() {
   useEffect(() => {
-    document.documentElement.classList.add('js')
+    // js-init disables transitions for the first frames, so switching to the hidden start state doesn't animate backwards.
+    const root = document.documentElement
+    root.classList.add('js', 'js-init')
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('js-init')))
     const els = [...document.querySelectorAll<HTMLElement>('[data-reveal]')]
     const show = (e: Element) => { (e as HTMLElement).dataset.in = '' }
     if (!('IntersectionObserver' in window)) { els.forEach(show); return }

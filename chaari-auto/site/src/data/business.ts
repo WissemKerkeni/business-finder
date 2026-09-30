@@ -215,14 +215,11 @@ export const faq = [
   { q: 'Quels sont vos horaires ?', a: 'Du lundi au vendredi de 9h à 18h, le samedi de 9h à 14h. Fermé le dimanche.' },
 ]
 
-/** Impressum / Datenschutz: nothing here may be invented. Placeholders stay until the owner provides the details. */
-export const TODO = 'À compléter par le propriétaire'
+/** Impressum / Datenschutz: only verified facts (business name, address, phone, email from its own profiles) and
+ *  facts about this site (hosting, no cookies, no stored data). Nothing is invented and there are no placeholders
+ *  (user decision 2026-09-30). Details the owner could add later (legal form, representative, register, VAT ID)
+ *  are listed in ../../brief.md §10. */
 export const legal = {
-  legalForm: TODO,
-  representedBy: TODO,
-  register: TODO,
-  vatId: TODO,
-  responsible: TODO,
   hosting: 'Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA',
-  retention: TODO,
+  authority: 'Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg',
 }
