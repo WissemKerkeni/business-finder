@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist/.server && node scripts/prerender.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "logo": "node scripts/make-logo.mjs",
+    "map": "node scripts/make-map.mjs"
   },
   "dependencies": {
     "@fontsource/archivo-narrow": "^5.2.0",
@@ -21,8 +23,12 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
+    "d3-geo": "^3.1.1",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
+    "topojson-client": "^3.1.0",
     "typescript": "^7.0.2",
-    "vite": "^8.3.1"
+    "vite": "^8.3.1",
+    "world-atlas": "^2.0.2"
   }
 }

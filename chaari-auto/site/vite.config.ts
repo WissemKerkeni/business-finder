@@ -2,8 +2,10 @@ import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { headTags, llmsTxt, robotsTxt, sitemapXml } from './src/seo/seo.ts'
+import { langFromPath } from './src/i18n.tsx'
 
-/** Injects meta tags + JSON-LD into index.html and emits robots.txt, sitemap.xml and llms.txt. */
+/** Dev: injects the meta tags + JSON-LD of the requested page (/ or /en/) into index.html. Build: leaves <!--app-head-->
+ *  for scripts/prerender.mjs, which writes one page per language. Emits robots.txt, sitemap.xml and llms.txt. */
 function seo(siteUrl: string): Plugin {
   const files = () => ({
     'robots.txt': robotsTxt(siteUrl),
@@ -12,7 +14,11 @@ function seo(siteUrl: string): Plugin {
   })
   return {
     name: 'chaari-auto-seo',
-    transformIndexHtml: (html) => html.replace('<!--app-head-->', headTags(siteUrl)),
+    transformIndexHtml(html, ctx) {
+      if (!ctx.server) return html
+      const lang = langFromPath(ctx.originalUrl ?? '/')
+      return html.replace('<!--app-head-->', headTags(siteUrl, lang)).replace('<html lang="fr">', `<html lang="${lang}">`)
+    },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         const body = files()[req.url?.slice(1) as keyof ReturnType<typeof files>]

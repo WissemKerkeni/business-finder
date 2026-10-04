@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react'
-import { photos, photoSrc, photoSrcSet, type PhotoKey } from '../data/business'
+import { logo, photos, photoSrc, photoSrcSet, type PhotoKey } from '../data/business'
+import { useCopy } from '../data/copy'
 
 type PhotoProps = { id: PhotoKey; alt: string; className?: string; sizes?: string; priority?: boolean }
 
@@ -48,13 +49,26 @@ export const btn = {
   outline: `${base} border border-chalk/70 px-5 py-3.5 text-chalk hover:bg-chalk hover:text-ink`,
 }
 
-/** Wordmark: CHAARI AUTO on a white German-style plate, like the plate holder on every car the business posts. */
-export const Plate = ({ className = 'text-sm sm:text-base' }: { className?: string }) => (
-  <span className={`inline-flex select-none items-center rounded-[3px] border border-ink bg-plate px-3 py-1 font-head font-bold tracking-[0.12em] text-ink outline outline-1 outline-plate ${className}`}>
-    CHAARI AUTO
+/** The logo: the car from the owner's artwork (without its wordmark) and CHAARI AUTO set beside it as before, on the
+ *  white plate (the car is drawn for a white background). Everything scales with font-size (text-* class); `sizes` is
+ *  the car's rendered width, for the srcset. */
+export const LogoLockup = ({ className = '', sizes = '64px', priority = false }: { className?: string; sizes?: string; priority?: boolean }) => (
+  <span className={`inline-flex select-none items-center gap-[0.5em] rounded-[4px] border border-ink bg-white py-[0.2em] pr-[0.7em] pl-[0.35em] font-head font-bold leading-none tracking-[0.12em] text-ink outline outline-1 outline-white ${className}`}>
+    <img
+      src={logo.mark}
+      srcSet={logo.markSet}
+      sizes={sizes}
+      alt=""
+      width={logo.markW}
+      height={logo.markH}
+      className="h-[2.1em] w-auto"
+      {...(priority ? { fetchPriority: 'high' as const } : { loading: 'lazy' as const })}
+    />
+    <span className="whitespace-nowrap">CHAARI AUTO</span>
   </span>
 )
 
-export const Stars = ({ className = '' }: { className?: string }) => (
-  <span className={`text-signal-text ${className}`} role="img" aria-label="5 étoiles sur 5">★★★★★</span>
-)
+export const Stars = ({ className = '' }: { className?: string }) => {
+  const t = useCopy()
+  return <span className={`text-[#FBBC04] ${className}`} role="img" aria-label={t.reviews.stars}>★★★★★</span>
+}

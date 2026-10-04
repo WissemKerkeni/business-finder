@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
-import { frDate, photoSrc, videoCaption, videoOrder, type Video } from '../data/business'
+import { photoSrc, videoCaption, videoOrder, type Video } from '../data/business'
+import { useCopy } from '../data/copy'
+import { fmtDate, useLang } from '../i18n'
 import { SectionTitle, Wrap, rd } from './ui'
 
 /** Portrait clips with poster + play button, as in the Stitch design: on hover the tile zooms, the scrim lightens and the
  *  play ring turns red; on a mouse/trackpad the muted clip also previews while hovered. A click plays it with controls.
  *  preload="none"; one clip plays at a time; a clip pauses when it leaves the view. */
 export default function Videos() {
+  const lang = useLang()
+  const t = useCopy().videos
   const refs = useRef<(HTMLVideoElement | null)[]>([])
   const [started, setStarted] = useState<Record<string, boolean>>({})
   const [preview, setPreview] = useState<string | null>(null)
@@ -46,12 +50,12 @@ export default function Videos() {
   }
 
   return (
-    <section id="videos" aria-labelledby="videos-title" className="border-b border-line bg-ink py-20 lg:py-28">
+    <section id="videos" aria-labelledby="videos-title" className="border-b border-line bg-ink py-12 md:py-16 lg:py-28">
       <Wrap>
-        <SectionTitle eyebrow="Instagram · Facebook" id="videos-title" className="mb-10">En vidéo</SectionTitle>
+        <SectionTitle eyebrow={t.eyebrow} id="videos-title" className="mb-8 lg:mb-10">{t.title}</SectionTitle>
         <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-5 lg:gap-6">
           {videoOrder.map((clip, i) => {
-            const cap = videoCaption(clip)
+            const cap = videoCaption(clip, lang)
             const live = started[clip.id]
             return (
               <figure
@@ -75,14 +79,14 @@ export default function Videos() {
                     width={clip.w}
                     height={clip.h}
                     onPlay={(e) => stopOthers(e.currentTarget)}
-                    aria-label={`Vidéo : ${cap}, publiée par Chaari Auto sur Facebook le ${frDate(clip.uploadDate)}`}
+                    aria-label={t.label(cap, fmtDate(clip.uploadDate, lang))}
                     className={`h-full w-full object-cover transition-transform duration-500 ease-out ${live ? '' : 'group-hover:scale-105'}`}
                   />
                   {!live && (
                     <button
                       type="button"
                       onClick={() => play(i, clip)}
-                      aria-label={`Lire la vidéo : ${cap}`}
+                      aria-label={`${t.play} : ${cap}`}
                       className={`absolute inset-0 flex items-center justify-center transition-colors duration-300 ${preview === clip.id ? 'bg-black/0' : 'bg-black/40 group-hover:bg-black/20'}`}
                     >
                       <span className={`flex h-14 w-14 items-center justify-center rounded-full border bg-ink/70 transition-all duration-300 group-hover:scale-110 group-hover:border-signal group-hover:text-signal-text ${preview === clip.id ? 'border-signal text-signal-text opacity-80' : 'border-white/60 text-white'}`}>
@@ -90,12 +94,12 @@ export default function Videos() {
                       </span>
                     </button>
                   )}
-                  <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-signal transition-transform duration-500 group-hover:scale-x-100" aria-hidden />
+                  <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-signal-text transition-transform duration-500 group-hover:scale-x-100" aria-hidden />
                 </div>
                 <figcaption className="pt-3 font-mono text-[11px] uppercase tracking-[0.1em]">
                   <p className="text-chalk transition-colors group-hover:text-white">{cap}</p>
                   <p className="mt-1 text-mute">
-                    Facebook · {frDate(clip.uploadDate)} · <a href={clip.postUrl} target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-signal-text">Voir sur Facebook</a>
+                    Facebook · {fmtDate(clip.uploadDate, lang)} · <a href={clip.postUrl} target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-signal-text">{t.seeFb}</a>
                   </p>
                 </figcaption>
               </figure>
