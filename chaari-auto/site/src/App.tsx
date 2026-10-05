@@ -7,8 +7,11 @@ import Deliveries from './components/Deliveries'
 import ForSale from './components/ForSale'
 import Videos from './components/Videos'
 import CarDialog from './components/CarDialog'
-import { ActionBar, Audience, Contact, Cta, Faq, Footer, Legal, Testimonials } from './components/Sections'
+import International from './components/International'
+import { ActionBar, Contact, Cta, Faq, Footer, Legal, Services, Testimonials } from './components/Sections'
 import { deliveries, forSale, type Car } from './data/business'
+import { copy } from './data/copy'
+import { LangContext, type Lang } from './i18n'
 
 const allCars: Car[] = [...deliveries, ...forSale]
 
@@ -47,7 +50,7 @@ function useReveal() {
   }, [])
 }
 
-export default function App() {
+export default function App({ lang }: { lang: Lang }) {
   useReveal()
   // The car panel state lives in the URL hash (#car-<id>) so a link opens its panel.
   const [openId, setOpenId] = useState<string | null>(null)
@@ -70,20 +73,21 @@ export default function App() {
   }, [openId])
 
   return (
-    <>
+    <LangContext.Provider value={lang}>
       <a href="#main" className="eyebrow sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[80] focus:bg-signal focus:px-4 focus:py-3 focus:text-white">
-        Aller au contenu
+        {copy[lang].skip}
       </a>
       <Header />
       <Hero />
       <main id="main">
+        <Services />
         <Steps />
-        <Audience />
+        <Testimonials />
+        <International />
         <RequestForm />
         <ForSale onOpen={open} />
         <Deliveries onOpen={open} />
         <Videos />
-        <Testimonials />
         <Faq />
         <Contact />
         <Cta />
@@ -92,6 +96,6 @@ export default function App() {
       <Footer />
       <ActionBar />
       <CarDialog car={allCars.find((c) => c.id === openId) ?? null} onClose={close} />
-    </>
+    </LangContext.Provider>
   )
 }

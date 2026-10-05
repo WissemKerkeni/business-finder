@@ -432,5 +432,170 @@
    1024,
    1440
   ]
+ },
+ "mercedes-gle-coupe-1": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "mercedes-gle-coupe-2": {
+  "w": 901,
+  "h": 1600,
+  "widths": [
+   640,
+   901
+  ]
+ },
+ "mercedes-gle-coupe-3": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "porsche-cayenne-coupe-1": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "porsche-cayenne-coupe-2": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "porsche-cayenne-coupe-3": {
+  "w": 901,
+  "h": 1600,
+  "widths": [
+   640,
+   901
+  ]
+ },
+ "porsche-cayenne-coupe-4": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "porsche-cayenne-coupe-5": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "audi-rs-q3-sportback-1": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "audi-rs-q3-sportback-2": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "jeep-wrangler-rubicon-1": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "jeep-wrangler-rubicon-2": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "jeep-wrangler-rubicon-3": {
+  "w": 901,
+  "h": 1600,
+  "widths": [
+   640,
+   901
+  ]
+ },
+ "jeep-wrangler-rubicon-4": {
+  "w": 901,
+  "h": 1600,
+  "widths": [
+   640,
+   901
+  ]
+ },
+ "cupra-formentor-1": {
+  "w": 1600,
+  "h": 901,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "cupra-formentor-2": {
+  "w": 901,
+  "h": 1600,
+  "widths": [
+   640,
+   901
+  ]
+ },
+ "audi-q5-1": {
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
+ },
+ "audi-q5-2": {
+  "w": 900,
+  "h": 1600,
+  "widths": [
+   640,
+   900
+  ]
+ },
+ "audi-q5-3": {
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   640,
+   1024,
+   1600
+  ]
  }
 }

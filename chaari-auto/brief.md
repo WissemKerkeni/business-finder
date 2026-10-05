@@ -19,7 +19,9 @@ Research done 2026-09-29, logged in via Claude in Chrome (Instagram, Facebook) p
 | Instagram | https://www.instagram.com/chaari.auto/ (792 followers, 43 posts, mostly Reels) | |
 | TikTok | https://www.tiktok.com/@chaari.auto (158 followers, 30 videos). The grid would not load without a login, so it was not walked. Its bio is quoted below. | |
 | Google Maps | https://www.google.com/maps/place/CHAARI+AUTO/@48.9455807,9.0985454,17z/data=!4m6!3m5!1s0x4799d534da3bde8b:0xef513e9a96efbc1b | |
-| Person | "Mohamed Chaari" is the Facebook user linked to the Instagram account. Reviews name "Mr Mohamed Chaari" / "Mohamed". | IG linked_fb_user, reviews → **owner to confirm before naming him on the site** |
+| Owner (Inhaber) | **Mohamed Chaari**, confirmed on 2026-10-05 (also the Facebook user linked to the Instagram account; reviews name "Mr Mohamed Chaari") | owner, 2026-10-05 |
+| USt-IdNr. (VAT ID) | **DE359663748** (German check digit valid; the EU VIES service was busy on 2026-10-05, so not yet confirmed there) | owner's document, 2026-10-05 |
+| EORI-Nr. | **DE663813168188865** (written "EOR1-Nr" on the owner's document) | owner's document, 2026-10-05 |
 | Not this business | "Société Chaari Auto Sud" (spare-parts wholesaler, Sfax) and "Lavage Abouda (Chaari Auto)" (car wash, Sfax) | excluded |
 
 Only the TikTok bio mentions Algeria; the FB and IG bios say Tunisia and France (see §2). There are no prices anywhere, so the site shows none ("Prix sur demande" is not needed, because nothing is offered for sale, see §6).
@@ -107,6 +109,8 @@ Legend: **D** = client post ("Félicitations …", client name never shown) · *
 | vw-golf | E | Volkswagen GOLF | — | "Tout option" | 2025-12-23 | brief only | IG 720p | IG DSm8JMHisug |
 | mercedes-glb-blanc | E | (overlay only: "MERCEDES GLB AMG") | — | caption is generic "Export de voiture de l'europe vers la Tunisie" | 2025-12-22 | brief only | IG 720p | IG DSlK1yJir6V |
 
+**Owner's photos (WhatsApp, 2026-10-04), added on 2026-10-05:** 22 photos of six cars in the same car park, all with the CHAARI AUTO plate holder at the front and empty holders at the rear. No captions, so model from the badges only, no year, no spec; shown first in the gallery as "Photos · Chaari Auto" (`kind: 'owner'`), processed by `site/scripts/owner-photos.mjs`. `mercedes-gle-coupe` (black, "GLE 350 de" badge, 3 photos), `porsche-cayenne-coupe` (grey, hybrid display, 5), `audi-rs-q3-sportback` (black, RS badge, 2; two readable third-party plates in the background pixelated), `jeep-wrangler-rubicon` (black, "Rubicon" and "4xe" badges, 4), `cupra-formentor` (matte blue, 2), `audi-q5` (white, new generation, rings only, 3). Not used: the Porsche cockpit with the driver's legs and the odometer, and two near-duplicates with another car's plate in the background. They were shot in the same car park as the Google Maps photos, which supports question 9 of §11.
+
 **Added to the site on 2026-09-30 (user request for two more cars):** `maps-range-rover-sport` (green Range Rover Sport, Maps photo 4000×3000) and `maps-mercedes-cla` (matte-grey Mercedes CLA, Maps photo 4000×3000). Each has a single photo, model from the badge or shape only, no year, no date and no spec, and is shown as "Photo · Google Maps".
 
 The Google Maps photos (20, no captions or dates) show more cars in the same car park, several with the CHAARI AUTO plate. Visible models include a Cupra Formentor, a VW Tiguan (new generation), Mercedes GLC and GLC Coupé, a Mercedes CLA, a Range Rover Sport, a VW Golf, a Toyota Corolla Touring, an Audi Q3, a Mercedes A-Class and a Porsche Cayenne. They are used only as atmosphere or hero images, labelled with the model where the badge is clear, and never with a year or spec. **Owner to confirm that these Maps photos are theirs** (one was credited to "Med Chaari").
@@ -150,6 +154,8 @@ The hero is the Google Maps photo of the black **Mercedes GLC Coupé** with the 
 
 ## 10. Legal page (Impressum and Datenschutz)
 
+**Update 2026-10-05:** the owner supplied the owner's name (**Mohamed Chaari**, Inhaber), the **USt-IdNr. DE359663748** and the **EORI-Nr. DE663813168188865**. They are on the site (Impressum: "Inhaber", "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG", "EORI-Nummer"; Datenschutz controller; JSON-LD `vatID`; llms.txt). Items 3 and 5 below are answered; the others are still open.
+
 The business is based in Germany, so the site needs an **Impressum** and a **Datenschutzerklärung**. **User decision (2026-09-30): no placeholders on the site and no questions for the client.** The site shows only verified facts: the Impressum has the name, address, phone/WhatsApp and email. The Datenschutz has the controller (the business, with its address and email) and facts about this site: no cookies, no analytics, no stored data, the WhatsApp form, the click-to-load Google Maps, hosting on Vercel, the rights of access, rectification and deletion, and the supervisory authority for Baden-Württemberg. Fields that can't be completed from public sources were removed: legal form, representative, register entry, VAT ID and the person responsible for content. A complete Impressum normally includes the owner's full name (and the register and VAT ID if they exist). If the owner ever provides them, add them to `legal` in `site/src/data/business.ts`. `stitch/impressum-questions.png` keeps the optional question list.
 
 **Search on 2026-09-30:** Northdata had no entry for "Chaari Auto" or for "Chaari" in Bietigheim-Bissingen (only an unrelated Chaari Sàrl in Paris). A web search for "Chaari Auto" Impressum found nothing. None of the business's profiles states a legal form, owner, register or VAT number. The Instagram account is linked to the Facebook user "Mohamed Chaari", and reviewers name "Mr Mohamed Chaari", but the business never states him as owner or legal representative, so he is not named in the Impressum. **Nothing can be filled from public sources**: the owner must supply everything below.
@@ -178,7 +184,7 @@ The business is based in Germany, so the site needs an **Impressum** and a **Dat
 6. Clip IG Dclp8_Jq5i0 is captioned "Range Rover Velar 2022" but shows an Audi RS Q3 → fix the IG caption?
 7. The black "Mercedes C AMG 2024" (19 Feb) has a "C 180" badge → which label is right?
 8. The RAV4 2021 (10 Jan carousel, 13 Jan video, 26 Feb "Félicitations"): is it the same car?
-9. The Google Maps photos: are they all theirs (uploaded by the business)?
-10. Can Mohamed Chaari's name appear on the site?
+9. The Google Maps photos: are they all theirs (uploaded by the business)? (The owner's own photos of 2026-10-04 were taken in the same car park.)
+10. ~~Can Mohamed Chaari's name appear on the site?~~ Yes: he is the owner (Inhaber), confirmed 2026-10-05, and is named in the Impressum.
 11. (Optional) Impressum details: see §10. The site ships without them, by user decision.
 12. Permission to reuse the reels on the site (audio removed; the business's own overlays kept).
