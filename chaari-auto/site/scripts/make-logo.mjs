@@ -1,6 +1,6 @@
 // Builds the logo assets from the owner's logo (../brand/logo-source.webp, white background). The site uses the car
 // alone (owner's choice, 2026-10-04); the CHAARI AUTO wordmark beside it is live text (LogoLockup in ui.tsx).
-//   public/logo/mark-{96,192,384}.webp   the car, trimmed                       → header, footer, hero, CTA
+//   public/logo/mark-{96,192,384}.webp   the car, trimmed, transparent around it → header, footer, hero, CTA (dark)
 //   public/logo/logo.png                  the car centred on a white square     → JSON-LD logo
 //   public/favicon.ico (16/32/48), favicon-{32,48,96,192,512}.png, apple-touch-icon.png → icons
 // usage: node scripts/make-logo.mjs
@@ -19,7 +19,38 @@ const car = { left: 258, top: 140, width: 936, height: 660 }
 // Two passes: sharp would run trim() before extract() in a single pipeline.
 const carBuf = await sharp(SRC).extract(car).toBuffer()
 const carImg = () => sharp(carBuf).trim({ background: '#ffffff', threshold: 20 })
-for (const h of [96, 192, 384]) await carImg().resize({ height: h }).webp({ quality: 90 }).toFile(out(`logo/mark-${h}.webp`))
+
+// The site is dark, so the marks have no white plate (owner's request, 2026-10-05): the white background around the car
+// becomes transparent, the white body stays. Flood fill from the border through light pixels; the anti-aliased fringe
+// of the black outline becomes black with partial alpha, so the edge stays clean on any dark colour.
+const cut = async () => {
+  const { data, info } = await carImg().ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  const { width: w, height: h } = info
+  const lum = (i) => (data[i * 4] * 299 + data[i * 4 + 1] * 587 + data[i * 4 + 2] * 114) / 1000
+  const seen = new Uint8Array(w * h)
+  const stack = []
+  for (let x = 0; x < w; x++) stack.push(x, (h - 1) * w + x)
+  for (let y = 0; y < h; y++) stack.push(y * w, y * w + w - 1)
+  while (stack.length) {
+    const i = stack.pop()
+    if (seen[i] || lum(i) < 110) continue
+    seen[i] = 1
+    const x = i % w
+    if (x > 0) stack.push(i - 1)
+    if (x < w - 1) stack.push(i + 1)
+    if (i >= w) stack.push(i - w)
+    if (i < w * (h - 1)) stack.push(i + w)
+  }
+  for (let i = 0; i < w * h; i++) {
+    if (!seen[i]) continue
+    const a = Math.max(0, Math.min(255, Math.round(255 - lum(i) * 1.1)))
+    data[i * 4] = data[i * 4 + 1] = data[i * 4 + 2] = 0
+    data[i * 4 + 3] = a
+  }
+  return sharp(data, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer()
+}
+const carCut = await cut()
+for (const h of [96, 192, 384]) await sharp(carCut).resize({ height: h }).webp({ quality: 90, alphaQuality: 100 }).toFile(out(`logo/mark-${h}.webp`))
 
 // Square images: the car centred on white with a small margin.
 const square = async (size, file) => {

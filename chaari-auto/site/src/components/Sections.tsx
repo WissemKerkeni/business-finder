@@ -3,7 +3,7 @@ import { business as b, cta, faq, legal, reviews, services, wa } from '../data/b
 import { useCopy } from '../data/copy'
 import { fmtRating, useLang } from '../i18n'
 import { LangSwitch } from './Header'
-import { LogoLockup, Photo, SectionTitle, Stars, WaIcon, Wrap, btn, rd } from './ui'
+import { LogoLockup, Photo, SectionTitle, SocialLinks, Stars, WaIcon, Wrap, btn, rd } from './ui'
 
 /** "Nos services": the three lines of business on the left, the photo framed on the right inside the container
  *  (same margin on both sides). The photo is the real GLE 53 AMG with the CHAARI AUTO plate. */
@@ -115,9 +115,7 @@ export function Contact() {
     [t.email, <a href={`mailto:${b.email}`} className="break-all hover:text-signal-text">{b.email}</a>],
     [t.address, <>{b.address.street}, {b.address.postalCode} {b.address.locality}, {b.address.countryName[lang]} <span className="block text-dim">{b.region[lang]}</span></>],
     [t.hours, <>{b.hours.map((h) => <span key={h.days.fr} className="block">{h.days[lang]} · {h.time[lang]}</span>)}</>],
-    [t.social, <>
-      <a href={b.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-signal-text">Facebook</a> · <a href={b.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-signal-text">Instagram</a> · <a href={b.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-signal-text">TikTok</a>
-    </>],
+    [t.social, <SocialLinks labels />],
   ]
   return (
     <section id="contact" aria-labelledby="contact-title" className="border-b border-line bg-ink py-12 md:py-16 lg:py-28">
@@ -187,24 +185,31 @@ export function Legal() {
           <h2 id="legal-title" className="mb-5 font-head text-2xl font-bold uppercase text-chalk">{t.title}</h2>
           <p className="mb-4">
             <span className={`${h3} block`}>Angaben gemäß § 5 DDG</span>
-            {b.name}<br />{b.address.street}<br />{b.address.postalCode} {b.address.locality}<br />Deutschland
+            {b.name}<br />Inhaber : {b.owner}<br />{b.address.street}<br />{b.address.postalCode} {b.address.locality}<br />Deutschland
           </p>
-          <p>
+          <p className="mb-4">
             <span className={`${h3} block`}>{t.contact}</span>
             Telefon / WhatsApp : <a href={`tel:${b.phoneE164}`} className="hover:text-white">{b.phone}</a><br />
             E-Mail : <a href={`mailto:${b.email}`} className="hover:text-white">{b.email}</a>
           </p>
+          <p>
+            <span className={`${h3} block`}>{t.ids}</span>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG : <span className="tnum">{legal.vatId}</span><br />
+            EORI-Nummer : <span className="tnum">{legal.eori}</span>
+          </p>
         </div>
         <div>
           <h2 id="datenschutz" className="mb-5 font-head text-2xl font-bold uppercase text-chalk">Datenschutz</h2>
-          <p className="mb-3">
+          <p className="mb-4">
             <span className={`${h3} block`}>{t.controller}</span>
-            {b.name}, {b.address.street}, {b.address.postalCode} {b.address.locality}, Deutschland · {b.email}
+            {b.name}, Inhaber {b.owner}, {b.address.street}, {b.address.postalCode} {b.address.locality}, Deutschland · {b.email}
           </p>
-          <p className="mb-3">{t.p1}</p>
-          <p className="mb-3">{t.p2}</p>
-          <p className="mb-3">{t.p3(legal.hosting)}</p>
-          <p>{t.p4(b.email, legal.authority)}</p>
+          {t.privacy(legal.hosting, b.email, legal.authority).map(([k, v]) => (
+            <p key={k} className="mb-4 last:mb-0">
+              <span className={`${h3} block`}>{k}</span>
+              {v}
+            </p>
+          ))}
         </div>
       </Wrap>
     </section>
@@ -218,20 +223,21 @@ export function Footer() {
     <footer className="bg-ink pt-12 pb-12">
       <Wrap className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-          <a href="#top" className="self-start" aria-label={`${b.name}, ${c.nav.home}`}><LogoLockup className="text-[20px]" /></a>
+          <a href="#top" className="shrink-0 self-start" aria-label={`${b.name}, ${c.nav.home}`}><LogoLockup className="text-[20px]" /></a>
           <p className="text-sm text-dim">{t.line}</p>
         </div>
         <nav aria-label={t.nav} className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-dim">
           <a href="#mentions-legales" className="hover:text-white">{t.legal}</a>
           <a href="#datenschutz" className="hover:text-white">Datenschutz</a>
-          <a href={b.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-white">Facebook</a>
-          <a href={b.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white">Instagram</a>
-          <a href={b.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white">TikTok</a>
         </nav>
-        <div className="flex items-center gap-4">
-          <LangSwitch />
-          <p className="font-mono text-[11px] text-mute">© 2026 {b.name}</p>
-        </div>
+        <SocialLinks className="shrink-0" />
+        <div className="self-start lg:self-center"><LangSwitch /></div>
+      </Wrap>
+      {/* Copyright and developer credit; rel without noreferrer so the portfolio can see the visits. */}
+      <Wrap className="mt-8 border-t border-line pt-6">
+        <p className="text-center font-mono text-[11px] leading-relaxed text-mute">
+          © 2026 {b.name} <span aria-hidden>·</span> {t.credit} <a href="https://wissemkerkeni.github.io/" target="_blank" rel="noopener" className="text-chalk-2 underline-offset-4 hover:text-signal-text hover:underline">Wissem Kerkeni</a>
+        </p>
       </Wrap>
     </footer>
   )

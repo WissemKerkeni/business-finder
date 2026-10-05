@@ -1,7 +1,7 @@
 # Chaari Auto — website
 
 One-page bilingual site (French at `/`, English at `/en/`) for Chaari Auto, a car-export business in the Stuttgart region (Bietigheim-Bissingen, Germany) with 12 years of experience: car export from Europe to Tunisia, France, Canada, the Gulf and Africa, car maintenance, and international shipping from the port of Genoa. Built with Vite + React 19 + Tailwind 4, on the same architecture as `ahmed-auto/site`.
-The layout follows `../stitch/desktop-final.html` (near-black #0C0C0D; Archivo Narrow, Geist, Space Mono, self-hosted through Fontsource). Since the owner's notes of 2026-10-04 the accent is the **logo blue** `#0A5CAA` (text on dark: `#5BA4F0`) instead of the Tunisian red, and the logo is the car from the owner's artwork (`../brand/logo-source.webp`, without its own wordmark) with "CHAARI AUTO" set beside it in the original plate lettering, on one white plate (`LogoLockup` in `ui.tsx`): in the header, footer and CTA, and large in the hero on phones and tablets (in the empty top of the photo; hidden on desktop, where the header logo is enough).
+The layout follows `../stitch/desktop-final.html` (near-black #0C0C0D; Archivo Narrow, Geist, Space Mono, self-hosted through Fontsource). Since the owner's notes of 2026-10-04 the accent is the **logo blue** `#0A5CAA` (text on dark: `#5BA4F0`) instead of the Tunisian red, and the logo is the car from the owner's artwork (`../brand/logo-source.webp`, without its own wordmark) with "CHAARI AUTO" in white beside it, in a dark version with no plate since 2026-10-05: the car is cut out of its white background by `npm run logo` (`LogoLockup` in `ui.tsx`): in the header, footer and CTA, and large in the hero on phones and tablets (in the empty top of the photo; hidden on desktop, where the header logo is enough).
 
 It is an informational site: a request is a WhatsApp message or a phone call. No payments, accounts, quote calculator or backend. The request form only builds a pre-filled `wa.me` message.
 
@@ -31,6 +31,8 @@ Every fact comes from the business's own posts, bio or Google Maps profile. Neve
 **Logo or market map**
 - Logo: replace `../brand/logo-source.webp` and run `npm run logo` (the crop boxes are measured on the current file; re-measure for a new one). Writes the car at 96/192/384 px high to `public/logo/`, `logo/logo.png` (JSON-LD), `favicon.ico` (16/32/48) and the PNG favicons (Google Search needs a square icon in a multiple of 48 px, and asks for `/favicon.ico`), and the apple-touch icon.
 - Market map: `npm run map` writes `public/map/markets.svg` (Natural Earth 1:110m, every market region in one tone) and `src/data/map.json` (projected city positions). Shares and names are `markets` in `business.ts`.
+
+**Photos the owner sends** (no caption): add the car to `cars` in `scripts/owner-photos.mjs` (the first photo is the gallery card, so landscape; `pix` boxes pixelate readable plates in the background), run `node scripts/owner-photos.mjs "<folder>"`, and add the car to `deliveries` with `kind: 'owner'`, model from the badge only, `year: null`, no specs.
 
 **A video**
 1. Add the clip to `CLIPS` in `../_scratch/selection.py` (Facebook reel id, post date, kept segment without glitch effects, readable plates or faces).
@@ -83,4 +85,4 @@ No cookies, no analytics, no third-party requests on load: fonts, photos and vid
 - "Our available stock" (step 01): the site has no stock list; add cars to `forSale` when there are some.
 - Car maintenance: what it covers and where it is done (the site only says "a maintenance service, book on WhatsApp").
 
-See `../brief.md` §11: meaning of "Export pour la Tunisie" posts, destinations (Algeria?), what "Gestion complète jusqu'à la livraison" includes, FCR, label conflicts (C 180 badge, Velar/RS Q3 caption), Google Maps photo ownership, naming Mohamed Chaari, Impressum details, permission to reuse the reels.
+See `../brief.md` §11: meaning of "Export pour la Tunisie" posts, destinations (Algeria?), what "Gestion complète jusqu'à la livraison" includes, FCR, label conflicts (C 180 badge, Velar/RS Q3 caption), Google Maps photo ownership, the remaining Impressum details (legal form, register entry; owner, VAT ID and EORI were supplied on 2026-10-05), permission to reuse the reels, and the years and specs of the six cars from the owner's photos.

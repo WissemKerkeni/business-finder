@@ -2,7 +2,7 @@
 // Used by the Vite plugin in vite.config.ts (dev, robots/sitemap/llms) and by scripts/prerender.mjs (head of each page);
 // nothing here ships to the browser bundle.
 import {
-  business as b, carName, carPhoto, deliveries, destinations, faq, forSale, forSaleDate, hero, markets, photos,
+  business as b, carName, carPhoto, deliveries, destinations, faq, forSale, forSaleDate, hero, legal, markets, photos,
   reviews, services, shipping, steps, videoCaption, videoOrder, type PhotoKey,
 } from '../data/business.ts'
 import { fmtDate, fmtRating, homePath, langs, type Lang } from '../i18n.tsx'
@@ -74,6 +74,7 @@ export function jsonLd(siteUrl: string, l: Lang) {
         logo: `${siteUrl}/logo/logo.png`,
         telephone: b.phoneE164,
         email: b.email,
+        vatID: legal.vatId,
         address: {
           '@type': 'PostalAddress',
           streetAddress: b.address.street,
@@ -244,6 +245,8 @@ export function llmsTxt(siteUrl: string) {
     '',
     '## Informations clés',
     `- Nom : ${b.name}`,
+    `- Inhaber (propriétaire) : ${b.owner}`,
+    `- USt-IdNr. (TVA) : ${legal.vatId} · EORI : ${legal.eori}`,
     `- Adresse : ${b.address.street}, ${b.address.postalCode} ${b.address.locality}, ${b.address.countryName.fr} (région de Stuttgart)`,
     `- Coordonnées GPS : ${b.geo.lat}, ${b.geo.lng}`,
     `- WhatsApp / téléphone : ${b.phone}`,
@@ -267,7 +270,7 @@ export function llmsTxt(siteUrl: string) {
       ? [`## Véhicules proposés (publiés au ${fmtDate(forSaleDate.iso, fr)}, disponibilité à confirmer)`, ...forSale.map((c) => `- ${carName(c)} ${c.year} — publié le ${fmtDate(c.date, fr)} — ${siteUrl}/#car-${c.id}`), '']
       : []),
     '## Voitures publiées « Export pour la Tunisie » (exemples, non proposées à la vente sur ce site)',
-    ...deliveries.map((c) => `- ${carName(c)}${c.year ? ` ${c.year}` : ''}${c.kind === 'client' ? ' (voiture d’un client)' : ''}${c.specs.length ? ` — ${c.specs.map(([, v]) => v).join(', ')}` : ''} — ${c.date ? `publié le ${fmtDate(c.date, fr)} sur ${c.source}` : 'photo du profil Google Maps'} — ${siteUrl}/#car-${c.id}`),
+    ...deliveries.map((c) => `- ${carName(c)}${c.year ? ` ${c.year}` : ''}${c.kind === 'client' ? ' (voiture d’un client)' : ''}${c.specs.length ? ` — ${c.specs.map(([, v]) => v).join(', ')}` : ''} — ${c.date ? `publié le ${fmtDate(c.date, fr)} sur ${c.source}` : c.kind === 'owner' ? 'photos de Chaari Auto' : 'photo du profil Google Maps'} — ${siteUrl}/#car-${c.id}`),
     '',
     '## Vidéos (extraits sans le son, publiées sur Facebook)',
     ...videoOrder.map((v) => `- ${videoCaption(v, fr)} — ${fmtDate(v.uploadDate, fr)} — ${v.postUrl}`),

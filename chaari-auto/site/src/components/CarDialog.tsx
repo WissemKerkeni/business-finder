@@ -95,7 +95,9 @@ export default function CarDialog({ car, onClose }: { car: Car | null; onClose: 
               <a href={`tel:${b.phoneE164}`} className={btn.outline}>{t.call}</a>
             </div>
             <p className="font-mono text-[11px] leading-relaxed text-mute">
-              {car.kind === 'maps'
+              {car.kind === 'owner'
+                ? t.fromOwner
+                : car.kind === 'maps'
                 ? <>{t.fromMaps[0]}<a href={car.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-white">{t.fromMaps[1]}</a>{t.fromMaps[2]}</>
                 : <>{t.fromPost(car.source)[0]}<a href={car.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-white">{t.fromPost(car.source)[1]}</a>{t.fromPost(car.source)[2]}</>}
             </p>

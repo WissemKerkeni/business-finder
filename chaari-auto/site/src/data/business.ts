@@ -21,6 +21,8 @@ export const photoSrcSet = (id: PhotoKey) => photos[id].widths.map((w) => `/phot
 export const business = {
   name: 'Chaari Auto',
   wordmark: 'CHAARI AUTO',
+  // Owner (Inhaber), confirmed by the owner on 2026-10-05.
+  owner: 'Mohamed Chaari',
   // Owner's positioning (2026-10-04).
   tagline: {
     fr: 'Spécialiste de l’exportation de voitures d’Europe vers l’international.',
@@ -190,15 +192,16 @@ export function requestMessage(r: Request, l: Lang) {
 // kind 'client': the post says "Félicitations <client>" (the client's name is never shown).
 // kind 'export': "Export pour la Tunisie", status unknown (owner to confirm). Never shown as available, no price.
 // kind 'maps': a photo on the business's Google Maps profile, no caption and no date → model only (from the badge), no year.
+// kind 'owner': photos the owner sent on WhatsApp (2026-10-04), no caption → model only (from the badges), no year or specs.
 export type Car = {
   id: string
   make: string
   model: string
   year: string | null
-  kind: 'client' | 'export' | 'maps'
-  date: string | null // post date, ISO (null for Google Maps photos)
-  source: 'Instagram' | 'Facebook' | 'Google Maps'
-  url: string
+  kind: 'client' | 'export' | 'maps' | 'owner'
+  date: string | null // post date, ISO (null for Google Maps and owner photos)
+  source: 'Instagram' | 'Facebook' | 'Google Maps' | 'Chaari Auto'
+  url: string // the post or profile ('' for owner photos)
   specs: [string, string][] // only what the post states (French; see `terms` for English)
   photos: number // photos/<id>-1 … -N
   alts: string[]
@@ -207,6 +210,43 @@ export type Car = {
 }
 
 export const deliveries: Car[] = [
+  // The owner's photos (2026-10-04, scripts/owner-photos.mjs), the newest material, so first.
+  {
+    id: 'mercedes-gle-coupe', make: 'Mercedes', model: 'GLE 350 de Coupé', year: null, kind: 'owner', date: null, source: 'Chaari Auto',
+    url: '', specs: [], photos: 3, schema: { bodyType: 'SUV coupé' },
+    alts: ['Mercedes GLE Coupé noir vu de trois quarts avant, plaque CHAARI AUTO', 'Mercedes GLE Coupé noir vu de face, plaque CHAARI AUTO', 'Mercedes GLE 350 de Coupé noir vu de trois quarts arrière'],
+    altsEn: ['Black Mercedes GLE Coupé, front three-quarter view, CHAARI AUTO plate', 'Black Mercedes GLE Coupé, front view, CHAARI AUTO plate', 'Black Mercedes GLE 350 de Coupé, rear three-quarter view'],
+  },
+  {
+    id: 'porsche-cayenne-coupe', make: 'Porsche', model: 'Cayenne Coupé', year: null, kind: 'owner', date: null, source: 'Chaari Auto',
+    url: '', specs: [], photos: 5, schema: { bodyType: 'SUV coupé' },
+    alts: ['Porsche Cayenne Coupé gris vu de profil', 'Porsche Cayenne Coupé gris vu de trois quarts arrière', 'Porsche Cayenne Coupé gris vu de face, plaque CHAARI AUTO', 'Calandre du Porsche Cayenne Coupé avec la plaque CHAARI AUTO', 'Sièges avant et volant du Porsche Cayenne Coupé'],
+    altsEn: ['Grey Porsche Cayenne Coupé, side view', 'Grey Porsche Cayenne Coupé, rear three-quarter view', 'Grey Porsche Cayenne Coupé, front view, CHAARI AUTO plate', 'Porsche Cayenne Coupé front grille with the CHAARI AUTO plate', 'Porsche Cayenne Coupé front seats and steering wheel'],
+  },
+  {
+    id: 'audi-rs-q3-sportback', make: 'Audi', model: 'RS Q3 Sportback', year: null, kind: 'owner', date: null, source: 'Chaari Auto',
+    url: '', specs: [], photos: 2, schema: { bodyType: 'SUV coupé' },
+    alts: ['Audi RS Q3 Sportback noire vue de trois quarts arrière', 'Audi RS Q3 Sportback noire vue de face, plaque CHAARI AUTO'],
+    altsEn: ['Black Audi RS Q3 Sportback, rear three-quarter view', 'Black Audi RS Q3 Sportback, front view, CHAARI AUTO plate'],
+  },
+  {
+    id: 'jeep-wrangler-rubicon', make: 'Jeep', model: 'Wrangler Rubicon 4xe', year: null, kind: 'owner', date: null, source: 'Chaari Auto',
+    url: '', specs: [], photos: 4, schema: { bodyType: 'SUV' },
+    alts: ['Jeep Wrangler Rubicon noir vu de trois quarts avant, plaque CHAARI AUTO', 'Jeep Wrangler Rubicon noir vu de profil arrière', 'Jeep Wrangler Rubicon noir vu de face, plaque CHAARI AUTO', 'Jeep Wrangler Rubicon noir vu de l’arrière, roue de secours'],
+    altsEn: ['Black Jeep Wrangler Rubicon, front three-quarter view, CHAARI AUTO plate', 'Black Jeep Wrangler Rubicon, rear side view', 'Black Jeep Wrangler Rubicon, front view, CHAARI AUTO plate', 'Black Jeep Wrangler Rubicon, rear view with the spare wheel'],
+  },
+  {
+    id: 'cupra-formentor', make: 'Cupra', model: 'Formentor', year: null, kind: 'owner', date: null, source: 'Chaari Auto',
+    url: '', specs: [], photos: 2, schema: { bodyType: 'SUV' },
+    alts: ['Cupra Formentor bleu mat vu de trois quarts arrière', 'Cupra Formentor bleu mat vu de face, plaque CHAARI AUTO'],
+    altsEn: ['Matte blue Cupra Formentor, rear three-quarter view', 'Matte blue Cupra Formentor, front view, CHAARI AUTO plate'],
+  },
+  {
+    id: 'audi-q5', make: 'Audi', model: 'Q5', year: null, kind: 'owner', date: null, source: 'Chaari Auto',
+    url: '', specs: [], photos: 3, schema: { bodyType: 'SUV' },
+    alts: ['Audi Q5 blanche vue de trois quarts avant, plaque CHAARI AUTO', 'Audi Q5 blanche vue de face, plaque CHAARI AUTO', 'Habitacle de l’Audi Q5 avec toit panoramique'],
+    altsEn: ['White Audi Q5, front three-quarter view, CHAARI AUTO plate', 'White Audi Q5, front view, CHAARI AUTO plate', 'Audi Q5 interior with panoramic roof'],
+  },
   {
     id: 'mercedes-c-noire-2024', make: 'Mercedes', model: 'C AMG', year: '2024', kind: 'client', date: '2026-02-19', source: 'Instagram',
     url: 'https://www.instagram.com/reel/DU89Uu-Ci5J/', specs: [['Équipement', 'Toutes options']], photos: 5, schema: { bodyType: 'Berline' },
@@ -288,19 +328,23 @@ export const specSheet = (c: Car, l: Lang): [string, string][] => {
     ...(c.year ? [[fr ? 'Année' : 'Year', fr ? `Modèle ${c.year}` : `${c.year} model`] as [string, string]] : []),
     ...c.specs.map(([k, v]) => [term(k, l), term(v, l)] as [string, string]),
     ...(c.date ? [[fr ? 'Publié le' : 'Posted on', fmtDate(c.date, l)] as [string, string]] : []),
-    ['Source', c.kind === 'maps' ? (fr ? 'Photo du profil Google Maps' : 'Photo from the Google Maps profile') : c.source],
+    ['Source', c.kind === 'maps' ? (fr ? 'Photo du profil Google Maps' : 'Photo from the Google Maps profile') : c.kind === 'owner' ? (fr ? 'Photos de Chaari Auto' : 'Photos from Chaari Auto') : c.source],
   ]
 }
 export const waCar = (c: Car, l: Lang) =>
   wa(l === 'fr'
     ? c.kind === 'maps'
       ? `Bonjour Chaari Auto, j’ai vu la photo de la ${carName(c)} sur votre profil Google Maps. Je cherche une voiture de ce type, pouvez-vous me renseigner ?`
+      : c.kind === 'owner'
+      ? `Bonjour Chaari Auto, j’ai vu les photos de la ${carName(c)} sur votre site. Je cherche une voiture de ce type, pouvez-vous me renseigner ?`
       : `Bonjour Chaari Auto, j’ai vu la ${carName(c)} (${c.year}) publiée le ${fmtDate(c.date, l)} sur votre page. Je cherche une voiture de ce type, pouvez-vous me renseigner ?`
     : c.kind === 'maps'
       ? `Hello Chaari Auto, I saw the photo of the ${carName(c)} on your Google Maps profile. I am looking for a car like this, can you help me?`
+      : c.kind === 'owner'
+      ? `Hello Chaari Auto, I saw the photos of the ${carName(c)} on your website. I am looking for a car like this, can you help me?`
       : `Hello Chaari Auto, I saw the ${carName(c)} (${c.year}) you posted on ${fmtDate(c.date, l)}. I am looking for a car like this, can you help me?`)
-/** "Publié le 12/02/2026 · Instagram", or "Photo · Google Maps" when the photo has no date. */
-export const carMeta = (c: Car, l: Lang) => (c.date ? `${l === 'fr' ? 'Publié le' : 'Posted'} ${fmtDate(c.date, l)} · ${c.source}` : `Photo · ${c.source}`)
+/** "Publié le 12/02/2026 · Instagram", or "Photo · Google Maps" / "Photos · Chaari Auto" when there is no date. */
+export const carMeta = (c: Car, l: Lang) => (c.date ? `${l === 'fr' ? 'Publié le' : 'Posted'} ${fmtDate(c.date, l)} · ${c.source}` : `${c.photos > 1 ? 'Photos' : 'Photo'} · ${c.source}`)
 
 // ---------- Videos (FB reels, trimmed, audio removed, the business's own overlays kept) ----------
 export type Video = { id: string; file: string; poster: PhotoKey; w: number; h: number; duration: number; carId: string; postUrl: string; uploadDate: string; segment: number[] }
@@ -407,11 +451,15 @@ export const faq: { q: L; a: L }[] = [
   },
 ]
 
-/** Impressum / Datenschutz: only verified facts (business name, address, phone, email from its own profiles) and
- *  facts about this site (hosting, no cookies, no stored data). Nothing is invented and there are no placeholders
- *  (user decision 2026-09-30). Details the owner could add later (legal form, representative, register, VAT ID)
- *  are listed in ../../brief.md §10. */
+/** Impressum / Datenschutz: only verified facts (business name, address, phone, email from its own profiles; owner,
+ *  VAT ID and EORI number from the owner's document of 2026-10-05) and facts about this site (hosting, no cookies, no
+ *  stored data). Nothing is invented and there are no placeholders (user decision 2026-09-30). Details still open
+ *  (legal form, register entry) are listed in ../../brief.md §10. */
 export const legal = {
+  // USt-IdNr. (§ 27a UStG); the check digit is valid.
+  vatId: 'DE359663748',
+  // EORI number (customs: exports outside the EU).
+  eori: 'DE663813168188865',
   hosting: 'Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA',
   authority: 'Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg',
 }

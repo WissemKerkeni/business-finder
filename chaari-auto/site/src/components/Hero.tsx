@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 h-72 bg-[linear-gradient(0deg,#0C0C0D_35%,transparent)] lg:hidden" />
 
       <div className="intro relative z-10 mx-auto mt-[108px] sm:mt-32 lg:hidden" style={delay(0)}>
-        <LogoLockup priority sizes="(min-width: 640px) 100px, 80px" className="text-[clamp(20px,7.6vw,30px)] shadow-[0_18px_50px_-12px_rgba(0,0,0,.8)] sm:text-[36px]" />
+        <LogoLockup priority sizes="(min-width: 640px) 100px, 80px" className="text-[clamp(20px,7.6vw,30px)] drop-shadow-[0_4px_18px_rgba(0,0,0,.75)] sm:text-[36px]" />
       </div>
 
       <Wrap className="relative z-10 mt-auto w-full pt-10 pb-10 lg:pt-36 lg:pb-12">

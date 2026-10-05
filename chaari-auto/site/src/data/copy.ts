@@ -108,7 +108,7 @@ const fr = {
     badLink: 'Le lien Mobile.de doit commencer par https://',
   },
   cars: {
-    eyebrow: 'Instagram · Facebook · Google Maps',
+    eyebrow: 'Chaari Auto · Instagram · Facebook · Google Maps',
     title: 'Export pour la Tunisie',
     client: 'Voiture d’un client',
     photos: (n: number) => `${n} ${n > 1 ? 'photos' : 'photo'}`,
@@ -120,6 +120,7 @@ const fr = {
     photo: 'Photo',
     call: 'Appeler',
     fromMaps: ['Photo publiée sur le profil Google Maps de Chaari Auto (', 'voir le profil', '). Année et détails : sur demande.'],
+    fromOwner: 'Photos de Chaari Auto. Année et détails : sur demande.',
     fromPost: (src: string) => [`Informations tirées de la publication de Chaari Auto sur ${src} (`, 'voir la publication', ').'],
   },
   sale: {
@@ -167,16 +168,22 @@ const fr = {
   legal: {
     title: 'Mentions légales / Impressum',
     contact: 'Kontakt / Contact',
+    ids: 'Identifiants / Steuer- und Zollnummern',
     controller: 'Responsable / Verantwortlicher',
-    p1: 'Ce site n’utilise ni cookies ni outil de mesure d’audience et ne conserve aucune donnée personnelle. Les polices, les photos et les vidéos sont hébergées sur ce site.',
-    p2: 'Le formulaire « Votre demande » n’envoie rien à ce site : il ouvre WhatsApp avec votre message, que vous choisissez d’envoyer ou non (WhatsApp Ireland Ltd.). La carte Google Maps n’est chargée qu’après votre clic (Google Ireland Ltd.).',
-    p3: (host: string) => `Hébergement : ${host}. L’hébergeur traite les données techniques nécessaires à l’affichage des pages (adresse IP, date et heure de la visite).`,
-    p4: (email: string, auth: string) => `Vous pouvez demander l’accès, la rectification ou l’effacement de vos données en écrivant à ${email}, et adresser une réclamation à l’autorité de contrôle : ${auth}.`,
+    // Datenschutz: [label, text] blocks, brief and factual.
+    privacy: (host: string, email: string, auth: string): [string, string][] => [
+      ['Données', 'Aucun cookie, aucun outil de mesure d’audience, aucune donnée personnelle conservée. Polices, photos et vidéos sont hébergées sur ce site.'],
+      ['Services tiers', 'Le formulaire ouvre WhatsApp (WhatsApp Ireland Ltd.) sans rien transmettre à ce site ; l’envoi du message reste votre choix. La carte Google Maps (Google Ireland Ltd.) ne se charge qu’après votre clic.'],
+      ['Hébergement', `${host}. Seules les données techniques nécessaires à l’affichage sont traitées (adresse IP, date et heure).`],
+      ['Vos droits', `Accès, rectification et effacement : ${email}. Réclamation : ${auth}.`],
+    ],
   },
   footer: {
     line: 'Export de voitures d’Europe vers l’international · Entretien automobile · Expédition',
     nav: 'Liens du pied de page',
     legal: 'Mentions légales / Impressum',
+    on: (net: string) => `Chaari Auto sur ${net}`,
+    credit: 'Site web développé et designé par',
   },
   bar: { label: 'Actions rapides', call: 'Appeler' },
 }
@@ -290,7 +297,7 @@ const en: Copy = {
     badLink: 'The Mobile.de link must start with https://',
   },
   cars: {
-    eyebrow: 'Instagram · Facebook · Google Maps',
+    eyebrow: 'Chaari Auto · Instagram · Facebook · Google Maps',
     title: 'Exported to Tunisia',
     client: 'Customer’s car',
     photos: (n: number) => `${n} ${n > 1 ? 'photos' : 'photo'}`,
@@ -302,6 +309,7 @@ const en: Copy = {
     photo: 'Photo',
     call: 'Call',
     fromMaps: ['Photo posted on Chaari Auto’s Google Maps profile (', 'see the profile', '). Year and details on request.'],
+    fromOwner: 'Photos from Chaari Auto. Year and details on request.',
     fromPost: (src: string) => [`Details from Chaari Auto’s post on ${src} (`, 'see the post', ').'],
   },
   sale: {
@@ -349,16 +357,21 @@ const en: Copy = {
   legal: {
     title: 'Legal notice / Impressum',
     contact: 'Kontakt / Contact',
+    ids: 'Tax and customs IDs / Steuer- und Zollnummern',
     controller: 'Controller / Verantwortlicher',
-    p1: 'This site uses no cookies and no analytics, and stores no personal data. Fonts, photos and videos are hosted on this site.',
-    p2: 'The “Your request” form sends nothing to this site: it opens WhatsApp with your message, which you choose whether to send (WhatsApp Ireland Ltd.). The Google map is loaded only after you click (Google Ireland Ltd.).',
-    p3: (host: string) => `Hosting: ${host}. The host processes the technical data needed to serve the pages (IP address, date and time of the visit).`,
-    p4: (email: string, auth: string) => `You can request access to, correction or deletion of your data by writing to ${email}, and lodge a complaint with the supervisory authority: ${auth}.`,
+    privacy: (host: string, email: string, auth: string): [string, string][] => [
+      ['Data', 'No cookies, no analytics, no personal data stored. Fonts, photos and videos are hosted on this site.'],
+      ['Third-party services', 'The form opens WhatsApp (WhatsApp Ireland Ltd.) and sends nothing to this site; whether to send the message is your choice. The Google map (Google Ireland Ltd.) loads only after you click.'],
+      ['Hosting', `${host}. Only the technical data needed to serve the pages is processed (IP address, date and time).`],
+      ['Your rights', `Access, correction and deletion: ${email}. Complaints: ${auth}.`],
+    ],
   },
   footer: {
     line: 'Car export from Europe to international destinations · Car maintenance · Shipping',
     nav: 'Footer links',
     legal: 'Legal notice / Impressum',
+    on: (net: string) => `Chaari Auto on ${net}`,
+    credit: 'Website developed and designed by',
   },
   bar: { label: 'Quick actions', call: 'Call' },
 }
