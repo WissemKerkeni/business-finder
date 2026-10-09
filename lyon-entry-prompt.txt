@@ -1,0 +1,250 @@
+# Business Lead Research — Lyon, France (1er → 9e arrondissement)
+
+Act as a **local business lead researcher**. Your goal is to find businesses in Lyon, France that could benefit from having a professional **brochure/informational website**.
+
+## Target area — strict order
+
+Search the City of Lyon arrondissement by arrondissement, in this exact order:
+
+1. **Lyon 1er** (69001) — Presqu'île nord, Pentes de la Croix-Rousse, Terreaux
+2. **Lyon 2e** (69002) — Presqu'île, Bellecour, Perrache, Confluence
+3. **Lyon 3e** (69003) — Part-Dieu, Guillotière nord, Monplaisir nord, Montchat
+4. **Lyon 4e** (69004) — Croix-Rousse plateau
+5. **Lyon 5e** (69005) — Vieux Lyon, Fourvière, Point du Jour, Ménival
+6. **Lyon 6e** (69006) — Brotteaux, Foch, Tête d'Or
+7. **Lyon 7e** (69007) — Guillotière, Jean Macé, Gerland
+8. **Lyon 8e** (69008) — Monplaisir, États-Unis, Mermoz, Grand Trou
+9. **Lyon 9e** (69009) — Vaise, Saint-Rambert, La Duchère, Gorge de Loup
+
+Do not mix arrondissements. Complete one before moving to the next.
+
+Within each arrondissement, cover the neighbourhoods (quartiers) and main shopping streets, not only the most central blocks.
+
+## Where to search
+
+Use multiple sources whenever possible:
+
+* Google Maps / Google Business Profiles
+* PagesJaunes — https://www.pagesjaunes.fr/
+* Mappy — https://fr.mappy.com/
+* Google Search
+* Societe.com / Pappers / Annuaire des Entreprises (to confirm the business is still active)
+* Facebook business pages
+* Instagram business pages
+* TheFork, Tripadvisor, Planity, Doctolib and similar booking platforms
+* Other publicly available websites/directories
+
+Use Google Maps as the primary source for discovering businesses, then use other sources to verify their contact information and online presence.
+
+## Target businesses
+
+Look for local businesses such as:
+
+* Restaurants, bouchons lyonnais, brasseries
+* Cafés / bars
+* Bakeries / pastry shops (boulangeries, pâtisseries)
+* Hotels / guest houses / chambres d'hôtes
+* Car rental companies
+* Car dealerships
+* Auto repair shops / garages / carrosseries
+* Car accessory stores
+* Beauty salons / hair salons / barbers / nail salons / institutes
+* Gyms / fitness centers / yoga & dance studios
+* Furniture and decoration stores
+* Clothing stores / boutiques
+* Electronics stores
+* Phone / computer repair shops
+* Construction / renovation companies (artisans du bâtiment)
+* Plumbers / electricians / locksmiths
+* Real-estate agencies
+* Travel agencies
+* Medical / dental / physiotherapy practices
+* Veterinary clinics
+* Opticians
+* Florists
+* Wedding / event businesses
+* Photography studios
+* Cleaning companies
+* Printing businesses / copy shops
+* Butchers, delicatessens, épiceries fines, wine shops (cavistes)
+* Other local businesses where a brochure website could provide value
+
+Do NOT limit the research to these categories. If you find another type of business that clearly could benefit from a professional website, include it.
+
+## Main qualification criteria
+
+I am specifically looking for businesses that **do NOT appear to have a proper brochure/informational website**.
+
+A business qualifies when:
+
+* It has no website listed on Google Maps, OR
+* The listed website is missing/broken, OR
+* The business only has Facebook/Instagram/social media and no dedicated website, OR
+* The website is clearly not a proper business website, OR
+* The "website" is only a marketplace/directory/booking-platform/social-media profile (PagesJaunes page, TheFork, Planity, Doctolib, Uber Eats, Linktree…) rather than the company's own website.
+
+### Important distinction
+
+Do NOT automatically classify a business as having "no website" just because Google Maps doesn't show one.
+
+Search the business name + arrondissement on Google and check other public sources.
+
+Also distinguish between:
+
+* **No website**
+* **Social media only**
+* **Website exists**
+* **Unclear / needs manual verification**
+
+Only include businesses as strong leads when there is reasonable evidence that they don't have a proper brochure website.
+
+Leave out franchises and chain branches (their head office runs the website).
+
+## Information to collect
+
+For every qualified business, collect:
+
+1. Business name
+2. Business category/type
+3. Arrondissement
+4. Neighbourhood (quartier), if known
+5. Full address
+6. Phone number
+7. Secondary phone number if available
+8. Google Maps link
+9. Facebook page, if available
+10. Instagram page, if available
+11. Website, if any
+12. Website status
+13. Short reason why it is a potential website lead
+14. Source(s) used to verify the information
+
+## Phone numbers
+
+Phone numbers are very important.
+
+Write them in international format: `+33 4 xx xx xx xx` (landline) or `+33 6/7 xx xx xx xx` (mobile).
+
+Try to find and verify the business phone number from:
+
+* Google Maps
+* PagesJaunes
+* Official Facebook page
+* Official Instagram page
+* Business directories
+* Other reliable public sources
+
+Prefer the most recently listed business number.
+
+Do not invent or guess phone numbers.
+
+If multiple numbers exist, include them and indicate which appears to be the primary number.
+
+## Website verification
+
+For each business, actively check whether a website exists.
+
+Search combinations such as:
+
+`"Business Name" Lyon`
+
+`"Business Name" Lyon 69003`
+
+`"Business Name" site officiel`
+
+Check Google results and the business's social media profiles.
+
+Classify website status as exactly one of:
+
+* `No website found`
+* `Social media only`
+* `Website exists`
+* `Website unclear`
+
+For my lead list, prioritize:
+
+**No website found** and **Social media only**.
+
+## Lead quality
+
+Add a `Lead Potential` field:
+
+* **High** — established business, no proper website, clear public phone number
+* **Medium** — likely suitable but website status or business information requires some verification
+* **Low** — weak evidence or questionable opportunity
+
+Do not include businesses with an obvious modern, functioning brochure/business website unless there is another strong reason they could be a lead.
+
+Do not include businesses marked as permanently closed.
+
+## Avoid duplicates
+
+Deduplicate businesses carefully.
+
+The same business may appear on:
+
+* Google Maps
+* PagesJaunes / Mappy
+* Facebook
+* Instagram
+* Multiple Google results
+
+Treat them as one business.
+
+## Search strategy
+
+Be systematic rather than stopping after finding a few businesses.
+
+For each arrondissement:
+
+1. Search Google Maps for different business categories.
+2. Record promising businesses.
+3. Search each promising business on Google.
+4. Verify whether it has a proper website.
+5. Find and verify its phone number.
+6. Check Facebook/Instagram when useful.
+7. Remove duplicates.
+8. Move to the next category.
+9. Continue until the arrondissement has been reasonably covered.
+
+Use multiple search queries for each category (French and English terms) because Google Maps results can vary depending on the query.
+
+## Output
+
+Create a structured table with these columns:
+
+| # | Business | Type | Arrondissement | Quartier | Phone | Website Status | Website | Google Maps | Facebook | Instagram | Lead Potential | Reason |
+| - | -------- | ---- | -------------- | -------- | ----- | -------------- | ------- | ----------- | -------- | --------- | -------------- | ------ |
+
+Keep each arrondissement clearly separated, in order 1er → 9e.
+
+## Priority
+
+Within each arrondissement, prioritize:
+
+**High potential → Medium potential → Low potential**
+
+Do not give me businesses that already have a good professional brochure website just to increase the number of results.
+
+## Final summary
+
+At the end provide:
+
+* Total qualified businesses
+* Number per arrondissement (1er to 9e)
+* Number with no website
+* Number with social media only
+* Number requiring manual verification
+* Breakdown by business type
+
+Also provide a separate **Top Leads** section containing the strongest opportunities, with their business name, type, arrondissement, phone number, and reason they are a good website prospect.
+
+### Important
+
+Accuracy is more important than quantity.
+
+Do not invent missing information.
+
+Clearly mark information that could not be verified.
+
+Use publicly available business information only.
