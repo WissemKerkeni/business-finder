@@ -5,7 +5,7 @@ The layout follows `../stitch/desktop-final.html` (near-black #0C0C0D; Archivo N
 
 It is an informational site: a request is a WhatsApp message or a phone call. No payments, accounts, quote calculator or backend. The request form only builds a pre-filled `wa.me` message.
 
-**Live:** https://chaari-auto.com (also https://chaari-auto.vercel.app; `www.chaari-auto.com` 308-redirects to the apex; DNS at OVH: apex `A 216.198.79.1`, `www` `CNAME cname.vercel-dns.com.`) (Vercel project `chaari-auto`, `prj_cj7fnXN6ezbkYzg7DyGyR39BhPPA`, team `team_ODIYw5HwL1ZT6MkftJt0ZpW3`; first production deploy `dpl_BbSJ71iogepXBsCQzUs4cBtV342e` on 2026-09-30). `SITE_URL=https://chaari-auto.com` is set in the Vercel production env (changed 2026-10-02). Deploy from this folder with `npx vercel deploy --prod --yes --scope wissem-kerkenis-projects`; `.vercelignore` keeps `dist/` out of the upload (Vercel builds from source).
+**Live:** https://chaari-auto.com (also https://chaari-auto.vercel.app; `www.chaari-auto.com` 308-redirects to the apex; DNS at OVH: apex `A 216.198.79.1`, `www` `CNAME cname.vercel-dns.com.`) (Vercel project `chaari-auto`, `prj_cj7fnXN6ezbkYzg7DyGyR39BhPPA`, team `team_ODIYw5HwL1ZT6MkftJt0ZpW3`; first production deploy `dpl_BbSJ71iogepXBsCQzUs4cBtV342e` on 2026-09-30). `SITE_URL=https://chaari-auto.com` is set in the Vercel production env (changed 2026-10-02). Since 2026-10-10 the project is connected to the client repo `WissemKerkeni/chaari-auto-website` with Root Directory `site`: every push to its `main` deploys to production, so port changes there and push. Vercel Web Analytics (`inject()`) and Speed Insights (`<SpeedInsights />`) run from `src/main.tsx`; the Datenschutz text says so (cookieless, anonymous).
 
 ```bash
 npm install
@@ -39,7 +39,7 @@ Every fact comes from the business's own posts, bio or Google Maps profile. Neve
 2. `python ../_scratch/make_clips.py clips` (H.264 720p, no audio, faststart, sharpest-frame poster), `python ../_scratch/prep_photos.py`, `python ../_scratch/optimize_photos.py public/photos src/data/photos.json`, `python ../_scratch/site_videos.py`.
 3. Add its caption to `videoCaptions` in `business.ts`. Keep the total video weight under ~40 MB.
 
-Then `npm run build`, check with `npm run preview`, and redeploy: `npx vercel deploy --prod --yes --scope wissem-kerkenis-projects`.
+Then `npm run build`, check with `npm run preview`, and redeploy by pushing to `main` of the client repo.
 
 ## Where things live
 

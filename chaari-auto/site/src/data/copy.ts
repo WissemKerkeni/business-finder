@@ -172,7 +172,8 @@ const fr = {
     controller: 'Responsable / Verantwortlicher',
     // Datenschutz: [label, text] blocks, brief and factual.
     privacy: (host: string, email: string, auth: string): [string, string][] => [
-      ['Données', 'Aucun cookie, aucun outil de mesure d’audience, aucune donnée personnelle conservée. Polices, photos et vidéos sont hébergées sur ce site.'],
+      ['Données', 'Aucun cookie, aucune donnée personnelle conservée. Polices, photos et vidéos sont hébergées sur ce site.'],
+      ['Statistiques', 'Vercel Web Analytics et Speed Insights (Vercel Inc.) comptent les visites et mesurent la vitesse des pages, sans cookie et de façon anonyme : aucune adresse IP ni identifiant n’est conservé. Base : intérêt légitime (art. 6, al. 1, f RGPD).'],
       ['Services tiers', 'Le formulaire ouvre WhatsApp (WhatsApp Ireland Ltd.) sans rien transmettre à ce site ; l’envoi du message reste votre choix. La carte Google Maps (Google Ireland Ltd.) ne se charge qu’après votre clic.'],
       ['Hébergement', `${host}. Seules les données techniques nécessaires à l’affichage sont traitées (adresse IP, date et heure).`],
       ['Vos droits', `Accès, rectification et effacement : ${email}. Réclamation : ${auth}.`],
@@ -360,7 +361,8 @@ const en: Copy = {
     ids: 'Tax and customs IDs / Steuer- und Zollnummern',
     controller: 'Controller / Verantwortlicher',
     privacy: (host: string, email: string, auth: string): [string, string][] => [
-      ['Data', 'No cookies, no analytics, no personal data stored. Fonts, photos and videos are hosted on this site.'],
+      ['Data', 'No cookies, no personal data stored. Fonts, photos and videos are hosted on this site.'],
+      ['Statistics', 'Vercel Web Analytics and Speed Insights (Vercel Inc.) count visits and measure page speed, without cookies and anonymously: no IP address or identifier is stored. Legal basis: legitimate interest (Art. 6(1)(f) GDPR).'],
       ['Third-party services', 'The form opens WhatsApp (WhatsApp Ireland Ltd.) and sends nothing to this site; whether to send the message is your choice. The Google map (Google Ireland Ltd.) loads only after you click.'],
       ['Hosting', `${host}. Only the technical data needed to serve the pages is processed (IP address, date and time).`],
       ['Your rights', `Access, correction and deletion: ${email}. Complaints: ${auth}.`],
