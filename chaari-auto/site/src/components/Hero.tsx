@@ -28,13 +28,13 @@ export default function Hero() {
   return (
     <section id="top" aria-labelledby="hero-title" className="relative flex min-h-[100svh] flex-col overflow-hidden border-b border-line lg:min-h-[max(100vh,820px)]">
       <div className={`absolute inset-0 overflow-hidden lg:top-32 lg:bottom-44 lg:left-[42%] ${edge}`}>
-        <Photo id={hero.id} alt={hero.alt[lang]} priority sizes="(min-width: 1024px) 50vw, 100vw" className="kenburns h-full w-full object-cover object-[45%_60%]" />
+        <Photo id={hero.id} alt={hero.alt[lang]} priority sizes="(min-width: 1024px) 50vw, 100vw" className="kenburns h-full w-full object-cover object-[50%_60%] lg:object-[50%_42%]" />
         <div className="absolute inset-0 bg-ink/55 lg:bg-transparent lg:bg-[linear-gradient(90deg,#0C0C0D_0%,#0C0C0DD9_18%,#0C0C0D66_40%,transparent_62%)]" />
       </div>
       <div className="absolute inset-x-0 bottom-0 h-72 bg-[linear-gradient(0deg,#0C0C0D_35%,transparent)] lg:hidden" />
 
       <div className="intro relative z-10 mx-auto mt-[108px] sm:mt-32 lg:hidden" style={delay(0)}>
-        <LogoLockup priority sizes="(min-width: 640px) 100px, 80px" className="text-[clamp(20px,7.6vw,30px)] drop-shadow-[0_4px_18px_rgba(0,0,0,.75)] sm:text-[36px]" />
+        <LogoLockup priority sizes="(min-width: 640px) 15vw, 23vw" className="text-[clamp(22px,8.8vw,36px)] drop-shadow-[0_4px_18px_rgba(0,0,0,.75)] sm:text-[min(5.6vw,56px)]" />
       </div>
 
       <Wrap className="relative z-10 mt-auto w-full pt-10 pb-10 lg:pt-36 lg:pb-12">

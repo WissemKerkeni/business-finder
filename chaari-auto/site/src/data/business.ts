@@ -156,7 +156,7 @@ export const destinations: L[] = [
 ]
 
 // Hero: Google Maps photo of a black Mercedes GLC Coupé with the CHAARI AUTO plate (owner to confirm the Maps photos are theirs).
-export const hero = { id: 'hero' as PhotoKey, alt: { fr: 'Mercedes GLC Coupé noir vu de trois quarts avant, avec la plaque CHAARI AUTO', en: 'Black Mercedes GLC Coupé, front three-quarter view, with the CHAARI AUTO plate' } as L }
+export const hero = { id: 'hero' as PhotoKey, alt: { fr: 'Mercedes-AMG GLE noir vu de face, avec la plaque CHAARI AUTO', en: 'Black Mercedes-AMG GLE, front view, with the CHAARI AUTO plate' } as L }
 export const cta = { id: 'cta' as PhotoKey, alt: { fr: 'Cupra Formentor gris avec la plaque CHAARI AUTO', en: 'Grey Cupra Formentor with the CHAARI AUTO plate' } as L }
 
 // ---------- Request form (no backend: builds a WhatsApp message) ----------
